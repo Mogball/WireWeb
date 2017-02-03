@@ -1,3 +1,59 @@
+.pp-header {
+    font-family: "pp-sans-big-medium", Helvetica Neue, Arial, sans-serif;
+    font-weight: normal;
+    font-variant: normal;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+header {
+    font-family: "pp-sans-big-regular", Helvetica Neue, Arial, sans-serif;
+    font-weight: normal;
+    font-variant: normal;
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
+.row-fluid {
+    background: #fff;
+    position: relative;
+    z-index: 2;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate(0, 0);
+}
+
+.row-fluid {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.hpw {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.center-text {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 nav {
   margin: 0;
   padding: 0;
