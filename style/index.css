@@ -53,6 +53,13 @@ body {
     text-align: center;
 }
 
+.topSection{
+
+       background-image: url(res/testBack1.jpg);
+       background-position-y: 15%;
+       background-size: cover;
+       
+}
 
 
 
