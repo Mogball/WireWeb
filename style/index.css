@@ -1,21 +1,34 @@
-.pp-header {
-    font-family: "pp-sans-big-medium", Helvetica Neue, Arial, sans-serif;
-    font-weight: normal;
-    font-variant: normal;
-    position: absolute;
-    z-index: 10;
-    width: 100%;
+
+html[lang="en-US"][data-device-type="dedicated"] .pp-header {
+    min-width: 1028px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    box-sizing: border-box;
 }
 
 header {
-    font-family: "pp-sans-big-regular", Helvetica Neue, Arial, sans-serif;
-    font-weight: normal;
-    font-variant: normal;
+  font-family: "pp-sans-big-medium", Helvetica Neue, Arial, sans-serif;
+  font-weight: normal;
+  font-variant: normal;
+  position: absolute;
+  z-index: 10;
+  margin: 0;
+  width: 100%;
+  padding: 0;
 }
 
 body {
     font-size: 14px;
     line-height: 1.5em;
+    display: block;
+    margin: 0px;
 }
 
 .row-fluid {
@@ -59,11 +72,12 @@ nav {
   padding: 0;
   position: fixed;
   top: 0;
+  height: 100%;
   width: 100%;
 }
 ul {
     list-style-type: none;
-
+    height: 67px;
     overflow: hidden;
     background-color: #333;
 
