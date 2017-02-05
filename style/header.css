@@ -5,7 +5,7 @@ ul.topnav {
     padding: 0;
     overflow: auto;
     background-color: #333;
-    height: 60;
+    height: auto;
 }
 
 ul.topnav li {float: left;}
@@ -14,9 +14,10 @@ ul.topnav li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 23px 20px;
     text-decoration: none;
 }
+
 
 ul.topnav li a:hover:not(.active) {background-color: #111;}
 
@@ -27,4 +28,14 @@ ul.topnav li.right {float: right;}
 @media screen and (max-width: 600px){
     ul.topnav li.right,
     ul.topnav li {float: none;}
+}
+
+img{
+  width:140px;
+  height:67px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+li.titleIcon {
+  height: 67;
 }
