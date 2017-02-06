@@ -12,3 +12,17 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
+
+.card .card-image .card-title {
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 24px;
+    padding-bottom: 12px;
+    background-color: rgba(184,184,184,0.7);
+    width: 100%;
+}
