@@ -111,16 +111,21 @@ function w3DisplayData(id, data) {
         a.innerHTML = a.innerHTML.replace(r, result);
     }
 }
+
+
 function w3IncludeHTML() {
   var z, i, elmnt, file, xhttp;
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     file = elmnt.getAttribute("w3-include-html");
+
     if (file) {
+      console.log("This is the " + file);
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+          console.log("This happened")
           elmnt.innerHTML = this.responseText;
           elmnt.removeAttribute("w3-include-html");
           w3IncludeHTML();
@@ -132,6 +137,8 @@ function w3IncludeHTML() {
     }
   }
 }
+
+function getMyWeb(){}
 function w3Http(target, readyfunc, xml, method) {
     var httpObj;
     if (!method) {method = "GET"; }
