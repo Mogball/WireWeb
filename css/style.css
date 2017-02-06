@@ -26,3 +26,8 @@
     background-color: rgba(184,184,184,0.7);
     width: 100%;
 }
+
+.main_page_head{
+    background-image: url('../res/ocean.jpg');
+    margin-bottom: 0px;
+}
