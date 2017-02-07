@@ -9,11 +9,7 @@
 
 .header-block {
     height: 10vh;
-}
-
-.header-item-block {
-    justify-content: center;
-
+    min-height: 60px;
 }
 
 .home-page-block {
@@ -21,8 +17,9 @@
 }
 
 .home-catch-phrase-block {
-    padding: 5vh;
+    padding: 41px;
     height: 30vh;
+    min-height: 150px;
     align-items: center;
     justify-content: center;
 }
