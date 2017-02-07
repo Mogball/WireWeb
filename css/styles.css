@@ -26,6 +26,10 @@
     line-height: 82px;
 }
 
+.header-nav-btns-btn {
+    margin-left: 15px;
+}
+
 .header-nav-btn {
     font-size: 18px;
     font-weight: 400;
