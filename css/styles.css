@@ -2,8 +2,24 @@
     background-color: #FE424D !important;
 }
 
+.header-logo-text {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.header-block {
+    height: 10vh;
+}
+
 .home-page-block {
-    height: 350px;
+    height: 60vh;
+}
+
+.home-catch-phrase-block {
+    padding: 5vh;
+    height: 30vh;
+    align-items: center;
+    justify-content: center;
 }
 
 .home-catch-phrase {
