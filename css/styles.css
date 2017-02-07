@@ -17,7 +17,7 @@
     transition: .3s ease-out;
 }
 .app-light-cyan:hover {
-    background-color: #00eaff;
+    background-color: #50e7f5;
 }
 
 .header-block, .header-content-block {
@@ -55,7 +55,7 @@
 
 nav .nav-wrapper i.header-nav-menu {
     line-height: 82px;
-    font-size: 3rem;
+    font-size: 2.4rem;
 }
 
 nav .menu-button-collapse {
