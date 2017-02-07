@@ -2,8 +2,7 @@
     background-color: #FE424D !important;
 }
 
-.header-logo-text {
-    font-size: 40px;
+.header-logo {
     font-weight: 900;
 }
 
@@ -18,7 +17,6 @@
 
 .home-catch-phrase-block {
     padding: 41px;
-    height: 30vh;
     min-height: 150px;
     align-items: center;
     justify-content: center;
@@ -34,7 +32,9 @@
 .home-sign-up-btn {
     margin: 20px;
     width: 35.5%;
+    min-width: 210px;
     height: 60.5%;
+    min-height: 55px;
     font-size: 30px;
     font-weight: 900;
     border-radius: 4px;
