@@ -1,19 +1,27 @@
-<div class="nav-wrapper container">
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".button-collapse").sideNav();
+    });
+</script>
 
-    <a href="../" class="brand-logo header-logo">Wire</a>
-    <ul class="right hide-on-med-and-down button-collapse center">
+<div class="nav-wrapper container">
+    <a href="../" class="header-logo">Wire</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse">
+        <i class="material-icons header-nav-menu">menu</i>
+    </a>
+    <ul class="right header-nav-btns">
         <li><a href="../pages/personal.html" onclick="reactClick(1)">Features</a></li>
         <li><a href="../pages/business.html" onclick="reactClick(2)">Services</a></li>
         <li><a href="../pages/profit.html" onclick="reactClick(3)">Company</a></li>
         <li><a href="../pages/career.html" onclick="reactClick(4)">Career</a></li>
-        <li>
-            <a class="btn waves-effect waves-light">Sign up</a>
-            <a class="btn waves-effect waves-light">Log in</a>
-        </li>
+        <li><a class="btn waves-effect waves-light">Sign up</a></li>
+        <li><a class="btn waves-effect waves-light">Log in</a></li>
     </ul>
 
     <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
     </ul>
-
 </div>
