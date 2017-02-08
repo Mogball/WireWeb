@@ -71,6 +71,14 @@
     margin-bottom: 0;
 }
 
+.discoverWire{
+  background-image: url(../res/wiretrans.jpg);
+}
+
+.discoverTitle{
+  margin: 0;
+}
+
 .footer-page-link {
     color: #e5e5fb;
 }
