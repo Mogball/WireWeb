@@ -134,3 +134,21 @@ nav .menu-button-collapse i {
 .career-card-container {
     width: 83%;
 }
+
+.career-page-main {
+    min-height: 300px;
+    height: 52vh;
+    padding: 7vh;
+}
+
+.career-page-button-block {
+    min-height: 140px;
+    height: 30vh;
+}
+
+.career-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
