@@ -50,7 +50,8 @@
 
 .header-nav-btn {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 500;
+    color: azure;
 }
 
 nav .nav-wrapper i.header-nav-menu {
@@ -124,4 +125,12 @@ nav .menu-button-collapse i {
     min-height: 60px;
     line-height: 70px;
     height: 70%;
+}
+
+.flow-text {
+    font-size: 15px;
+}
+
+.career-card-container {
+    width: 83%;
 }
