@@ -29,14 +29,15 @@
 }
 
 .main_page_head {
-    background-image: url('../res/ocean.jpg');
-    margin-bottom: 0px;
+    background-image: url('../res/zurich_pan.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 0;
 }
 
 
 .scrollDownButton {
     display: inline-block;
-    padding: 6px 12px;
     margin-bottom: 0;
     font-size: 14px;
     font-weight: normal;
@@ -53,7 +54,6 @@
     user-select: none;
     background-image: none;
     border: 1px solid transparent;
-    border-radius: 4px;
     width: 70px;
     height: 70px;
     margin-top: 30px;
@@ -67,8 +67,8 @@
     border-bottom: 1px;
     border-style: solid;
     border-bottom-color: #f0f0f0;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .footer-page-link {
@@ -90,7 +90,7 @@
     color: #ffffff;
     font-size: 40px;
     font-weight: bold;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-top: 5px;
 }
 
