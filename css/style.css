@@ -35,7 +35,6 @@
     margin-bottom: 0;
 }
 
-
 .scrollDownButton {
     display: inline-block;
     margin-bottom: 0;
@@ -71,12 +70,12 @@
     margin-bottom: 0;
 }
 
-.discoverWire{
-  background-image: url(../res/wiretrans.jpg);
+.discoverWire {
+    background-image: url(../res/wiretrans.jpg);
 }
 
-.discoverTitle{
-  margin: 0;
+.discoverTitle {
+    margin: 0;
 }
 
 .footer-page-link {

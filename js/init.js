@@ -3,7 +3,7 @@
         // Enable the side navigation menu
         $(".menu-button-collapse").sideNav();
 
-        // Set the active navigation button if possible
+        /*// Set the active navigation button if possible
         var navbar = document.getElementsByTagName("nav")[0];
         // There should no more than one navigation bar
         if (navbar) {
@@ -15,7 +15,7 @@
                     selected_nav_btn.setAttribute("class", "active"); // set active
                 }
             }
-        }
+        }*/
 
     });
 })(jQuery);
