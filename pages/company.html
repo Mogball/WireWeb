@@ -1,26 +1,19 @@
 <!Doctype html>
 <html>
 
+<!--
+Google Maps API Tutorial
+https://developers.google.com/maps/documentation/javascript/marker-clustering
 
-
- <!--
-Yolo, so here is the link to the tutorial for map API: https://developers.google.com/maps/documentation/javascript/marker-clustering
-
-Right now, I am using the API key from one of my other project which used Google API before, will change to our own.
-
-
+Currency keys are from another project
+TODO get keys for Wire
 Browser API key:      AIzaSyBmsDog871naOfSLVIqTjxo7_q9egdnUvY
 Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
-try, inserting it to other services
-
 -->
-
-
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Wire AR-payment</title>
@@ -34,20 +27,6 @@ try, inserting it to other services
     <!-- Include jQuery (Dependency of jQuery ScrollTo) -->
     <script src="../js/jquery/jquery.js"></script>
     <script src="../js/lib/jquery-scrollto.js"></script>
-
-    <style>
-          /* Always set the map height explicitly to define the size of the div
-           * element that contains the map. */
-          #map {
-            height: 100%;
-          }
-          /* Optional: Makes the sample page fill the window. */
-          html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-          }
-        </style>
 
 </head>
 
@@ -86,7 +65,7 @@ try, inserting it to other services
     </div>
 </div>
 <div class="section no-pad-top">
-    <div style="margin: 15vw; margin-top: 0; margin-bottom: 0;">
+    <div class="about-us-header-block-container">
         <div class="cyan darken-2 about-us-header-block z-depth-1">
             <div class="container">
                 <div class="template-section-block">
@@ -98,15 +77,14 @@ try, inserting it to other services
                 </div>
             </div>
         </div>
-        <div class="center" >
+        <div class="center">
             <div class="z-depth-2 about-us-members-block app-ripple">
-                <div class="container" >
+                <div class="container">
                     <h5>Members</h5>
                 </div>
             </div>
         </div>
         <div class="container about-us-member-container">
-
             <div class="about-us-member-portrait grey lighten-3 z-depth-1">
                 <p class="member-name">Eugene Wang</p>
                 <p class="member-name">CEO</p>
@@ -119,7 +97,7 @@ try, inserting it to other services
         </div>
     </div>
 </div>
-<div class="about-us-title-block z-depth-2">
+<div class="about-us-title-block margin-top z-depth-2">
     <div class="container">
         <a name="support"></a>
         <div class="template-block">
@@ -203,7 +181,7 @@ try, inserting it to other services
         </div>
     </div>
 </div>
-<div class="about-us-title-block z-depth-2">
+<div class="about-us-title-block margin-top z-depth-2">
     <div class="container">
         <a name="contact"></a>
         <div class="template-block">
@@ -257,21 +235,15 @@ try, inserting it to other services
             </div>
         </div>
         <div class="row center">
-            <h5 class="contact-sub-header margin-top">Find us nearby</h5>
-
-
-
+            <h5 class="contact-sub-header margin-top map-header">Find us nearby</h5>
         </div>
+        <div class="inherit-dim">
+            <div class="map-container z-depth-1">
+                <div id="map" class="col s12 m8"></div>
+            </div>
         </div>
-
-    </div>
-
-    <div >
-      <div id="map" class="col s12 m8" style="height:100vh"></div>
     </div>
 </div>
-
-
 
 <footer class="page-footer blue" w3-include-html="../pages/footer.html"></footer>
 
@@ -280,50 +252,9 @@ try, inserting it to other services
 <script src="../js/materialize.js"></script>
 <script src="../js/init.js"></script>
 <script src="../js/html_in.js"></script>
+<script src="../js/init_google_map.js"></script>
 <script>w3IncludeHTML()</script>
-
-
-<script>
-
-  function initMap() {
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
-      center: {lat: 37.7, lng: -122.4},
-    });
-
-    // Create an array of alphabetical characters used to label the markers.
-    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-    // Add some markers to the map.
-    // Note: The code uses the JavaScript Array.prototype.map() method to
-    // create an array of markers based on a given "locations" array.
-    // The map() method here has nothing to do with the Google Maps API.
-    var markers = locations.map(function(location, i) {
-      return new google.maps.Marker({
-        position: location,
-        label: labels[i % labels.length]
-      });
-    });
-
-    // Add a marker clusterer to manage the markers.
-    var markerCluster = new MarkerClusterer(map, markers,
-        {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-  }
-  var locations = [
-    {lat: 37.787013, lng: -122.433451},
-    {lat: 37.803072, lng: -122.411421},
-    {lat: 43.643510, lng: -79.391063},
-
-  ]
-</script>
-<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-</script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmsDog871naOfSLVIqTjxo7_q9egdnUvY&callback=initMap">
-</script>
-
-
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmsDog871naOfSLVIqTjxo7_q9egdnUvY&callback=initMap"></script>
 </body>
-
 </html>

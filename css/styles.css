@@ -204,9 +204,13 @@ nav .menu-button-collapse i {
 }
 
 .about-us-title-block {
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 25px;
     background-color: #E2ECF3;
+}
+
+.about-us-title-block.margin-top {
+    margin-top: 70px;
 }
 
 .about-us-title {
@@ -412,4 +416,49 @@ h5.contact-sub-header.margin {
 
 h5.contact-sub-header.margin-top {
     margin-top: 30px;
+}
+
+.about-us-header-block-container {
+    margin: 15vw;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.inherit-dim {
+    height: 100%;
+    width: 100%;
+}
+
+.contact-sub-header.margin-top.map-header {
+    border-bottom-color: #666666;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding-bottom: 7px;
+}
+
+.map-container {
+    height: 83.33vh;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    -webkit-transition: ease-in 0.2s;
+    -moz-transition: ease-in 0.2s;
+    -o-transition: ease-in 0.2s;
+    transition: ease-in 0.2s;
+}
+
+.map-container:hover {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 
+    0 1px 10px 0 rgba(0, 0, 0, 0.12), 
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    -o-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+}
+
+div#map {
+    height: 100%;
+    border-radius: inherit;
 }
