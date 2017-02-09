@@ -13,9 +13,96 @@
 
 </head>
 <body>
-<nav class="blue lighten-1 header-block" role="navigation" w3-include-html="../pages/header.html"></nav>
+<nav class="blue lighten-1 header-block" role="navigation">
+    <div class="nav-wrapper container">
+        <a href="../" class="header-logo">Wire</a>
+        <a href="#" data-activates="nav-mobile" class="menu-button-collapse">
+            <i class="material-icons header-nav-menu">menu</i>
+        </a>
+        <ul class="header-nav-btns right header-nav-btns-btn">
+            <li><a class="btn waves-effect waves-light header-btn app-light-orange"
+                   href="../pages/register.html">Sign up</a></li>
+            <li><a class="btn waves-effect waves-light header-btn app-light-cyan"
+                   href="../pages/login.html">Log in</a></li>
+        </ul>
+        <ul class="header-nav-btns right">
+            <li><a class="header-nav-btn" href="../pages/features.html"
+                   onclick="reactClick(1)">Features</a></li>
+            <li><a class="header-nav-btn" href="../pages/services.html"
+                   onclick="reactClick(2)">Services</a></li>
+            <li><a class="header-nav-btn" href="../pages/company.html"
+                   onclick="reactClick(3)">Company</a></li>
+            <li><a class="header-nav-btn" href="../pages/career.html"
+                   onclick="reactClick(4)">Career</a></li>
+        </ul>
+        <ul class="side-nav" id="nav-mobile">
+            <li><a href="#" onclick="reactClick(5)">XD</a></li>
+        </ul>
+    </div>
+</nav>
 
-<div class="le_page" w3-include-html="../pages/body.html"></div>
+<div class="le_page">
+    <div class="row main_page_head home-page-block">
+    </div>
+
+    <div class="cyan lighten-1 home-catch-phrase-block">
+        <div class="container">
+            <h4 class="home-catch-phrase">No cards, no cash, just Wire</h4>
+            <div class="center">
+                <a class="btn-large waves-effect waves-light
+                home-sign-up-btn app-light-red">Learn more</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br><br>
+            <h1 class="header center orange-text">Some title</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">Some description</h5>
+            </div>
+            <div class="row center">
+                <a class="btn-large waves-effect waves-light orange">Sign up</a>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="section">
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+                        <h5 class="center">Feature 1</h5>
+                        <p class="light">Describe feature 1</p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+                        <h5 class="center">Feature 2</h5>
+                        <p class="light">Describe feature 2</p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+                        <h5 class="center">Feature 3</h5>
+                        <p class="light">Describe feature 3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</div>
 <footer class="page-footer blue" w3-include-html="../pages/footer.html"></footer>
 
 

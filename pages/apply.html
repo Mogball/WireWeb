@@ -18,7 +18,33 @@
 </head>
 
 <body>
-<nav class="blue lighten-1 header-block" role="navigation" w3-include-html="../pages/header.html"></nav>
+<nav class="blue lighten-1 header-block" role="navigation">
+    <div class="nav-wrapper container">
+        <a href="../" class="header-logo">Wire</a>
+        <a href="#" data-activates="nav-mobile" class="menu-button-collapse">
+            <i class="material-icons header-nav-menu">menu</i>
+        </a>
+        <ul class="header-nav-btns right header-nav-btns-btn">
+            <li><a class="btn waves-effect waves-light header-btn app-light-orange"
+                   href="../pages/register.html">Sign up</a></li>
+            <li><a class="btn waves-effect waves-light header-btn app-light-cyan"
+                   href="../pages/login.html">Log in</a></li>
+        </ul>
+        <ul class="header-nav-btns right">
+            <li><a class="header-nav-btn" href="../pages/features.html"
+                   onclick="reactClick(1)">Features</a></li>
+            <li><a class="header-nav-btn" href="../pages/services.html"
+                   onclick="reactClick(2)">Services</a></li>
+            <li><a class="header-nav-btn" href="../pages/company.html"
+                   onclick="reactClick(3)">Company</a></li>
+            <li><a class="header-nav-btn" href="../pages/career.html"
+                   onclick="reactClick(4)">Career</a></li>
+        </ul>
+        <ul class="side-nav" id="nav-mobile">
+            <li><a href="#" onclick="reactClick(5)">XD</a></li>
+        </ul>
+    </div>
+</nav>
 <div class="section">
     <div class="container center">
         <div style="margin-top:25px">
