@@ -442,6 +442,7 @@ div#map {
     background-size: cover;
     margin-bottom: 0;
     height: 70vh;
+    width: 100%;
 }
 
 .features-page-block {
@@ -505,4 +506,11 @@ div#map {
 .fixed-bar nav {
     top: 0;
     position: fixed;
+}
+
+.fixed-bar-anchor {
+    display: block;
+    position: relative;
+    top: -47px;
+    visibility: hidden;
 }
