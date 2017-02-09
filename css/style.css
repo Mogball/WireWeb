@@ -76,11 +76,19 @@
 
 .footer-page-link {
     color: #e5e5fb;
+    -webkit-transition: ease-out 0.1s;
+    -moz-transition: ease-out 0.1s;
+    -o-transition: ease-out 0.1s;
+    transition: ease-out 0.1s;
 }
 
 .footer-page-link:hover {
     font-weight: bold;
     color: #ffffff;
+    -webkit-transition: ease-out 0.15s;
+    -moz-transition: ease-out 0.15s;
+    -o-transition: ease-out 0.15s;
+    transition: ease-out 0.15s;
 }
 
 .footer-category-label {
