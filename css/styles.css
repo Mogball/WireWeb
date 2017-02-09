@@ -359,3 +359,6 @@ nav .menu-button-collapse i {
     transition: ease-out 0.28s;
 }
 
+.support-item-number {
+    color: #84ffff;
+}
