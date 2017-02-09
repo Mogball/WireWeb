@@ -126,3 +126,9 @@
   background-image: url(../res/skymr.jpg);
   height: 30vh;
 }
+
+.global {
+  background-image: url(../res/global.jpg);
+  height: 30vh;
+
+}
