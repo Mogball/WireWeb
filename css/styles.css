@@ -204,7 +204,7 @@ nav .menu-button-collapse i {
 }
 
 .about-us-title-block {
-    margin-top: 25px;
+    margin-top: 0px;
     margin-bottom: 25px;
     background-color: #E2ECF3;
 }
@@ -242,7 +242,7 @@ nav .menu-button-collapse i {
 .about-us-members-block {
     padding: 10px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 70px;
     margin-bottom: 30px;
     max-width: 550px;
     min-width: 100px;
