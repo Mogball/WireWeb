@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e23ff15b-3978-496b-8ee2-973c1ac77039" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/multi.jpg" afterPath="$PROJECT_DIR$/res/multi.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/styles.css" afterPath="$PROJECT_DIR$/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/company.html" afterPath="$PROJECT_DIR$/pages/company.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="WireWeb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,8 +80,8 @@
           <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/styles.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="171">
-                  <caret line="490" column="0" selection-start-line="490" selection-start-column="0" selection-end-line="496" selection-end-column="1" />
+                <state relative-caret-position="121">
+                  <caret line="483" column="1" selection-start-line="483" selection-start-column="1" selection-end-line="483" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -128,8 +130,8 @@
         <option value="$PROJECT_DIR$/pages/features.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/materialize.css" />
-        <option value="$PROJECT_DIR$/css/styles.css" />
         <option value="$PROJECT_DIR$/pages/company.html" />
+        <option value="$PROJECT_DIR$/css/styles.css" />
       </list>
     </option>
   </component>
@@ -259,7 +261,7 @@
       <updated>1486564145089</updated>
       <workItem from="1486564147034" duration="32642000" />
       <workItem from="1486618340800" duration="2001000" />
-      <workItem from="1486657820517" duration="10897000" />
+      <workItem from="1486657820517" duration="10930000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/Mogball/WireWeb&#10;&#10;# Conflicts:&#10;#&#9;pages/features.html&#10;&#10;Touched up the feature page and developed basic template">
       <created>1486568693418</created>
@@ -272,7 +274,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45540000" />
+    <option name="totallyTimeSpent" value="45573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -538,14 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="490" column="0" selection-start-line="490" selection-start-column="0" selection-end-line="496" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -568,6 +562,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="483" column="1" selection-start-line="483" selection-start-column="1" selection-end-line="483" selection-end-column="1" />
           <folding />
         </state>
       </provider>
