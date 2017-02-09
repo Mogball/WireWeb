@@ -31,7 +31,7 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
 </head>
 
 <body>
-<nav class="blue lighten-1 header-block" role="navigation">
+<nav class="blue lighten-1 header-block z-depth-0" role="navigation">
     <div class="nav-wrapper container">
         <a href="../" class="header-logo">Wire</a>
         <a href="#" data-activates="nav-mobile" class="menu-button-collapse">
@@ -56,7 +56,7 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
     </div>
 </nav>
 <div class="follow-scroll">
-    <nav class="blue nav-extended">
+    <nav class="blue lighten-1 nav-extended z-depth-0">
         <div class="nav-content">
             <ul class="tabs tabs-transparent">
                 <li class="tab"><a href="#about-us">About us</a></li>
@@ -68,9 +68,9 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
 </div>
 
 <div class="about-us-page-block"></div>
+<a name="about-us" class="fixed-bar-anchor"></a>
 <div class="about-us-title-block z-depth-2">
     <div class="container">
-        <a name="about-us"></a>
         <div class="template-block">
             <h2 class="about-us-title">About Us</h2>
         </div>
@@ -111,8 +111,8 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
 </div>
 <div class="about-us-title-block margin-top z-depth-2">
     <div class="container">
-        <a name="support"></a>
         <div class="template-block">
+            <a name="support" class="fixed-bar-anchor"></a>
             <h2 class="about-us-title">Support</h2>
         </div>
     </div>
@@ -194,8 +194,8 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
 </div>
 <div class="about-us-title-block margin-top z-depth-2">
     <div class="container">
-        <a name="contact"></a>
         <div class="template-block">
+            <a name="contact" class="fixed-bar-anchor"></a>
             <h2 class="about-us-title">Contact</h2>
         </div>
     </div>
@@ -278,6 +278,7 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmsDog871naOfSLVIqTjxo7_q9egdnUvY&callback=initMap"></script>
 
+<!-- one of the jQuery scripts somewhere is messing with the tabs-->
 <script type="text/javascript">
     (function ($) {
         var element = $(".follow-scroll");
