@@ -55,6 +55,17 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
         </ul>
     </div>
 </nav>
+<div class="follow-scroll">
+    <nav class="blue nav-extended">
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a href="#about-us">About us</a></li>
+                <li class="tab"><a href="#support">Support</a></li>
+                <li class="tab"><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
 
 <div class="about-us-page-block"></div>
 <div class="about-us-title-block z-depth-2">
@@ -264,6 +275,24 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
 <script src="../js/init_google_map.js"></script>
 <script>w3IncludeHTML()</script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmsDog871naOfSLVIqTjxo7_q9egdnUvY&callback=initMap"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmsDog871naOfSLVIqTjxo7_q9egdnUvY&callback=initMap"></script>
+
+<script type="text/javascript">
+    (function ($) {
+        var element = $(".follow-scroll");
+        var originalY = element.offset().top;
+        var topMargin = 0;
+        $(window).on("scroll", function (event) {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop >= originalY) {
+                element.addClass("fixed-bar")
+            } else {
+                element.removeClass("fixed-bar");
+            }
+        });
+    })(jQuery);
+</script>
+
 </body>
 </html>
