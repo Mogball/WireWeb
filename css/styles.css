@@ -514,3 +514,17 @@ div#map {
     top: -47px;
     visibility: hidden;
 }
+
+.features-main-title {
+    color: #efefef;
+    font-weight: 900;
+    margin: auto;
+    top: 50%;
+}
+
+.features-main-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+}
