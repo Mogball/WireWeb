@@ -444,6 +444,13 @@ div#map {
     height: 70vh;
 }
 
+.features-page-block {
+    background-image: url('../res/machu_picchu.jpg');
+    background-size: cover;
+    margin-bottom: 0;
+    height: 70vh;
+}
+
 /* Put all media at the bottom */
 @media only screen and (max-width: 992px) {
     nav div .header-nav-btns {
