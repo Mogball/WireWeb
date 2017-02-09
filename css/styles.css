@@ -19,6 +19,9 @@
 .app-light-cyan:hover {
     background-color: #50e7f5;
 }
+.app-ripple {
+    background-color: #E2ECF3;
+}
 
 .header-block, .header-content-block {
     height: 10vh;
@@ -161,7 +164,7 @@ nav .menu-button-collapse i {
 }
 
 .template-main-block {
-    margin: 0px;
+    margin: 0;
     padding: 40px;
 }
 
@@ -192,3 +195,167 @@ nav .menu-button-collapse i {
 .template-container {
     width: 60%;
 }
+
+.about-us-title-block {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #E2ECF3;
+}
+
+.about-us-title {
+    font-weight: 200;
+    color: #021D21;
+}
+
+.about-us-header {
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.about-us-header-block {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    -webkit-transition: ease-in 0.25s;
+    -moz-transition: ease-in 0.25s;
+    -o-transition: ease-in 0.25s;
+    transition: ease-in 0.25s;
+}
+
+.about-us-header-block:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 18px 0 rgba(0, 0, 0, 0.12),
+    0 3px 5px -1px rgba(0, 0, 0, 0.3);
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    -o-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+}
+
+.about-us-members-block {
+    padding: 10px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    max-width: 550px;
+    min-width: 100px;
+    -webkit-transition: ease-in 0.25s;
+    -moz-transition: ease-in 0.25s;
+    -o-transition: ease-in 0.25s;
+    transition: ease-in 0.25s;
+    border-radius: 8px;
+}
+
+.about-us-members-block:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 18px 0 rgba(0, 0, 0, 0.12), 
+    0 3px 5px -1px rgba(0, 0, 0, 0.3);
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    -o-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+}
+
+.about-us-member-portrait {
+    height: 40vw;
+    width: 40vw;
+    min-width: 40px;
+    max-width: 200px;
+    min-height: 40px;
+    max-height: 200px;
+    border-radius: 100%;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    -webkit-transition: ease-in 1s;
+    -moz-transition: ease-in 1s;
+    -o-transition: ease-in 1s;
+    transition: ease-in 1s;
+}
+
+.about-us-member-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.member-name {
+    color: #777777;
+    margin: 1px;
+    font-weight: 500;
+}
+
+.about-us-member-portrait:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 18px 0 rgba(0, 0, 0, 0.12),
+    0 3px 5px -1px rgba(0, 0, 0, 0.3);
+    -webkit-transition: ease-out 1s;
+    -moz-transition: ease-out 1s;
+    -o-transition: ease-out 1s;
+    transition: ease-out 1s;
+}
+
+.support-item {
+    border-radius: 10px;
+    -webkit-transition: ease-out 0.2s;
+    -moz-transition: ease-out 0.2s;
+    -o-transition: ease-out 0.2s;
+    transition: ease-out 0.2s;
+    background-color: #546e7a;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
+    0 1px 7px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.support-item:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 18px 0 rgba(0, 0, 0, 0.12),
+    0 3px 5px -1px rgba(0, 0, 0, 0.3);
+    background-color: #56707c;
+    -webkit-transition: ease-out 0.2s;
+    -moz-transition: ease-out 0.2s;
+    -o-transition: ease-out 0.2s;
+    transition: ease-out 0.2s;
+}
+
+.support-item-header {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.support-item-link {
+    color: #20c0da;
+    -webkit-transition: ease-in 0.15s;
+    -moz-transition: ease-in 0.15s;
+    -o-transition: ease-in 0.15s;
+    transition: ease-in 0.15s;
+}
+
+.support-item-link:hover {
+    color: #00e5ff;
+    -webkit-transition: ease-out 0.1s;
+    -moz-transition: ease-out 0.1s;
+    -o-transition: ease-out 0.1s;
+    transition: ease-out 0.1s;
+}
+
+.google-play-badge {
+    -webkit-transition: ease-in 0.3s;
+    -moz-transition: ease-in 0.3s;
+    -o-transition: ease-in 0.3s;
+    transition: ease-in 0.3s;
+    border-radius: 5px;
+}
+
+.google-play-badge:hover {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    -webkit-transition: ease-out 0.28s;
+    -moz-transition: ease-out 0.28s;
+    -o-transition: ease-out 0.28s;
+    transition: ease-out 0.28s;
+}
+

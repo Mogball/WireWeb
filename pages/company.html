@@ -32,13 +32,13 @@
         </ul>
         <ul class="header-nav-btns right">
             <li><a class="header-nav-btn" href="../pages/features.html"
-                                     onclick="reactClick(1)">Features</a></li>
+                   onclick="reactClick(1)">Features</a></li>
             <li><a class="header-nav-btn" href="../pages/services.html"
-                                     onclick="reactClick(2)">Services</a></li>
+                   onclick="reactClick(2)">Services</a></li>
             <li class="active"><a class="header-nav-btn" href="../pages/company.html"
-                                    onclick="reactClick(3)">Company</a></li>
+                                  onclick="reactClick(3)">Company</a></li>
             <li><a class="header-nav-btn" href="../pages/career.html"
-                                   onclick="reactClick(4)">Career</a></li>
+                   onclick="reactClick(4)">Career</a></li>
         </ul>
         <ul class="side-nav" id="nav-mobile">
             <li><a href="#" onclick="reactClick(5)">XD</a></li>
@@ -46,82 +46,98 @@
     </div>
 </nav>
 
-<div class="section">
+<div class="about-us-title-block z-depth-2">
     <div class="container">
-        <div class="template-block template-main-block">
-            <h2 class="template-main-title">Our Company</h2>
+        <a name="about-us"></a>
+        <div class="template-block">
+            <h2 class="about-us-title">About Us</h2>
         </div>
     </div>
-    <div style="margin: 15vw; margin-top: 50px; margin-bottom: 160px;">
-        <div class="cyan darken-1">
+</div>
+<div class="section no-pad-top">
+    <div style="margin: 15vw; margin-top: 0; margin-bottom: 0;">
+        <div class="cyan darken-2 about-us-header-block z-depth-1">
             <div class="container">
                 <div class="template-section-block">
-                    <h4 class="template-section-title">About</h4>
+                    <p class="about-us-header">
+                        Wire is improving the way we manage our finances. From
+                        mobile and online transactions to borrowing and insurance,
+                        Wire is making headway into the future of finance.
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="cyan">
-            <div class="container">
-                <div class="template-section-block template-list">
-                    <ul style="margin: 10px;">
-                        <li>Track your bills and utilities</li>
-                        <li>Pay directly with one click</li>
-                        <li>Pay with Wire Extra Credit</li>
-                    </ul>
+        <div class="center">
+            <div class="z-depth-2 about-us-members-block app-ripple">
+                <div class="container">
+                    <h5>Members</h5>
                 </div>
             </div>
         </div>
-        <div class="cyan darken-1">
-            <div class="container">
-                <div class="template-section-block">
-                    <h4 class="template-section-title">Contact</h4>
-                </div>
+        <div class="container about-us-member-container">
+            <div class="about-us-member-portrait grey lighten-3 z-depth-1">
+                <p class="member-name">Eugene Wang</p>
+                <p class="member-name">CEO</p>
+            </div>
+            <div class="about-us-member-portrait grey lighten-3 z-depth-1">
+                <p class="member-name">Jeff Niu</p>
+                <p class="member-name">CTO, COO</p>
             </div>
         </div>
-        <div class="cyan">
-            <div class="container">
-                <div class="template-section-block template-list">
-                    <ul style="margin: 10px;">
-                        <li>Use Wire to easily borrow and lend</li>
-                        <li>For mortgage and insurance</li>
-                        <li>Take advance of Wire Savings accounts</li>
-                    </ul>
+    </div>
+</div>
+<div class="about-us-title-block z-depth-2">
+    <div class="container">
+        <a name="support"></a>
+        <div class="template-block">
+            <h2 class="about-us-title">Support</h2>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="card support-item">
+                    <div class="card-content white-text">
+                        <span class="card-title">Mobile App</span>
+                        <p>You can find Wire Mobile on Google Play</p>
+                        <div class="container center" style="margin: 10px;">
+                            <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.maps">
+                                <img class="google-play-badge" alt="Get it on Google Play"
+                                     src="../res/google-play-badge.png"
+                                     style="height:42px;width:141px"/>
+                            </a>
+                        </div>
+                        <h5 class="support-item-header">Tap-to-Pay</h5>
+                        <p style="word-wrap: break-word">
+                            In order to use Wire Mobile's tap function, your phone must have
+                            NFC (near field communication). Click
+                            <a class="support-item-link" href="https://www.unitag.io/nfc/is-my-phone-compatible-with-nfc"> here </a>
+                            to see if your phone supports NFC. Otherwise, you can always use QR codes.
+                        </p>
+                        <h5 class="support-item-header">Account</h5>
+                        <p>To use Wire Mobile, you need only a phone number or email to sign up.
+                        You can sign up with an email online
+                            <a class="support-item-link"
+                               href="../pages/register.html"> here</a>.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="cyan darken-1">
-            <div class="container">
-                <div class="template-section-block">
-                    <h4 class="template-section-title">Support</h4>
+            <div class="col s12 m4">
+                <div class="card support-item">
+                    <div class="card-content white-text">
+                        <span class="card-title">Web App</span>
+                        <p>xd</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="cyan">
-            <div class="container">
-                <div class="template-section-block template-list">
-                    <ul style="margin: 10px;">
-                        <li>Store any currency in your Wire account</li>
-                        <li>Instant currency conversion, without any fees</li>
-                        <li>Experience truly borderless travel and shopping</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="cyan darken-1">
-            <div class="container">
-                <div class="template-section-block">
-                    <h4 class="template-section-title">Developers</h4>
-                </div>
-            </div>
-        </div>
-        <div class="cyan">
-            <div class="container">
-                <div class="template-section-block template-list">
-                    <ul style="margin: 10px;">
-                        <li>Purchase or rent movies with Wire</li>
-                        <li>Pay for a well-deserved vacation with your cash</li>
-                        <li>Get more with Wire Extra Credit</li>
-                    </ul>
+            <div class="col s12 m4">
+                <div class="card support-item">
+                    <div class="card-content white-text">
+                        <span class="card-title">Financial Support</span>
+                        <p>xd</p>
+                    </div>
                 </div>
             </div>
         </div>
