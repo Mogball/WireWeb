@@ -358,6 +358,12 @@ nav .menu-button-collapse i {
     -o-transition: ease-in 0.3s;
     transition: ease-in 0.3s;
     border-radius: 5px;
+    height: 42px;
+    width: 141px;
+}
+
+.google-play-badge-container {
+    margin-top: 10px;
 }
 
 .google-play-badge:hover {
@@ -461,4 +467,11 @@ h5.contact-sub-header.margin-top {
 div#map {
     height: 100%;
     border-radius: inherit;
+}
+
+.about-us-page-block {
+    background-image: url('../res/waterloo_e5_bridge.jpg');
+    background-size: cover;
+    margin-bottom: 0;
+    height: 66.67vh;
 }
