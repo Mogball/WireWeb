@@ -81,31 +81,6 @@ nav .menu-button-collapse i {
     line-height: 56px;
 }
 
-@media only screen and (max-width: 992px) {
-    nav div .header-nav-btns {
-        display: none;
-    }
-
-    .header-logo {
-        left: 50%;
-        transform: translateX(-50%);
-        -webkit-transform: translateX(-50%);
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    nav a.menu-button-collapse {
-        display: none;
-    }
-}
-
-@media only screen and (min-width: 601px) {
-    nav a.menu-button-collapse {
-        height: 64px;
-        line-height: 64px;
-    }
-}
-
 .home-page-block {
     height: 60vh;
 }
@@ -387,13 +362,6 @@ nav .menu-button-collapse i {
     height: 340px;
 }
 
-.contact-mid-border-left {
-    border-left-width: 1px;
-    border-left-color: #323D41;
-    border-left-style: solid;
-    height: 340px;
-}
-
 .contact-sub-header {
     font-weight: 300;
 }
@@ -455,8 +423,8 @@ h5.contact-sub-header.margin-top {
 }
 
 .map-container:hover {
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 
-    0 1px 10px 0 rgba(0, 0, 0, 0.12), 
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12),
     0 2px 4px -1px rgba(0, 0, 0, 0.3);
     -webkit-transition: ease-out 0.3s;
     -moz-transition: ease-out 0.3s;
@@ -473,5 +441,37 @@ div#map {
     background-image: url('../res/waterloo_e5_bridge.jpg');
     background-size: cover;
     margin-bottom: 0;
-    height: 66.67vh;
+    height: 70vh;
+}
+
+/* Put all media at the bottom */
+@media only screen and (max-width: 992px) {
+    nav div .header-nav-btns {
+        display: none;
+    }
+
+    .header-logo {
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    nav a.menu-button-collapse {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    nav a.menu-button-collapse {
+        height: 64px;
+        line-height: 64px;
+    }
+}
+
+@media only screen and (max-width: 601px) {
+    .contact-mid-border {
+        border-right-width: 0;
+    }
 }
