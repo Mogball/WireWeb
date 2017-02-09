@@ -101,3 +101,15 @@
     margin-top: 4px;
     margin-left: 6px;
 }
+
+.sideViewright{
+  margin-top: 7vh;
+  margin-right: 10vw;
+  margin-bottom: 7vh;
+  margin-left: 10vw;
+}
+
+.multiPlat{
+  background-image: url(../res/multi.jpg);
+
+}
