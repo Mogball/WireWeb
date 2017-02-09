@@ -31,17 +31,14 @@
                    href="../pages/login.html">Log in</a></li>
         </ul>
         <ul class="header-nav-btns right">
-            <li><a class="header-nav-btn" href="../pages/features.html"
-                   onclick="reactClick(1)">Features</a></li>
-            <li><a class="header-nav-btn" href="../pages/services.html"
-                   onclick="reactClick(2)">Services</a></li>
-            <li class="active"><a class="header-nav-btn" href="../pages/company.html"
-                                  onclick="reactClick(3)">Company</a></li>
-            <li><a class="header-nav-btn" href="../pages/career.html"
-                   onclick="reactClick(4)">Career</a></li>
+            <li><a class="header-nav-btn" href="../pages/features.html">Features</a></li>
+            <li><a class="header-nav-btn" href="../pages/services.html">Services</a></li>
+            <li class="active">
+                <a class="header-nav-btn" href="../pages/company.html">Company</a></li>
+            <li><a class="header-nav-btn" href="../pages/career.html">Career</a></li>
         </ul>
         <ul class="side-nav" id="nav-mobile">
-            <li><a href="#" onclick="reactClick(5)">XD</a></li>
+            <li><a href="#">XD</a></li>
         </ul>
     </div>
 </nav>
@@ -132,12 +129,13 @@
                         <p>
                             In order to use Wire Mobile's tap function, your phone must have
                             NFC (near field communication). Click
-                            <a class="support-item-link" href="https://www.unitag.io/nfc/is-my-phone-compatible-with-nfc"> here </a>
+                            <a class="support-item-link"
+                               href="https://www.unitag.io/nfc/is-my-phone-compatible-with-nfc"> here </a>
                             to see if your phone supports NFC. Otherwise, you can always use QR codes.
                         </p>
                         <h5 class="support-item-header">Account</h5>
                         <p>To use Wire Mobile, you need only a phone number or email to sign up.
-                        You can sign up online
+                            You can sign up online
                             <a class="support-item-link"
                                href="../pages/register.html"> here</a>.</p>
                     </div>
@@ -148,7 +146,7 @@
                     <div class="card-content white-text">
                         <span class="card-title">Financial Support</span>
                         <p>If you wish to speak with a Wire financial adviser,
-                        feel free to contact us at <span class="support-item-number">
+                            feel free to contact us at <span class="support-item-number">
                         1-800-0000</span>.</p>
                         <h5 class="support-item-header">Borrowing and lending</h5>
                         <p>Wire lets you borrow and lend funds. Wire uses advanced
@@ -163,7 +161,6 @@
                             algorithms. Check your eligibility at
                             <a class="support-item-link"
                                href="../pages/login.html">Wire Services</a>.</p>
-                        </p>
                     </div>
                 </div>
             </div>
@@ -178,7 +175,57 @@
         </div>
     </div>
 </div>
-
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6 contact-mid-border center">
+                <h5 class="contact-sub-header margin">Contact information</h5>
+                <div class="left-align">
+                    <div style="margin: 10px">
+                        <p class="contact-font margin">Wire support<br>
+                            <span class="support-item-number">regular.support@wire.com</span>
+                        </p>
+                        <p class="contact-font margin-top">Wire finance<br>
+                            <span class="support-item-number">finance.support@wire.com</span>
+                        </p>
+                    </div>
+                    <div style="margin: 10px">
+                        <p class="contact-font margin">Call center<br>
+                            <span class="support-item-number">1-800-WIRE</span>
+                        </p>
+                        <p class="contact-font margin-top">Financial advisor<br>
+                            <span class="support-item-number">1-800-0000</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 center contact-mid-border-left center">
+                <h5 class="contact-sub-header">Send us a message</h5>
+                <div class="left-align contact-margin-left">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email" data-error="wrong" data-success="right">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="tell-me-about-yourself" class="materialize-textarea"></textarea>
+                            <label for="tell-me-about-yourself">Message</label>
+                        </div>
+                    </div>
+                    <div class="career-block">
+                        <a class="btn waves-effect waves-light">Send</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row center">
+            <h5 class="contact-sub-header margin-top">Find us nearby</h5>
+        </div>
+        <!--PUT THE MAP HERE xd-->
+    </div>
+</div>
 
 <footer class="page-footer blue" w3-include-html="../pages/footer.html"></footer>
 

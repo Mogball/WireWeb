@@ -2,23 +2,29 @@
     background-color: #EE323D;
     transition-timing-function: cubic-bezier(0.1, 0.4, 0.58, 1);
 }
+
 .app-light-red:hover {
     background-color: #FE525D;
 }
+
 .app-light-orange {
     background-color: #fb8c00;
     transition: .3s ease-out;
 }
+
 .app-light-orange:hover {
-    background-color: #ffab40 ;
+    background-color: #ffab40;
 }
+
 .app-light-cyan {
     background-color: #3dd5e2;
     transition: .3s ease-out;
 }
+
 .app-light-cyan:hover {
     background-color: #50e7f5;
 }
+
 .app-ripple {
     background-color: #E2ECF3;
 }
@@ -79,6 +85,7 @@ nav .menu-button-collapse i {
     nav div .header-nav-btns {
         display: none;
     }
+
     .header-logo {
         left: 50%;
         transform: translateX(-50%);
@@ -248,7 +255,7 @@ nav .menu-button-collapse i {
 
 .about-us-members-block:hover {
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
-    0 1px 18px 0 rgba(0, 0, 0, 0.12), 
+    0 1px 18px 0 rgba(0, 0, 0, 0.12),
     0 3px 5px -1px rgba(0, 0, 0, 0.3);
     -webkit-transition: ease-out 0.3s;
     -moz-transition: ease-out 0.3s;
@@ -360,5 +367,49 @@ nav .menu-button-collapse i {
 }
 
 .support-item-number {
-    color: #84ffff;
+    color: #4dd0e1;
+}
+
+.contact-mid-border {
+    border-right-width: 1px;
+    border-right-color: #323D41;
+    border-right-style: solid;
+    height: 340px;
+}
+
+.contact-mid-border-left {
+    border-left-width: 1px;
+    border-left-color: #323D41;
+    border-left-style: solid;
+    height: 340px;
+}
+
+.contact-sub-header {
+    font-weight: 300;
+}
+
+.contact-font {
+    color: #666666;
+    font-weight: 300;
+}
+
+p.contact-font.margin {
+    margin-bottom: 0px;
+}
+
+p.contact-font.margin-top {
+    margin-top: 4px;
+}
+
+div.left-align.contact-margin-left {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+h5.contact-sub-header.margin {
+    margin-bottom: 20px;
+}
+
+h5.contact-sub-header.margin-top {
+    margin-top: 30px;
 }
