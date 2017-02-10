@@ -524,9 +524,8 @@ div#map {
 .features-main-title {
     color: #efefef;
     font-weight: 900;
-    margin: auto;
     top: 50%;
-    font-size: 50px;
+    font-size: 70px;
 }
 
 .features-main-title-container {
@@ -534,4 +533,19 @@ div#map {
     align-items: center;
     justify-content: center;
     height: inherit;
+    flex-direction: column;
+}
+
+.features-main-title-desc {
+    background-color: rgba(45, 45, 45, 0.75);
+    margin: auto;
+    padding: 8px 20px 8px 20px;
+    border-radius: 15px;
+    height: auto;
+}
+
+.features-desc {
+    color: white;
+    font-size: 24px;
+    font-weight: 200;
 }
