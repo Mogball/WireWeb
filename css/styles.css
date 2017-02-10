@@ -463,11 +463,17 @@ div#map {
         transform: translateX(-50%);
         -webkit-transform: translateX(-50%);
     }
+    .auto-adjust-tabs {
+        width: 99%;
+    }
 }
 
 @media only screen and (min-width: 992px) {
     nav a.menu-button-collapse {
         display: none;
+    }
+    .auto-adjust-tabs {
+        width: 334px;
     }
 }
 
@@ -520,6 +526,7 @@ div#map {
     font-weight: 900;
     margin: auto;
     top: 50%;
+    font-size: 50px;
 }
 
 .features-main-title-container {
