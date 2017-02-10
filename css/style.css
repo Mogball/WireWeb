@@ -29,7 +29,7 @@
 }
 
 .main_page_head {
-    background-image: url('../res/zurich_pan.jpg');
+    background-image: url(../res/skymr.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 0;
@@ -116,6 +116,14 @@
   margin-bottom: 7vh;
   margin-left: 10vw;
 }
+
+.sideViewTop{
+    margin-top: 1vh;
+    margin-right: 10vw;
+    margin-bottom: 7vh;
+    margin-left: 10vw;
+}
+
 
 .multiPlat{
   background-image: url(../res/multi.jpg);

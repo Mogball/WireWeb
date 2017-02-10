@@ -82,7 +82,7 @@ nav .menu-button-collapse i {
 }
 
 .home-page-block {
-    height: 50vh;
+    height: auto;
 }
 
 .home-catch-phrase-block {
@@ -583,6 +583,25 @@ p.features-desc {
 }
 
 h3.features-desc {
+    margin-top: 100px;
+    padding: 0;
+    color: #1de9b6;
+    font-weight: 900;
+}
+
+
+.homeT1 {
+    color: #ffffff;
+    font-weight: 300;
+    padding: 20px;
+    margin: auto;
+}
+
+p.homeT1 {
+    font-size: 25px;
+}
+
+h3.homeT1 {
     margin-top: 100px;
     padding: 0;
     color: #1de9b6;
