@@ -620,3 +620,14 @@ h3.features-desc {
     font-size: 16px;
     font-weight: 500;
 }
+
+.feature-2-header {
+    color: #2c2e2f;
+    font-weight: 300;
+    font-variant: normal;
+    border-bottom-width: 1px;
+    border-bottom-color: #2b2d2d;
+    border-bottom-style: solid;
+    padding: 10px;
+    margin-top: 25px;
+}
