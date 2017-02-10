@@ -82,7 +82,7 @@ nav .menu-button-collapse i {
 }
 
 .home-page-block {
-    height: 80vh;
+    height: 50vh;
 }
 
 .home-catch-phrase-block {
@@ -284,6 +284,18 @@ nav .menu-button-collapse i {
     transition: ease-out 1s;
 }
 
+.support-item-home {
+    border-radius: 10px;
+    -webkit-transition: ease-out 0.2s;
+    -moz-transition: ease-out 0.2s;
+    -o-transition: ease-out 0.2s;
+    transition: ease-out 0.2s;
+    background-color: #ffffff;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
+    0 1px 7px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
 .support-item {
     border-radius: 10px;
     -webkit-transition: ease-out 0.2s;
@@ -301,6 +313,18 @@ nav .menu-button-collapse i {
     0 1px 18px 0 rgba(0, 0, 0, 0.12),
     0 3px 5px -1px rgba(0, 0, 0, 0.3);
     background-color: #56707c;
+    -webkit-transition: ease-out 0.2s;
+    -moz-transition: ease-out 0.2s;
+    -o-transition: ease-out 0.2s;
+    transition: ease-out 0.2s;
+}
+
+
+.support-item-home:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 18px 0 rgba(0, 0, 0, 0.12),
+    0 3px 5px -1px rgba(0, 0, 0, 0.3);
+    background-color: #84ffff;
     -webkit-transition: ease-out 0.2s;
     -moz-transition: ease-out 0.2s;
     -o-transition: ease-out 0.2s;
