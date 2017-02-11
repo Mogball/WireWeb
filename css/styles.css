@@ -319,7 +319,6 @@ nav .menu-button-collapse i {
     transition: ease-out 0.2s;
 }
 
-
 .support-item-home:hover {
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
     0 1px 18px 0 rgba(0, 0, 0, 0.12),
@@ -589,7 +588,6 @@ h3.features-desc {
     font-weight: 900;
 }
 
-
 .homeT1 {
     color: #ffffff;
     font-weight: 300;
@@ -655,7 +653,6 @@ h3.homeT1 {
     min-width: 300px;
     -webkit-transition: ease-out 0.5s;
     -moz-transition: ease-out 0.5s;
-    -ms-transition: ease-out 0.5s;
     -o-transition: ease-out 0.5s;
     transition: ease-out 0.5s;
 }
@@ -674,6 +671,7 @@ h3.homeT1 {
     .feature-2-header:hover {
         min-width: 300px;
     }
+
     .feature-2-header {
         min-width: 200px;
     }
@@ -688,7 +686,7 @@ p.feature-1-text.black {
 }
 
 .feature-3-block {
-    background-image: url('../res/nice_house.jpg');
+    background-image: url("../res/nice_house.jpg");
     background-size: cover;
     margin-bottom: 0;
     height: 80vh;
@@ -697,4 +695,57 @@ p.feature-1-text.black {
 div.section.margin {
     padding-bottom: 60px;
     padding-top: 28px;
+}
+
+.service-main-block {
+    background-image: url("../res/bridge.jpg");
+    background-size: cover;
+    margin-bottom: 0;
+    height: 69vh;
+}
+
+.service-1-block {
+    background-image: url('../res/washington.jpg');
+    background-size: cover;
+    margin-bottom: 0;
+    height: 80vh;
+}
+
+.service-2-header {
+    color: #2c2e2f;
+    font-weight: 300;
+    font-variant: normal;
+    padding: 10px 35px 10px 35px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 13px;
+    border-radius: 30px;
+    line-height: 40px;
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    -o-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+}
+
+.service-2-header:hover {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    -o-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+}
+
+.service-2-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-3-block {
+    background-image: url("../res/borderless.jpg");
+    background-size: cover;
+    margin-bottom: 0;
+    height: 80vh;
 }
