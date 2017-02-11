@@ -815,11 +815,11 @@ h4.home-card-header {
 .home-block-1 {
     margin-bottom: 0;
     background-size: cover;
-    height: 80vh;
     -webkit-transition: ease-out 0.3s;
     -moz-transition: ease-out 0.3s;
     -o-transition: ease-out 0.3s;
     transition: ease-out 0.3s;
+    height: auto;
 }
 
 .home-block-1:hover {
@@ -832,10 +832,57 @@ h4.home-card-header {
     transition: ease-out 0.3s;
 }
 
-.home-block-1-header-block {
-    color: white;
-    background-color: rgba(20, 30, 40, 0.87);
-    line-height: 64px;
-    border-radius: 32px;
-    padding: 10px 20px 10px 20px;
+.service-2-header.z-depth-1.home {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    margin-top: 30px;
+}
+
+div.row.home-steps {
+    width: 70%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+.home-card-text {
+    text-align: left;
+}
+
+div.card.home-card {
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    -o-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+}
+
+div.card.home-card:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 18px 0 rgba(0, 0, 0, 0.12),
+    0 3px 5px -1px rgba(0, 0, 0, 0.3);
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    -o-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+}
+
+.home-block-2 {
+    background-image: url("../res/multi.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.landing-block-header {
+    font-weight: 200;
+}
+
+h2.landing-block-header {
+    margin-top: 170px;
+}
+
+p.landing-block-header.white-text {
+    font-size: 26px;
 }
