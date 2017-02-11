@@ -82,7 +82,10 @@ nav .menu-button-collapse i {
 }
 
 .home-page-block {
-    height: auto;
+    background-image: url("../res/sleeping_world.jpg");
+    background-size: cover;
+    margin-bottom: 0;
+    height: 87vh;
 }
 
 .home-catch-phrase-block {
@@ -748,4 +751,57 @@ div.section.margin {
     background-size: cover;
     margin-bottom: 0;
     height: 80vh;
+}
+
+.home-card-block {
+    min-height: 200px;
+    margin: 37px auto 37px auto;
+}
+
+.home-card {
+    align-self: stretch;
+    border-radius: 10px;
+    min-height: 200px;
+}
+
+.card.home-card.responsive {
+    -webkit-transition: ease-out 0.25s;
+    -moz-transition: ease-out 0.25s;
+    -o-transition: ease-out 0.25s;
+    transition: ease-out 0.25s;
+    background-color: #f9f9f9;
+}
+
+.card.home-card.responsive:hover {
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    -ms-transition: ease-out 0.3s;
+    -o-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    background-color: #fdfdfd;
+}
+
+h4.home-card-header {
+    color: #2c2e2f;
+    font-weight: 200;
+    margin-top: 35px;
+    padding-bottom: 5px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #555555;
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    -o-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+}
+
+h4.home-card-header:hover {
+    border-bottom-width: 2px;
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    -o-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
 }
