@@ -85,7 +85,7 @@ nav .menu-button-collapse i {
     background-image: url("../res/sleeping_world.jpg");
     background-size: cover;
     margin-bottom: 0;
-    height: 87vh;
+    min-height: 87vh;
     -webkit-transition: ease-out 0.3s;
     -moz-transition: ease-out 0.3s;
     -o-transition: ease-out 0.3s;
@@ -868,10 +868,11 @@ div.card.home-card:hover {
 
 .home-block-2 {
     background-image: url("../res/multi.png");
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     margin-bottom: 0;
+    height: 40vh;
     margin-top: 20px;
 }
 
@@ -880,7 +881,7 @@ div.card.home-card:hover {
 }
 
 h2.landing-block-header {
-    margin-top: 170px;
+    margin-top: 27.687vh;
 }
 
 p.landing-block-header.white-text {
