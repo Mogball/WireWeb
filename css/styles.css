@@ -758,6 +758,7 @@ div.section.margin {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 10px 0 10px;
 }
 
 .service-3-block {
@@ -844,8 +845,21 @@ div.row.home-steps {
     padding-bottom: 30px;
 }
 
+@media only screen and (max-width: 601px) {
+    div.row.home-steps {
+        width: 100%;
+    }
+    .steps {
+        margin: 0;
+    }
+}
+
 .home-card-text {
     text-align: left;
+}
+
+.steps {
+    margin: 0 auto 0 auto;
 }
 
 div.card.home-card {
