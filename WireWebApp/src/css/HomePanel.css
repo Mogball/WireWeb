@@ -1,0 +1,13 @@
+.home-panel-section {
+    background-color: azure;
+}
+
+.home-info-panel {
+    background-color: #00b8d4;
+    position: relative;
+    z-index: 1;
+}
+
+.home-items-panel {
+
+}

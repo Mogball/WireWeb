@@ -1,3 +1,8 @@
+.header-container {
+    z-index: 5;
+    position: relative;
+}
+
 .nav-container {
     display: flex;
     align-self: stretch;
@@ -61,7 +66,6 @@
     color: azure;
     font-size: 25px;
     font-weight: 200;
-    height: auto;
     align-self: stretch;
     cursor: pointer;
     width: 100%;

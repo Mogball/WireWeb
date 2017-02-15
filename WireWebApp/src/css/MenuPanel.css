@@ -1,0 +1,17 @@
+.menu-panel-section {
+    width: 225px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu-container {
+    background-color: #29b6f6;
+    display: flex;
+    position: relative;
+    z-index: 3;
+    flex: 1;
+}
+
+.side-menu {
+}

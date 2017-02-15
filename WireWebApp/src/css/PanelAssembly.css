@@ -1,0 +1,11 @@
+.panel-assembly-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.side-panel-section {
+}
+
+.mid-panel-section {
+    flex: 1;
+}

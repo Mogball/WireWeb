@@ -56,7 +56,7 @@ export default class Header extends Component {
 
 const HeaderContainer = function (props) {
     return (
-        <div className="indigo z-depth-2">
+        <div className="header-container indigo z-depth-2">
             <div className="nav-wrapper container nav-bar">
                 <div className="nav-container">
                     <ul className="nav-bar-button-container small-margin">
