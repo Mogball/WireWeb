@@ -19,8 +19,8 @@ class AccountDisplay extends Component {
         // Initialize state
         this.state = {
             // STUB data
-            accountCompletion: 45,
-            accountPhoto: './res/stubProfilePic.jpg'
+            accountCompletion: 55,
+            accountPhoto: require('./res/stubProfilePic.jpg')
         };
 
         // Bind functions
@@ -46,8 +46,8 @@ class AccountDisplay extends Component {
                         <canvas ref="accountProgress"/>
                         <div className="sub-block-1">
                             <div className="sub-block-2">
-                                <img className="profile-picture"
-                                     src={require(this.state.accountPhoto)}/>
+                                <img className="profile-picture" alt="profilePic"
+                                     src={this.state.accountPhoto}/>
                             </div>
                         </div>
                     </div>
