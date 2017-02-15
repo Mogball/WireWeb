@@ -21,7 +21,10 @@ export default class Dashboard extends Component {
 
     render() {
         return (
+          <div>
             <Header activeScreen={this.state.activeScreen}/>
+            <h1>Yolo, Eugene is here! </h1>
+          </div>
         );
     }
 }
