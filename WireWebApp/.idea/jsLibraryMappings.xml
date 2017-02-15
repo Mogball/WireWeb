@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{WireWebApp/node_modules}" />
+    <file url="file://$PROJECT_DIR$/src/App.js" libraries="{WebGL}" />
+    <file url="file://$PROJECT_DIR$/src/Dashboard.js" libraries="{WebGL}" />
+    <includedPredefinedLibrary name="ECMAScript 6" />
+  </component>
+</project>
