@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bd7f4af-f454-4970-b09b-58749549e208" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HomePanel.js" afterPath="$PROJECT_DIR$/src/HomePanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MenuPanel.js" afterPath="$PROJECT_DIR$/src/MenuPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/AccountPanel.css" afterPath="$PROJECT_DIR$/src/css/AccountPanel.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/Header.css" afterPath="$PROJECT_DIR$/src/css/Header.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/HomePanel.css" afterPath="$PROJECT_DIR$/src/css/HomePanel.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/MenuPanel.css" afterPath="$PROJECT_DIR$/src/css/MenuPanel.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/PanelAssembly.css" afterPath="$PROJECT_DIR$/src/css/PanelAssembly.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/TopLevelApp.css" afterPath="$PROJECT_DIR$/src/css/TopLevelApp.css" />
     </list>
     <ignored path="WireWebApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,14 +30,14 @@
     <favorites_list name="WireWebApp" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6318302">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
           <file leaf-file-name="AccountPanel.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/AccountPanel.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+                <state relative-caret-position="375">
+                  <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
@@ -43,11 +45,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="MenuPanel.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="MenuPanel.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/MenuPanel.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="125">
-                  <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+                <state relative-caret-position="475">
+                  <caret line="70" column="68" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
@@ -55,14 +57,12 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Dashboard.js">
+          <file leaf-file-name="HomePanel.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/HomePanel.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-71">
-                  <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-                  <folding>
-                    <element signature="e#0#39#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="379">
+                  <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="43" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -70,12 +70,92 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+        <leaf>
+          <file leaf-file-name="AccountPanel.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/css/AccountPanel.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="50">
+                  <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Dashboard.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/css/Dashboard.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="50">
+                  <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Header.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/css/Header.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="310">
+                  <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/css/index.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="175">
+                  <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="materialize.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/css/materialize.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="100">
+                  <caret line="2580" column="1" selection-start-line="2580" selection-start-column="1" selection-end-line="2580" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="MenuPanel.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/css/MenuPanel.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1983">
-                  <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+                <state relative-caret-position="550">
+                  <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PanelAssembly.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/css/PanelAssembly.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="50">
+                  <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TopLevelApp.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/css/TopLevelApp.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HomePanel.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/css/HomePanel.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="100">
+                  <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -105,22 +185,23 @@
         <option value="$PROJECT_DIR$/src/js/materialize.js" />
         <option value="$PROJECT_DIR$/src/Header.js" />
         <option value="$PROJECT_DIR$/src/PanelAssembly.js" />
-        <option value="$PROJECT_DIR$/src/HomePanel.js" />
         <option value="$PROJECT_DIR$/src/AccountPanel.js" />
         <option value="$PROJECT_DIR$/src/css/StateButton.css" />
         <option value="$PROJECT_DIR$/src/css/StateButton.js" />
         <option value="$PROJECT_DIR$/src/config.js" />
-        <option value="$PROJECT_DIR$/src/MenuPanel.js" />
-        <option value="$PROJECT_DIR$/src/css/AccountPanel.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/css/index.css" />
         <option value="$PROJECT_DIR$/src/css/Dashboard.css" />
         <option value="$PROJECT_DIR$/src/Dashboard.js" />
-        <option value="$PROJECT_DIR$/src/css/Header.css" />
-        <option value="$PROJECT_DIR$/src/css/HomePanel.css" />
-        <option value="$PROJECT_DIR$/src/css/MenuPanel.css" />
         <option value="$PROJECT_DIR$/src/css/PanelAssembly.css" />
+        <option value="$PROJECT_DIR$/src/HomePanel.js" />
+        <option value="$PROJECT_DIR$/src/css/HomePanel.css" />
+        <option value="$PROJECT_DIR$/src/css/TopLevelApp.css" />
+        <option value="$PROJECT_DIR$/src/MenuPanel.js" />
+        <option value="$PROJECT_DIR$/src/css/Header.css" />
+        <option value="$PROJECT_DIR$/src/css/AccountPanel.css" />
+        <option value="$PROJECT_DIR$/src/css/MenuPanel.css" />
       </list>
     </option>
   </component>
@@ -186,7 +267,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -199,16 +280,10 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
-      <pane id="Scratches" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../WireMobile/app/DashboardHistoryScreen.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
@@ -299,12 +374,12 @@
       <workItem from="1487057712609" duration="85000" />
       <workItem from="1487083930323" duration="17901000" />
       <workItem from="1487182656767" duration="25501000" />
-      <workItem from="1487260124650" duration="540000" />
+      <workItem from="1487260124650" duration="4609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44027000" />
+    <option name="totallyTimeSpent" value="48096000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -413,6 +488,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -463,27 +539,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HomePanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="754">
           <caret line="58" column="40" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AccountPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -498,10 +558,64 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js" />
-    <entry file="file://$PROJECT_DIR$/src/css/index.css">
+    <entry file="file://$PROJECT_DIR$/src/TopLevelApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WireMobile/app/DashboardHistoryScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="183" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AccountPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HomePanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/TopLevelApp.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -513,44 +627,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TopLevelApp.js">
+    <entry file="file://$PROJECT_DIR$/src/css/HomePanel.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="100">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/css/materialize.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="2589" column="2" selection-start-line="2589" selection-start-column="2" selection-end-line="2590" selection-end-column="0" />
+        <state relative-caret-position="100">
+          <caret line="2580" column="1" selection-start-line="2580" selection-start-column="1" selection-end-line="2580" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
+    <entry file="file://$PROJECT_DIR$/src/MenuPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/Header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1300">
-          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/HomePanel.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="475">
+          <caret line="70" column="68" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -564,37 +671,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/css/AccountPanel.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+        <state relative-caret-position="50">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/Header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/css/MenuPanel.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1983">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="550">
+          <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MenuPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

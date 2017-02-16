@@ -13,11 +13,12 @@ export default class MenuPanel extends Component {
         this.state = {
             // STUB data
             walletItems: [
-                "RBC Visa Infinity",
-                "Bank of Americard",
-                "TD Canada Trust",
-                "UnionPay",
-                "PayPal Mastercard Express"
+                {name: "RBC Visa Infinity"},
+                {name: "Bank of Americard"},
+                {name: "TD Canada Trust", balance: 232312314},
+                {name: "UnionPay", balance: 5245351},
+                {name: "PayPal Mastercard Express", balance: 877573},
+                {name: "Swag card 360 xd Bonus edition ;^)"}
             ]
         }
     }
@@ -35,14 +36,12 @@ export default class MenuPanel extends Component {
                             <div className="wallet-container"/>
                             <div className="wallet-container">
                                 <div className="wallet-add-button">
-                                    <div className="wallet-container text">
-                                        +
-                                    </div>
+                                    <div className="wallet-container text">+</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <WalletList/>
+                    <WalletList items={this.state.walletItems}/>
                 </div>
             </div>
         );
@@ -50,17 +49,17 @@ export default class MenuPanel extends Component {
 }
 
 class WalletList extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
+        const items = this.props.items ?
+            this.props.items.map((item) => {
+                return (
+                    <li key={item.name}><WalletItem item={item}/></li>
+                );
+            }) : null;
         return (
             <div className="wallet-list-toplevel">
                 <ul>
-                    <li><WalletItem/></li>
-                    <li><WalletItem/></li>
-                    <li><WalletItem/></li>
+                    {items}
                 </ul>
             </div>
         );
@@ -68,20 +67,32 @@ class WalletList extends Component {
 }
 
 class WalletItem extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
+        const name = this.props.item.name ? this.props.item.name : "";
+        const balance = this.props.item.balance ? formatMoney(this.props.item.balance) : "";
         return (
             <div className="wallet-item-toplevel">
                 <div className="item-name">
-                    <p>RBC Visa Infinity express</p>
+                    <p>{name}</p>
                 </div>
                 <div className="item-balance">
-                    <p>$1,203,201</p>
+                    <p>{balance}</p>
                 </div>
             </div>
         );
     }
 }
+
+var formatMoney = function (n, showPlus, hideDollar) {
+    hideDollar = !!hideDollar;
+    showPlus = !!showPlus;
+    n /= 100;
+    var s = n < 0 ? '—' : (showPlus ? '+' : '') + '';
+    s += hideDollar ? '' : '$';
+    var i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(2)));
+    var j;
+    j = (j = i.length) > 3 ? j % 3 : 0;
+    return s + (j ? i.substr(0, j) + ',' : '')
+        + i.substr(j).replace(/(\d{3})(?=\d)/g, '$1' + ',')
+        + (2 ? '.' + Math.abs(n - i).toFixed(2).slice(2) : '');
+};
