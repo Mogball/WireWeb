@@ -20,7 +20,7 @@ class AccountDisplay extends Component {
         this.state = {
             // STUB data
             accountCompletion: 55,
-            accountPhoto: require('./res/stubProfilePic.jpg')
+            accountPhoto: require('./res/mingYao.jpg')
         };
 
         // Bind functions

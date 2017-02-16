@@ -1,13 +1,22 @@
 .home-panel-section {
     background-color: azure;
+
 }
 
 .home-info-panel {
     background-color: #00b8d4;
     position: relative;
+    height: 10vh;
+    padding: 10px;
+    margin: 10px;
     z-index: 1;
 }
 
 .home-items-panel {
-
+    background-color: #00b8d4;
+    height: 100vh;
+    margin: 10px;
+    padding: 10px;
+    z-index: 1;
+    position: relative;
 }
