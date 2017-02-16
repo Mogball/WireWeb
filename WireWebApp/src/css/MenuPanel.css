@@ -1,6 +1,6 @@
 .menu-panel-section {
     width: 225px;
-    height: 80vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }

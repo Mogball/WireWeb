@@ -50,7 +50,7 @@
 .nav-bar-logo-block {
     display: flex;
     flex: 1;
-    line-height: 10vh;
+    line-height: 70px;
 }
 
 .nav-bar-button-block {
