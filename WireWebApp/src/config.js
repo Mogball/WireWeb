@@ -7,6 +7,11 @@ var cfg = {
             "Store",
             "Manage"
         ],
+    },
+
+    menuPanel: {
+        sideMenuTitle: "Wallet",
+        addButton: "+"
     }
 
 };
