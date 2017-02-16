@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Header from './Header';
 import PanelAssembly from './PanelAssembly';
+import './css/Dashboard.css';
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -22,7 +23,7 @@ export default class Dashboard extends Component {
 
     render() {
         return (
-            <div>
+            <div className="dashboard">
                 <Header activeScreen={this.state.activeScreen}/>
                 <PanelAssembly/>
             </div>

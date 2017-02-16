@@ -42,11 +42,7 @@ export default class MenuPanel extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="side-menu-contents">
-
-                        <WalletList/>
-
-                    </div>
+                    <WalletList/>
                 </div>
             </div>
         );
@@ -61,9 +57,11 @@ class WalletList extends Component {
     render() {
         return (
             <div className="wallet-list-toplevel">
-                <WalletItem/>
-                <WalletItem/>
-                <WalletItem/>
+                <ul>
+                    <li><WalletItem/></li>
+                    <li><WalletItem/></li>
+                    <li><WalletItem/></li>
+                </ul>
             </div>
         );
     }

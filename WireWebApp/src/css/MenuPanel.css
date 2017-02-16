@@ -90,4 +90,19 @@
 }
 
 .wallet-list-toplevel {
+    padding: 0 20px 0 20px;
+}
+
+.wallet-item-toplevel {
+    margin: 10px 0 10px 0;
+    background-color: #4fc3f7;
+}
+
+.item-name p {
+    margin: 0 0 3px 0;
+}
+
+.item-balance p {
+    margin: 0;
+    text-align: right;
 }

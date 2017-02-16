@@ -58,10 +58,11 @@
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
-    -webkit-transition: ease-out 0.1s;
-    -moz-transition: ease-out 0.1s;
-    -o-transition: ease-out 0.1s;
-    transition: ease-out 0.1s;
+    -webkit-transition: ease-out 0.21s;
+    -moz-transition: ease-out 0.21s;
+    -ms-transition: ease-out 0.21s;
+    -o-transition: ease-out 0.21s;
+    transition: ease-out 0.21s;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
     0 1px 7px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -1px rgba(0, 0, 0, 0.2);
@@ -75,6 +76,10 @@
 
 .profile-picture:active {
     box-shadow: none !important;
+    -webkit-transition: ease-out 0.1s;
+    -moz-transition: ease-out 0.1s;
+    -o-transition: ease-out 0.1s;
+    transition: ease-out 0.1s;
 }
 
 .sub-block-1 {
