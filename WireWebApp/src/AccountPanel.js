@@ -98,7 +98,10 @@ class AccountInfo extends Component {
                         </div>
                     </div>
                     <div className="account-actions">
-
+                        <div className="button-assembly">
+                            <div className="button deposit z-depth-1 btn">Deposit</div>
+                            <div className="button withdraw z-depth-1 btn">Withdraw</div>
+                        </div>
                     </div>
                 </div>
             </li>

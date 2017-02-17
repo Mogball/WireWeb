@@ -144,14 +144,14 @@
 .account-info-container {
     display: flex;
     flex: 1;
-    padding: 0 0.6066em 0 0.6066em;
+    padding: 0.7em 0.6066em 0.7em 0.6066em;
 }
 
 .account-info {
     display: flex;
     justify-content: space-between;
     flex: 3;
-    padding: 0.7em 0.6066em 0.7em 0;
+    padding: 0 0.6066em 0 0;
 }
 
 .account-info h5 {
@@ -197,6 +197,43 @@
     margin: 0;
 }
 
+.value-block h5 {
+    color: #30ff90;
+    font-weight: 300;
+}
+
 .account-actions {
     flex: 2;
+}
+
+.button-assembly {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.button {
+    width: 80%;
+    height: 40%;
+    -webkit-transition: ease-out 0.25s;
+    -moz-transition: ease-out 0.25s;
+    -o-transition: ease-out 0.25s;
+    transition: ease-out 0.25s;
+}
+
+.button:hover  {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.button:active {
+    box-shadow: none !important;
+    -webkit-transition: ease-out 0.1s;
+    -moz-transition: ease-out 0.1s;
+    -ms-transition: ease-out 0.1s;
+    -o-transition: ease-out 0.1s;
+    transition: ease-out 0.1s;
 }
