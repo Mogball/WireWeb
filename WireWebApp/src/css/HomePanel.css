@@ -4,11 +4,23 @@
 .home-info-panel {
     position: relative;
     padding: 0.5em;
-    margin: 0.5em;
+    margin: 1.5em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #202020;
+    border-radius: 0.5em;
+}
+
+.home-info-panel h4 {
+    margin: 0;
+    font-size: 2.3rem;
+    font-weight: 200;
+    color: #202020;
+    line-height: 2.4rem;
 }
 
 .home-items-panel {
-    margin: 0.5em;
     padding: 0.5em;
+    margin: 1.5em;
     position: relative;
 }
