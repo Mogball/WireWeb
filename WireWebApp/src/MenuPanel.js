@@ -4,8 +4,6 @@ import './css/materialize.css';
 import prop from './config.js';
 import func from './helper';
 
-import AccountPanel from './AccountPanel';
-
 export default class MenuPanel extends Component {
     constructor(props) {
         super(props);
