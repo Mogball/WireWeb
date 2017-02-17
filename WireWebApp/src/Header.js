@@ -38,7 +38,7 @@ export default class Header extends Component {
                 <a onClick={() => {
                     this.handleClick(buttonLabel)
                 }}
-                   id={buttonLabel} className={"nav-bar-button" + this.getActive(buttonLabel)}>
+                   id={buttonLabel} className={"waves-effect nav-bar-button" + this.getActive(buttonLabel)}>
                     <p className={"nav-bar-button-text" + this.getActive(buttonLabel)}>
                         {buttonLabel}
                     </p>

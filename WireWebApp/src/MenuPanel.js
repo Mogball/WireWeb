@@ -52,7 +52,7 @@ const WalletListPanel = function(props) {
             <WalletList items={props.walletItems}/>
         </div>
     );
-}
+};
 
 class WalletList extends Component {
     render() {

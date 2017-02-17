@@ -12,6 +12,13 @@ var cfg = {
     menuPanel: {
         sideMenuTitle: "Wallet",
         addButton: "+"
+    },
+
+    actionPanel: {
+        actionLabels: [
+            "Send",
+            "Request"
+        ]
     }
 
 };

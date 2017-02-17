@@ -41,7 +41,6 @@ var formatDate = function (date, showYear) {
         hour >= 12 ? 'pm' : 'am', monthMap[month], day, year);
 };
 
-
 exports.formatMoney = formatMoney;
 exports.formatComma = formatComma;
 exports.formatDate = formatDate;

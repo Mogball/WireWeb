@@ -142,29 +142,63 @@
 
 .app-light-red {
     background-color: #EE323D;
-    transition-timing-function: cubic-bezier(0.1, 0.4, 0.58, 1);
+    -webkit-transition: ease-out 0.25s;
+    -moz-transition: ease-out 0.25s;
+    -o-transition: ease-out 0.25s;
+    transition: ease-out 0.25s;
+}
+
+.app-light-red:visited {
+    background-color: #EE323D;
 }
 
 .app-light-red:hover {
     background-color: #FE525D;
 }
 
+.app-light-red:focus {
+    background-color: #eb303a;
+}
+
 .app-light-orange {
     background-color: #fb8c00;
-    transition: .3s ease-out;
+    -webkit-transition: ease-out 0.25s;
+    -moz-transition: ease-out 0.25s;
+    -ms-transition: ease-out 0.25s;
+    -o-transition: ease-out 0.25s;
+    transition: ease-out 0.25s;
+}
+
+.app-light-orange:visited {
+    background-color: #fb8c00;
 }
 
 .app-light-orange:hover {
     background-color: #ffab40;
 }
 
+.app-light-orange:focus {
+    background-color: #f98a00;
+}
+
 .app-light-cyan {
     background-color: #3dd5e2;
-    transition: .3s ease-out;
+    -webkit-transition: ease-out 0.25s;
+    -moz-transition: ease-out 0.25s;
+    -o-transition: ease-out 0.25s;
+    transition: ease-out 0.25s;
+}
+
+.app-light-cyan:visited {
+    background-color: #3dd5e2;
 }
 
 .app-light-cyan:hover {
     background-color: #50e7f5;
+}
+
+.app-light-cyan:focus {
+    background-color: #3bd2e0;
 }
 
 .app-ripple {
@@ -924,6 +958,10 @@ div.section.margin {
 .home-card {
     align-self: stretch;
     border-radius: 10px;
+    min-height: 200px;
+}
+
+.card-content {
     min-height: 200px;
 }
 

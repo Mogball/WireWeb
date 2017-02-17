@@ -3,7 +3,7 @@
     width: 100%;
     z-index: 4;
     display: flex;
-    padding: 0.85em 2em 0.85em 2em;
+    padding: 0.85em 2em 0 2em;
 }
 
 .container {
@@ -27,13 +27,13 @@
     flex: 1;
     align-self: stretch;
     display: flex;
-    width: 11.7em;
-    height: 11.7em;
+    width: 10.7em;
+    height: 10.7em;
 }
 
 .profile-picture-container div.block {
-    width: 85%;
-    height: 85%;
+    width: 90%;
+    height: 90%;
     margin: auto;
     vertical-align: middle;
 }
@@ -75,13 +75,19 @@
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
-    -webkit-transition: ease-out 0.21s;
-    -moz-transition: ease-out 0.21s;
-    -o-transition: ease-out 0.21s;
-    transition: ease-out 0.21s;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    -o-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
     0 1px 7px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .profile-picture:hover {
@@ -92,10 +98,10 @@
 
 .profile-picture:active {
     box-shadow: none !important;
-    -webkit-transition: ease-out 0.1s;
-    -moz-transition: ease-out 0.1s;
-    -o-transition: ease-out 0.1s;
-    transition: ease-out 0.1s;
+    -webkit-transition: ease-out 0.2s;
+    -moz-transition: ease-out 0.2s;
+    -o-transition: ease-out 0.2s;
+    transition: ease-out 0.2s;
 }
 
 .sub-block-1 {
@@ -144,7 +150,7 @@
 .account-info-container {
     display: flex;
     flex: 1;
-    padding: 0.7em 0.6066em 0.7em 0.6066em;
+    padding: 1em 0.6066em 1em 0.6066em;
 }
 
 .account-info {
@@ -203,7 +209,7 @@
 }
 
 .account-actions {
-    flex: 2;
+    flex: 1.5;
 }
 
 .button-assembly {
@@ -215,25 +221,33 @@
 }
 
 .button {
-    width: 80%;
-    height: 40%;
-    -webkit-transition: ease-out 0.25s;
-    -moz-transition: ease-out 0.25s;
-    -o-transition: ease-out 0.25s;
-    transition: ease-out 0.25s;
+    width: 60%;
+    padding: 0;
+    min-width: 7em;
 }
 
-.button:hover  {
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-    0 1px 10px 0 rgba(0, 0, 0, 0.12),
-    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+.button:hover {
 }
 
 .button:active {
     box-shadow: none !important;
-    -webkit-transition: ease-out 0.1s;
-    -moz-transition: ease-out 0.1s;
-    -ms-transition: ease-out 0.1s;
-    -o-transition: ease-out 0.1s;
-    transition: ease-out 0.1s;
+    -webkit-transition: ease-out 0.12s;
+    -moz-transition: ease-out 0.12s;
+    -o-transition: ease-out 0.12s;
+    transition: ease-out 0.12s;
+}
+
+@media only screen and (max-width: 992px) {
+    .account-panel-container ul {
+        flex-direction: column;
+    }
+
+    .account-panel-section-block {
+        padding-bottom: 0.3em;
+        padding-top: 0;
+    }
+
+    .account-info {
+        min-height: 6.8em;
+    }
 }

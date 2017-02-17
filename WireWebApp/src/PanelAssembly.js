@@ -5,6 +5,7 @@ import './css/materialize.css';
 import MenuPanel from './MenuPanel';
 import HomePanel from './HomePanel';
 import AccountPanel from './AccountPanel';
+import AccountActionPanel from './AccountActionPanel';
 
 export default class PanelAssembly extends Component {
     render() {
@@ -12,6 +13,7 @@ export default class PanelAssembly extends Component {
             <div className="panel-assembly-section">
                 <div className="account-panel-section">
                     <AccountPanel/>
+                    <AccountActionPanel/>
                 </div>
                 <div className="side-panel-section">
                     <MenuPanel/>

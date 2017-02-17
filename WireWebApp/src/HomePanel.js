@@ -48,7 +48,7 @@ class HistoryPanel extends Component {
         const items = this.props.items ?
             this.props.items.map((item) => {
                 return (
-                    <li><HistoryItem item={item}/></li>
+                    <li key={item.timestamp}><HistoryItem item={item}/></li>
                 );
             }) : null;
         return (

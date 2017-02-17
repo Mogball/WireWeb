@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import './css/AccountPanel.css';
 import './css/materialize.css';
 import func from './helper';
+import './effects';
 
 export default class AccountPanel extends Component {
     render() {
         return (
-            <div className="account-panel-section-block z-depth-2 indigo">
+            <div className="account-panel-section-block indigo">
                 <div className="container">
                     <div className="account-panel-container">
                         <ul>
@@ -55,8 +56,10 @@ class AccountDisplay extends Component {
                             <canvas ref="accountProgress"/>
                             <div className="sub-block-1">
                                 <div className="sub-block-2">
-                                    <img className="profile-picture" alt="profilePic"
-                                         src={this.state.accountPhoto}/>
+                                    <div className="profile-picture waves-effect">
+                                        <img alt="profilePic"
+                                            src={this.state.accountPhoto}/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -99,8 +102,12 @@ class AccountInfo extends Component {
                     </div>
                     <div className="account-actions">
                         <div className="button-assembly">
-                            <div className="button deposit z-depth-1 btn">Deposit</div>
-                            <div className="button withdraw z-depth-1 btn">Withdraw</div>
+                            <div className="button btn waves-effect waves-light">
+                                <span>Deposit</span>
+                            </div>
+                            <div className="button btn waves-effect waves-light">
+                                <span>Withdraw</span>
+                            </div>
                         </div>
                     </div>
                 </div>
