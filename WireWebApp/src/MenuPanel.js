@@ -17,7 +17,7 @@ export default class MenuPanel extends Component {
                 {name: "The swag bank of swagland, xd xd", balance: 999999849599},
                 {name: "RBC Visa Infinity"},
                 {name: "Bank of Americard"},
-                {name: "RBC Express Chequeing", balance: -231423},
+                {name: "RBC Express Checking", balance: -231423},
                 {name: "TD Canada Trust", balance: 232312314},
                 {name: "UnionPay", balance: 5245351},
                 {name: "PayPal Mastercard Express", balance: 877573},
@@ -29,7 +29,6 @@ export default class MenuPanel extends Component {
     render() {
         return (
             <div className="menu-panel-section">
-                <AccountPanel/>
                 <WalletListPanel walletItems={this.state.walletItems}/>
             </div>
         );

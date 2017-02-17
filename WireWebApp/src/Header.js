@@ -35,8 +35,10 @@ export default class Header extends Component {
     render() {
         const headerButtons = prop.cfg.header.buttonLabels.map((buttonLabel) =>
             <li key={buttonLabel}>
-                <a onClick={() => {this.handleClick(buttonLabel)}}
-                    id={buttonLabel} className={"nav-bar-button" + this.getActive(buttonLabel)}>
+                <a onClick={() => {
+                    this.handleClick(buttonLabel)
+                }}
+                   id={buttonLabel} className={"nav-bar-button" + this.getActive(buttonLabel)}>
                     <p className={"nav-bar-button-text" + this.getActive(buttonLabel)}>
                         {buttonLabel}
                     </p>
@@ -56,12 +58,14 @@ export default class Header extends Component {
 
 const HeaderContainer = function (props) {
     return (
-        <div className="header-container indigo z-depth-2">
-            <div className="nav-wrapper container nav-bar">
-                <div className="nav-container">
-                    <ul className="nav-bar-button-container small-margin">
-                        {props.children}
-                    </ul>
+        <div className="header-container indigo darken-2 z-depth-1">
+            <div className="container">
+                <div className="nav-bar">
+                    <div className="nav-container">
+                        <ul className="nav-bar-button-container small-margin">
+                            {props.children}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,7 +76,7 @@ const HeaderTitle = function () {
     return (
         <li className="logo">
             <div className="nav-bar-logo-block">
-                <span href="../" className="logo">{prop.cfg.header.title}</span>
+                <p href="../" className="logo">{prop.cfg.header.title}</p>
             </div>
         </li>
     );

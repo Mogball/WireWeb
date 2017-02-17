@@ -11,10 +11,6 @@ export default class HomePanel extends Component {
         // Initialize state
         this.state = {
             // STUB data
-            firstName: 'Emeritus',
-            lastName: 'Pachementyke',
-            balance: 3354743562,
-            balancePoints: 23145252,
             transactionHistory: [
                 {change: -765, timestamp: 61658567754356, uid: 846542106359},
                 {change: -34, timestamp: 61657934532554, uid: 986754213424},
@@ -32,15 +28,10 @@ export default class HomePanel extends Component {
     }
 
     render() {
-        const name = this.state.lastName + ", " + this.state.firstName;
         return (
             <div className="home-panel-section">
                 <div className="home-info-panel">
 
-                    <h4>{name}</h4>
-                    <h5>Balance {func.formatMoney(this.state.balance)}</h5>
-                    <h5>Points {func.formatComma(this.state.balancePoints)}</h5>
-                    <p>Deposit Withdraw</p>
                 </div>
                 <div className="home-items-panel">
 

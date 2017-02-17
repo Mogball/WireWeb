@@ -172,7 +172,8 @@
 }
 
 .header-block, .header-content-block {
-    height: 10vh;
+    height: 9.5vh;
+    max-height: 82px;
     min-height: 82px;
 }
 
