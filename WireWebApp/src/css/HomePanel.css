@@ -58,13 +58,13 @@
 .history-list-toplevel ul {
     padding: 1.2em;
     margin: 0;
-    background-color: #fefefe;
+    background-color: transparent;
 }
 
 .history-toplevel {
     padding: 0.2em 0.5em 0.2em 0.5em;
     margin: 0.8em 0 0.8em 0.5em;
-    cursor: default;
+    cursor: pointer;
     background-color: #fefefe;
     border-top-right-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
@@ -101,6 +101,10 @@
     background-color: #414dc8;
 }
 
+.history-toplevel-background:active {
+    background-color: #415de8;
+}
+
 .history-item-block {
     display: flex;
     justify-content: space-between;
@@ -128,4 +132,5 @@
     margin: 0;
     font-size: 1.3rem;
     font-weight: 300;
+    color: #33aa88;
 }

@@ -94,7 +94,7 @@ class HistoryItem extends Component {
     render() {
         return (
             <div className="history-toplevel-background">
-                <div className="history-toplevel">
+                <div className="history-toplevel waves-effect">
                     <p className="history-date">
                         {func.formatDate(new Date(this.props.item.timestamp), true)}
                     </p>
