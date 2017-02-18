@@ -3,16 +3,16 @@
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding: 0 3.64em 0 2em;
+    padding: 0 1em 0 1em;
 }
 
 .action-panel-block {
-    padding: 0 16px 0 16px;
     flex: 3;
 }
 
 .super-block {
     display: flex;
+    padding: 0 16px 0 16px;
 }
 
 .block-1 {
@@ -21,7 +21,7 @@
 
 .action-panel-block ul li {
     padding: 0 0.8em 0 0.8em;
-    margin: 0 0 0.4em 0;
+    margin: 0 0 0.6em 0;
     border-radius: 0.7em;
     flex: 1;
 }

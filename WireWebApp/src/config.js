@@ -19,6 +19,10 @@ var cfg = {
             "Send",
             "Request"
         ]
+    },
+
+    homePanel: {
+        transactionHistoryLabel: "History"
     }
 
 };

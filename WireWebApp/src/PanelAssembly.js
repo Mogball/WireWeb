@@ -15,11 +15,13 @@ export default class PanelAssembly extends Component {
                     <AccountPanel/>
                     <AccountActionPanel/>
                 </div>
-                <div className="side-panel-section">
-                    <MenuPanel/>
-                </div>
-                <div className="mid-panel-section">
-                    <HomePanel/>
+                <div className="container main-section-block">
+                    <div className="side-panel-section">
+                        <MenuPanel/>
+                    </div>
+                    <div className="mid-panel-section">
+                        <HomePanel/>
+                    </div>
                 </div>
             </div>
         );

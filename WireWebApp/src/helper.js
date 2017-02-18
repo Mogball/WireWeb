@@ -35,7 +35,7 @@ var formatDate = function (date, showYear) {
     var day = date.getDate();
     var month = date.getMonth();
     var year = !!showYear ? ", {0}".format(date.getYear()) : "";
-    return "{0}:{1}{2}, {3} {4}{5}".format(
+    return "{0}:{1}{2} {3} {4}{5}".format(
         hour === 0 ? 12 : hour > 12 ? hour - 12 : hour,
         minute >= 10 ? minute : '0' + minute,
         hour >= 12 ? 'pm' : 'am', monthMap[month], day, year);
