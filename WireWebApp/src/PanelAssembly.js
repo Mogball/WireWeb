@@ -88,6 +88,6 @@ export default class PanelAssembly extends Component {
                     </div>
                 </div>
             </div>
-        );
+    );
     }
-}
+    }

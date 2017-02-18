@@ -51,11 +51,13 @@ export default class Dashboard extends Component {
         const popups = [];
         var active = 0;
         for (var name in this.popups) {
-            if (this.state.shows[name]) {
-                active++;
-            }
-            if (this.popups[name]) {
-                popups.push(this.popups[name]);
+            if (this.popups.hasOwnProperty(name)) {
+                if (this.state.shows[name]) {
+                    active++;
+                }
+                if (this.popups[name]) {
+                    popups.push(this.popups[name]);
+                }
             }
         }
         const popupManager = (

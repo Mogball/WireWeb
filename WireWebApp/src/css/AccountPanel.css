@@ -245,6 +245,7 @@
 @media only screen and (max-width: 992px) {
     .account-panel-container ul {
         flex-direction: column;
+        padding-top: 0.8em;
     }
 
     .account-panel-section-block {
@@ -273,6 +274,14 @@
     -moz-transition: ease-out 0.3s;
     -o-transition: ease-out 0.3s;
     transition: ease-out 0.3s;
+    z-index: 9999;
+}
+
+.input-field.popup-text input {
+    padding-left: 1em;
+    padding-right: 1em;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
 }
 
 .popup-window {
@@ -283,7 +292,7 @@
     z-index: 9999;
 }
 
-.popup-window div {
+.popup-title-block {
     margin: 0;
     padding: 1em 2em 1em 2em;
     border-radius: 0.8em;
@@ -299,14 +308,48 @@
     cursor: default;
 }
 
-.popup-window div:hover {
+.popup-block {
+    padding: 2em;
+}
+
+.popup-title-block:hover {
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
     0 1px 10px 0 rgba(0, 0, 0, 0.12),
     0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
-.popup-window div h1 {
+.popup-title-block h1 {
     font-size: 3rem;
     margin: 0;
     font-weight: 200;
+}
+
+.amount-input-container label {
+    position: relative;
+    bottom: 2.5em;
+    font-size: 1.7rem;
+    z-index: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: ease-out 0.2s;
+    -moz-transition: ease-out 0.2s;
+    -o-transition: ease-out 0.2s;
+    transition: ease-out 0.2s;
+}
+
+.amount-input-container input {
+    font-size: 1.8rem;
+    z-index: 20;
+    font-weight: 300;
+    max-width: 12em;
+}
+
+.amount-input-container {
+    padding: 1.5em 5em 0.5em 5em;
+}
+
+.popup-buttons div {
+    margin: 0.2em 0.9em 0.2em 0.9em;
 }

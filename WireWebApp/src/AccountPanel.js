@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './css/AccountPanel.css';
-import './css/materialize.css';
 import func from './helper';
 import './effects';
 
@@ -175,8 +174,23 @@ class DepositPopup extends Component {
                     <div style={{height: "100%", width: "100%"}}>
                         <div style={{height: "15%"}} onClick={this.props.hideDeposit}/>
                         <div className="popup-window z-depth-2 center">
-                            <div className="indigo z-depth-1">
+                            <div className="popup-title-block indigo z-depth-1">
                                 <h1>Deposit</h1>
+                            </div>
+                            <div>
+                                <div className="amount-input-container">
+                                    <input placeholder="Amount" id="deposit-amount" type="text"/>
+                                </div>
+                            </div>
+                            <div className="row popup-buttons">
+                                <div
+                                    onClick={this.props.hideDeposit}
+                                    className="btn-large waves-effect waves-light">
+                                    <span>Cancel</span>
+                                </div>
+                                <div className="btn-large waves-effect waves-light">
+                                    <span>Deposit</span>
+                                </div>
                             </div>
                         </div>
                         <div style={{height: "15%"}} onClick={this.props.hideDeposit}/>
@@ -198,8 +212,23 @@ class WithdrawPopup extends Component {
                     <div style={{height: "100%", width: "100%"}}>
                         <div style={{height: "15%"}} onClick={this.props.hideDeposit}/>
                         <div className="popup-window z-depth-2 center">
-                            <div className="indigo z-depth-1">
+                            <div className="popup-title-block indigo z-depth-1">
                                 <h1>Withdraw</h1>
+                            </div>
+                            <div>
+                                <div className="amount-input-container">
+                                    <input placeholder="Amount" id="withdraw-amount" type="text"/>
+                                </div>
+                            </div>
+                            <div className="row popup-buttons">
+                                <div
+                                    onClick={this.props.hideDeposit}
+                                    className="btn-large waves-effect waves-light">
+                                    <span>Cancel</span>
+                                </div>
+                                <div className="btn-large waves-effect waves-light">
+                                    <span>Withdraw</span>
+                                </div>
                             </div>
                         </div>
                         <div style={{height: "15%"}} onClick={this.props.hideDeposit}/>
