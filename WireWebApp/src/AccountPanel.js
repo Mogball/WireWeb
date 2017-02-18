@@ -11,8 +11,11 @@ export default class AccountPanel extends Component {
                 <div className="container">
                     <div className="account-panel-container">
                         <ul>
-                            <AccountDisplay/>
-                            <AccountInfo/>
+                            <AccountDisplay
+                                accountCompletion={this.props.accountCompletion}
+                                accountPhoto={this.props.accountPhoto}/>
+                            <AccountInfo
+                                popupManager={this.props.popupManager}/>
                         </ul>
                     </div>
                 </div>
@@ -28,8 +31,8 @@ class AccountDisplay extends Component {
         // Initialize state
         this.state = {
             // STUB data
-            accountCompletion: 55,
-            accountPhoto: require('./res/stubProfilePic.jpg')
+            accountCompletion: props.accountCompletion ? props.accountCompletion : 0,
+            accountPhoto: props.accountPhoto ? props.accountPhoto : null
         };
 
         // Bind functions
@@ -58,7 +61,7 @@ class AccountDisplay extends Component {
                                 <div className="sub-block-2">
                                     <div className="profile-picture waves-effect">
                                         <img alt="profilePic"
-                                            src={this.state.accountPhoto}/>
+                                             src={this.state.accountPhoto}/>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +84,40 @@ class AccountInfo extends Component {
             lastName: 'Pachementyke',
             balance: 3354743562,
             balancePoints: 23145252,
-        }
+        };
+        this.hideDeposit = this.hideDeposit.bind(this);
+        this.hideWithdraw = this.hideWithdraw.bind(this);
+        this.clickedDeposit = this.clickedDeposit.bind(this);
+        this.clickedWithdraw = this.clickedWithdraw.bind(this);
+    }
+
+    hideDeposit() {
+        this.props.popupManager.hidePopup("Deposit");
+        document.getElementById("Deposit").className = "popup-type-1";
+    }
+
+    hideWithdraw() {
+        this.props.popupManager.hidePopup("Withdraw");
+        document.getElementById("Withdraw").className = 'popup-type-1';
+    }
+
+    clickedDeposit() {
+        this.props.popupManager.showPopup("Deposit");
+        document.getElementById("Deposit").className = "popup-type-1 show";
+    }
+
+    clickedWithdraw() {
+        this.props.popupManager.showPopup("Withdraw");
+        document.getElementById("Withdraw").className = "popup-type-1 show";
+    }
+
+    componentDidMount() {
+        this.props.popupManager.addPopup("Deposit",
+            <DepositPopup key="Deposit" hideDeposit={this.hideDeposit}/>
+        );
+        this.props.popupManager.addPopup("Withdraw",
+            <WithdrawPopup key="Withdraw" hideDeposit={this.hideWithdraw}/>
+        );
     }
 
     render() {
@@ -102,10 +138,14 @@ class AccountInfo extends Component {
                     </div>
                     <div className="account-actions">
                         <div className="button-assembly">
-                            <div className="button btn waves-effect waves-light">
+                            <div
+                                onClick={this.clickedDeposit}
+                                className="button btn waves-effect waves-light">
                                 <span>Deposit</span>
                             </div>
-                            <div className="button btn waves-effect waves-light">
+                            <div
+                                onClick={this.clickedWithdraw}
+                                className="button btn waves-effect waves-light">
                                 <span>Withdraw</span>
                             </div>
                         </div>
@@ -124,4 +164,49 @@ const InfoItem = function (props) {
             </div>
         </div>
     );
+};
+
+class DepositPopup extends Component {
+    render() {
+        return (
+            <div id="Deposit" className="popup-type-1">
+                <div style={{display: "flex", height: "100%", width: "100%"}}>
+                    <div style={{width: "15%"}} onClick={this.props.hideDeposit}/>
+                    <div style={{height: "100%", width: "100%"}}>
+                        <div style={{height: "15%"}} onClick={this.props.hideDeposit}/>
+                        <div className="popup-window z-depth-2 center">
+                            <div className="indigo z-depth-1">
+                                <h1>Deposit</h1>
+                            </div>
+                        </div>
+                        <div style={{height: "15%"}} onClick={this.props.hideDeposit}/>
+                    </div>
+                    <div style={{width: "15%"}} onClick={this.props.hideDeposit}/>
+                </div>
+            </div>
+        );
+    }
+}
+
+
+class WithdrawPopup extends Component {
+    render() {
+        return (
+            <div id="Withdraw" className="popup-type-1">
+                <div style={{display: "flex", height: "100%", width: "100%"}}>
+                    <div style={{width: "15%"}} onClick={this.props.hideDeposit}/>
+                    <div style={{height: "100%", width: "100%"}}>
+                        <div style={{height: "15%"}} onClick={this.props.hideDeposit}/>
+                        <div className="popup-window z-depth-2 center">
+                            <div className="indigo z-depth-1">
+                                <h1>Withdraw</h1>
+                            </div>
+                        </div>
+                        <div style={{height: "15%"}} onClick={this.props.hideDeposit}/>
+                    </div>
+                    <div style={{width: "15%"}} onClick={this.props.hideDeposit}/>
+                </div>
+            </div>
+        );
+    }
 }

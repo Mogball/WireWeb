@@ -11,17 +11,8 @@ export default class MenuPanel extends Component {
 
         // Initialize state
         this.state = {
-            // STUB data
-            walletItems: [
-                {name: "The swag bank of swagland, xd xd", balance: 999999849599},
-                {name: "RBC Visa Infinity"},
-                {name: "Bank of Americard"},
-                {name: "RBC Express Checking", balance: -231423},
-                {name: "TD Canada Trust", balance: 232312314},
-                {name: "UnionPay", balance: 5245351},
-                {name: "PayPal Mastercard Express", balance: 877573},
-                {name: "Swag card 360 xd Bonus edition ;^)"}
-            ]
+            // STUB dataAdd
+            walletItems: props.walletItems
         }
     }
 
@@ -34,13 +25,15 @@ export default class MenuPanel extends Component {
 
 const WalletListPanel = function (props) {
     return (
-        <div className="side-menu-container z-depth-1">
-            <div className="side-menu header">
-                <div className="wallet-container">
-                    <h5 className="wallet-title">{prop.cfg.menuPanel.sideMenuTitle}</h5>
+        <div className="home-panel-section z-depth-1">
+            <div className="home-items-panel">
+                <div className="history-list-toplevel">
+                    <div className="z-depth-1 history-panel-title center indigo lighten-1">
+                        <h5>{prop.cfg.menuPanel.sideMenuTitle}</h5>
+                    </div>
+                    <WalletList items={props.walletItems}/>
                 </div>
             </div>
-            <WalletList items={props.walletItems}/>
         </div>
     );
 };
@@ -54,11 +47,14 @@ class WalletList extends Component {
                 );
             }) : null;
         return (
-            <div className="wallet-list-toplevel">
-                <ul>
-                    {items}
-                </ul>
-            </div>
+            <ul className="wallet-list center">
+                <li>
+                    <a className="btn waves-effect waves-light add-button">
+                        <span className="no-drag">Add</span>
+                    </a>
+                </li>
+                {items}
+            </ul>
         );
     }
 }

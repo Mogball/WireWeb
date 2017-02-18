@@ -24,7 +24,6 @@
 }
 
 .history-panel-title {
-    z-index: 5;
     position: relative;
     border-radius: 0.5em;
     -webkit-transition: ease-out 0.22s;
@@ -64,15 +63,15 @@
 
 .history-toplevel {
     padding: 0.2em 0.5em 0.2em 0.5em;
-    margin: 0.8em 0 0.8em 0.5em;
+    margin: 0.4em 0 0.4em 0.5em;
     cursor: pointer;
     background-color: #fefefe;
     border-top-right-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
     -webkit-transition: ease-out 0.15s;
-    -moz-transition:  ease-out 0.15s;
-    -o-transition:  ease-out 0.15s;
-    transition:  ease-out 0.15s;
+    -moz-transition: ease-out 0.15s;
+    -o-transition: ease-out 0.15s;
+    transition: ease-out 0.15s;
 }
 
 .history-toplevel:hover {
@@ -93,9 +92,13 @@
     background-color: transparent;
     border-radius: 0.5em;
     -webkit-transition: ease-out 0.15s;
-    -moz-transition:  ease-out 0.15s;
-    -o-transition:  ease-out 0.15s;
-    transition:  ease-out 0.15s;
+    -moz-transition: ease-out 0.15s;
+    -o-transition: ease-out 0.15s;
+    transition: ease-out 0.15s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .history-toplevel-background:hover {
@@ -134,4 +137,33 @@
     font-size: 1.3rem;
     font-weight: 300;
     color: #33aa88;
+}
+
+.history-item-info {
+    margin-left: 1.4em;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    -o-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    overflow: hidden;
+}
+
+.collapse-data {
+    padding: 2em;
+}
+
+.history-toplevel-background.expanded {
+    background-color: #414dc8;
+}
+
+.history-toplevel-background.expanded:active {
+    background-color: #415de8;
+}
+
+.history-toplevel.expanded {
+    background-color: #f7f7f7;
+}
+
+.history-toplevel.expanded:hover {
+    background-color: #f0f0f0;
 }

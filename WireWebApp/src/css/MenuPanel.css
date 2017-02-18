@@ -90,12 +90,11 @@
     overflow: auto;
     padding: 0 1.05em 0 1em;
     margin: 0;
-    height: 90vh;
 }
 
 .wallet-item-toplevel {
     margin: 0.667em 0 0.667em 0;
-    background-color: #f5f5f5;
+    background-color: #fefefe;
     border-radius: 0.333em;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
     0 1px 10px 0 rgba(0, 0, 0, 0.12),
@@ -106,6 +105,8 @@
     transition: ease-out 0.22s;
     cursor: pointer;
     min-height: 4.25em;
+    display: flex;
+    flex-direction: column;
 }
 
 .wallet-item-toplevel:hover {
@@ -116,7 +117,7 @@
 }
 
 .wallet-item-toplevel:active {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     box-shadow: none !important;
     -webkit-transition: ease-out 0.12s;
     -moz-transition: ease-out 0.12s;
@@ -124,10 +125,14 @@
     transition: ease-out 0.12s;
 }
 
+.item-name {
+    flex: 1;
+}
+
 .item-name p {
     margin: 0;
     padding: 0.333em 0.333em 0 0.333em;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.05rem;
     color: #404040;
     font-weight: 300;
@@ -135,40 +140,35 @@
     -moz-transition: ease-out 0.22s;
     -o-transition: ease-out 0.22s;
     transition: ease-out 0.22s;
-}
-
-.item-name p:hover {
-    color: #202020;
-}
-
-.item-name p:active {
-    color: #505050;
-    -webkit-transition: ease-out 0.12s;
-    -moz-transition: ease-out 0.12s;
-    -o-transition: ease-out 0.12s;
-    transition: ease-out 0.12s;
+    text-align: left;
 }
 
 .item-balance p {
     margin: 0.333em 0 0 0;
     text-align: right;
     padding: 0 0.333em 0.06667em 0.333em;
-    color: #33aa88;
-    font-size: 1rem;
+    color: #33c588;
+    font-size: 1.1rem;
+    font-weight: 400;
     -webkit-transition: ease-out 0.22s;
     -moz-transition: ease-out 0.22s;
     -o-transition: ease-out 0.22s;
     transition: ease-out 0.22s;
 }
 
-.item-balance p:hover {
-    color: #40b090;
+.history-list-toplevel ul.wallet-list {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 
-.item-balance p:active {
-    color: #40d0a0;
-    -webkit-transition: ease-out 0.12s;
-    -moz-transition: ease-out 0.12s;
-    -o-transition: ease-out 0.12s;
-    transition: ease-out 0.12s;
+.no-drag {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.add-button {
+    width: 100%;
+    margin: 0.3em 0 0.3em 0;
 }

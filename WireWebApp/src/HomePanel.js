@@ -12,49 +12,7 @@ export default class HomePanel extends Component {
         // Initialize state
         this.state = {
             // STUB data
-            transactionHistory: [
-                {
-                    change: -765, timestamp: 61658567754356, uid: 846542106359,
-                    username: "Tim Hortons", description: "Retail payment"
-                },
-                {
-                    change: -34, timestamp: 61657934532554, uid: 986754213424,
-                    username: "Eugene Wang", description: "Direct transfer"
-                },
-                {
-                    change: -7524, timestamp: 61656454235334, uid: 456453446425,
-                    username: "Amazon", description: "Purchase of 3 items"
-                },
-                {
-                    change: -3425, timestamp: 61359973947937, uid: 345553444321,
-                    username: "Steam", description: "Skyrim Legendary Edition"
-                },
-                {
-                    change: 3553211, timestamp: 61345332441324, uid: 243213532453,
-                    username: "OLB Crazy 75", description: "Lottery winnings"
-                },
-                {
-                    change: 600000, timestamp: 61345235443643, uid: 435652432411,
-                    username: "Forerunner Matthias", description: "Requested expenses"
-                },
-                {
-                    change: 3235, timestamp: 61344156143742, uid: 642342523451,
-                    username: "Forerunner Elinor", description: "Compensation for dinner"
-                },
-                {
-                    change: -682745, timestamp: 61343635546543, uid: 363454624512,
-                    username: "Origin PCs", description: "Thank you for your purchase!"
-                },
-                {
-                    change: -1253, timestamp: 61342456134666, uid: 435146334674,
-                    username: "McDonald's", description: "Retail purchase"
-                },
-                {
-                    change: -43251, timestamp: 61341543246532, uid: 673856253525,
-                    username: "Nintendo", description: "Nintendo Switch"
-                },
-            ]
-
+            transactionHistory: props.transactionHistory
         }
     }
 
@@ -91,25 +49,77 @@ class HistoryPanel extends Component {
 }
 
 class HistoryItem extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {collapsed: true};
+        this.collapsed.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.getStyle = this.getStyle.bind(this);
+    }
+
+    collapsed() {
+        return this.state.collapsed ? 0 :
+            this.refs.collapseData.clientHeight;
+    }
+
+    handleClick() {
+        this.setState(prevState => ({
+            collapsed: !prevState.collapsed
+        }));
+    }
+
+    getStyle() {
+        return this.state.collapsed ? "" : " expanded";
+    }
+
     render() {
         return (
-            <div className="history-toplevel-background">
-                <div className="history-toplevel waves-effect">
-                    <p className="history-date">
-                        {func.formatDate(new Date(this.props.item.timestamp), true)}
-                    </p>
-                    <div className="history-item-block">
-                        <div className="history-item-desc-block">
-                            <p className="username">
-                                {this.props.item.username}
-                            </p>
-                            <p className="description">
-                                {this.props.item.description}
+            <div>
+                <div className={"history-toplevel-background" + this.getStyle()}>
+                    <div className={"history-toplevel" + this.getStyle() + " waves-effect"}
+                         onClick={this.handleClick}>
+                        <p className="history-date">
+                            {func.formatDate(new Date(this.props.item.timestamp), true)}
+                        </p>
+                        <div className="history-item-block">
+                            <div className="history-item-desc-block">
+                                <p className="username">
+                                    {this.props.item.username}
+                                </p>
+                                <p className="description">
+                                    {this.props.item.description}
+                                </p>
+                            </div>
+                            <p className="history-change">
+                                {func.formatMoney(this.props.item.change, true)}
                             </p>
                         </div>
-                        <p className="history-change">
-                            {func.formatMoney(this.props.item.change, true)}
-                        </p>
+                    </div>
+                </div>
+                <div className="history-item-info" style={{height: this.collapsed()}}>
+                    <div ref="collapseData">
+                        <div className="collapse-data">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi risus dolor, rutrum et nibh
+                            ac,
+                            cursus dictum turpis. Morbi leo dolor, lobortis sit amet pulvinar ac, dignissim eu ligula.
+                            Vestibulum scelerisque vel massa quis pellentesque. Integer eros mi, volutpat non mauris id,
+                            iaculis
+                            gravida ipsum. Vestibulum vel ipsum eu dolor congue placerat. Mauris ultricies nunc nec
+                            ligula
+                            volutpat posuere. Curabitur tristique, nisl et pharetra faucibus, lectus nulla tristique
+                            nibh,
+                            non
+                            egestas dui sem vehicula justo. Suspendisse vel lobortis odio, a feugiat nibh. Mauris
+                            sodales
+                            gravida lacus, at tincidunt velit rutrum non. Donec tincidunt luctus ligula, a vestibulum
+                            libero
+                            lacinia tempor. Etiam orci est, gravida ac consectetur eget, tincidunt at elit. Cras aliquet
+                            nec
+                            ante at posuere. In vel pharetra orci, non mattis est. Etiam a varius quam. Morbi imperdiet
+                            tortor
+                            augue, id scelerisque mi interdum aliquet. Sed nec risus pretium, efficitur mi a, iaculis
+                            lectus.
+                        </div>
                     </div>
                 </div>
             </div>
