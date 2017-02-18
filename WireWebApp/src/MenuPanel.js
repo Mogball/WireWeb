@@ -3,6 +3,7 @@ import './css/MenuPanel.css';
 import './css/materialize.css';
 import prop from './config.js';
 import func from './helper';
+import './css/HomePanel.css';
 
 export default class MenuPanel extends Component {
     constructor(props) {
@@ -26,27 +27,17 @@ export default class MenuPanel extends Component {
 
     render() {
         return (
-            <div className="menu-panel-section">
-                <WalletListPanel walletItems={this.state.walletItems}/>
-            </div>
+            <WalletListPanel walletItems={this.state.walletItems}/>
         );
     }
 }
 
-const WalletListPanel = function(props) {
+const WalletListPanel = function (props) {
     return (
         <div className="side-menu-container z-depth-1">
             <div className="side-menu header">
                 <div className="wallet-container">
                     <h5 className="wallet-title">{prop.cfg.menuPanel.sideMenuTitle}</h5>
-                </div>
-                <div className="wallet-container">
-                    <div className="wallet-container"/>
-                    <div className="wallet-container">
-                        <div className="wallet-add-button">
-                            <div className="wallet-container text">{prop.cfg.menuPanel.addButton}</div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <WalletList items={props.walletItems}/>

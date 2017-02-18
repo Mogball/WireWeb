@@ -231,6 +231,10 @@
     user-select: none;
 }
 
+.button span {
+    font-weight: 300;
+}
+
 .button:hover {
 }
 
