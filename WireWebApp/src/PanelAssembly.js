@@ -77,7 +77,8 @@ export default class PanelAssembly extends Component {
                         accountCompletion={this.props.accountCompletion}
                         accountPhoto={this.props.accountPhoto}
                         walletItems={this.props.walletItems}/>
-                    <AccountActionPanel/>
+                    <AccountActionPanel
+                        popupManager={this.props.popupManager}/>
                 </div>
                 <div className="container main-section-block">
                     <div className="side-panel-section">

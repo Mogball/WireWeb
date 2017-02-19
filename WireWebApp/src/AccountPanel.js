@@ -196,8 +196,8 @@ class WDPopup extends Component {
             <div id={this.props.title} className="popup-type-1">
                 <div style={{display: "flex", height: "100%", width: "100%"}}>
                     <div style={{width: "15%"}} onClick={this.exit}/>
-                    <div style={{height: "100%", width: "100%"}}>
-                        <div style={{height: "5%"}} onClick={this.exit}/>
+                    <div style={{height: "100%", width: "100%", display: "flex", flexDirection: 'column'}}>
+                        <div className="BT-padding" onClick={this.exit}/>
                         <div className="popup-window z-depth-2 center">
                             <div className="popup-title-block indigo z-depth-1">
                                 <h1>{this.props.title}</h1>
@@ -223,7 +223,7 @@ class WDPopup extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="popup-bottom-stopped" onClick={this.exit}/>
+                        <div  className="BT-padding" onClick={this.exit}/>
                     </div>
                     <div style={{width: "15%"}} onClick={this.exit}/>
                 </div>
