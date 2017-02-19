@@ -83,6 +83,7 @@ export default class PanelAssembly extends Component {
                 <div className="container main-section-block">
                     <div className="side-panel-section">
                         <MenuPanel
+                            popupManager={this.props.popupManager}
                             walletItems={this.props.walletItems}/>
                     </div>
                     <div className="mid-panel-section">

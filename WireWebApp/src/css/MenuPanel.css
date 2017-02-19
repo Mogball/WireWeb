@@ -50,42 +50,6 @@
     cursor: default;
 }
 
-.wallet-add-button {
-    background-color: #ff9800;
-    color: #fff;
-    text-align: center;
-    cursor: pointer;
-    width: 2.333em;
-    height: 2.333em;
-    border-radius: 50%;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-    0 1px 10px 0 rgba(0, 0, 0, 0.12),
-    0 2px 4px -1px rgba(0, 0, 0, 0.3);
-    -webkit-transition: ease-out 0.3s;
-    -moz-transition: ease-out 0.3s;
-    -o-transition: ease-out 0.3s;
-    transition: ease-out 0.3s;
-    display: flex;
-}
-
-.wallet-add-button:hover {
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-    0 1px 10px 0 rgba(0, 0, 0, 0.12),
-    0 2px 4px -1px rgba(0, 0, 0, 0.3);
-    background-color: #ffb74d;
-}
-
-.wallet-add-button:active {
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 1px 2px 0 rgba(0, 0, 0, 0.12),
-    0 2px 1px -1px rgba(0, 0, 0, 0.2);
-    -webkit-transition: ease-out 0.15s;
-    -moz-transition: ease-out 0.15s;
-    -o-transition: ease-out 0.15s;
-    transition: ease-out 0.15s;
-    background-color: #ffa726;
-}
-
 .wallet-list-toplevel ul {
     overflow: auto;
     padding: 0 1.05em 0 1em;
@@ -95,7 +59,7 @@
 .wallet-item-toplevel {
     margin: 0.667em 0 0.667em 0;
     background-color: #fefefe;
-    border-radius: 0.333em;
+    border-radius: 0.08em;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
     0 1px 10px 0 rgba(0, 0, 0, 0.12),
     0 2px 4px -1px rgba(0, 0, 0, 0.3);
@@ -186,4 +150,35 @@
     -ms-transition: ease-out 0.15s;
     -o-transition: ease-out 0.15s;
     transition: ease-out 0.15s;
+}
+
+.remove-popup-item {
+    display: block;
+    padding: 0 1em 0 1em;
+}
+
+.remove-popup-item-block {
+    max-width: 250px;
+    min-width: 170px;
+    display: table;
+    margin: auto;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+}
+
+.remove-popup-item-block div.wallet-item-toplevel {
+    cursor: default !important;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #009688;
+    box-shadow: none !important;
+    min-height: 5em;
+}
+
+.remove-popup-item-block div.wallet-item-toplevel:hover {
+    box-shadow: none !important;
+}
+
+.remove-popup-item-block div.wallet-item-toplevel:active {
+    box-shadow: none !important;
 }

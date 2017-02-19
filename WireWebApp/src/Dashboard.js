@@ -19,6 +19,7 @@ export default class Dashboard extends Component {
         this.showPopup = this.showPopup.bind(this);
         this.hidePopup = this.hidePopup.bind(this);
         this.addPopup = this.addPopup.bind(this);
+        this.removePopup = this.removePopup.bind(this);
     }
 
     componentWillMount() {
@@ -46,6 +47,12 @@ export default class Dashboard extends Component {
         });
     }
 
+    removePopup(name) {
+        this.popups[name] = null;
+        this.setState({
+            shows: update(this.state.shows, {[name]: {$set: null}})
+        });
+    }
 
     render() {
         const popups = [];

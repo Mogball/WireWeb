@@ -1,5 +1,5 @@
 .home-panel-section {
-    border-radius: 0.5em
+    border-radius: 0.11em
 }
 
 .home-info-panel {
@@ -25,7 +25,7 @@
 
 .history-panel-title {
     position: relative;
-    border-radius: 0.5em;
+    border-radius: 0.09em;
     -webkit-transition: ease-out 0.22s;
     -moz-transition: ease-out 0.22s;
     -o-transition: ease-out 0.22s;
@@ -66,8 +66,8 @@
     margin: 0.4em 0 0.4em 0.5em;
     cursor: pointer;
     background-color: #fefefe;
-    border-top-right-radius: 0.3em;
-    border-bottom-right-radius: 0.3em;
+    border-top-right-radius: 0.2em;
+    border-bottom-right-radius: 0.2em;
     -webkit-transition: ease-out 0.15s;
     -moz-transition: ease-out 0.15s;
     -o-transition: ease-out 0.15s;
