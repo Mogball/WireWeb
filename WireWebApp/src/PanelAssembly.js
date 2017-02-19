@@ -20,7 +20,8 @@ export default class PanelAssembly extends Component {
                 {name: "TD Canada Trust", balance: 232312314},
                 {name: "UnionPay", balance: 5245351},
                 {name: "PayPal Mastercard Express", balance: 877573},
-                {name: "Swag card 360 xd Bonus edition ;^)"}
+                {name: "Swag card 360 xd Bonus edition ;^)"},
+                {name: "Mega swagalicious card"}
             ],
             transactionHistory: [
                 {
@@ -75,7 +76,8 @@ export default class PanelAssembly extends Component {
                     <AccountPanel
                         popupManager={this.props.popupManager}
                         accountCompletion={this.props.accountCompletion}
-                        accountPhoto={this.props.accountPhoto}/>
+                        accountPhoto={this.props.accountPhoto}
+                        walletItems={this.props.walletItems}/>
                     <AccountActionPanel/>
                 </div>
                 <div className="container main-section-block">

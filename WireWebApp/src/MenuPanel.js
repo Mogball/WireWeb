@@ -59,7 +59,7 @@ class WalletList extends Component {
     }
 }
 
-class WalletItem extends Component {
+export class WalletItem extends Component {
     render() {
         const name = this.props.item.name ? this.props.item.name : "";
         const balance = this.props.item.balance ? func.formatMoney(this.props.item.balance) : "";

@@ -285,9 +285,10 @@
 }
 
 .popup-window {
+    max-width: 900px;
+    margin: auto;
     background-color: #fff;
     width: 100%;
-    height: 70%;
     border-radius: 1em;
     z-index: 9999;
 }
@@ -350,6 +351,43 @@
     padding: 1.5em 5em 0.5em 5em;
 }
 
+.popup-buttons {
+    margin-bottom: 0;
+    padding-bottom: 0.9em;
+}
+
 .popup-buttons div {
     margin: 0.2em 0.9em 0.2em 0.9em;
+}
+
+.wallet-display-toplevel {
+    padding: 1.2em 1.4em 0 1.4em;
+    max-width: 900px;
+    margin: auto;
+    vertical-align: middle;
+}
+
+.wallet-display-toplevel ul {
+    padding: 0;
+    margin: 0;
+}
+
+.wallet-display-toplevel ul li {
+    display: inline-block;
+    width: 25%;
+    margin: 0;
+    padding: 0 0.7em 0 0.7em;
+}
+
+.wallet-item-toplevel.display-item {
+    min-height: 6.5em;
+    padding: 0.5em;
+}
+
+.item-name p {
+    word-wrap: break-word;
+}
+
+.item-balance p {
+    word-wrap: break-word;
 }

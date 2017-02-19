@@ -14,7 +14,8 @@ export default class AccountPanel extends Component {
                                 accountCompletion={this.props.accountCompletion}
                                 accountPhoto={this.props.accountPhoto}/>
                             <AccountInfo
-                                popupManager={this.props.popupManager}/>
+                                popupManager={this.props.popupManager}
+                                walletItems={this.props.walletItems}/>
                         </ul>
                     </div>
                 </div>
@@ -112,10 +113,12 @@ class AccountInfo extends Component {
 
     componentDidMount() {
         this.props.popupManager.addPopup("Deposit",
-            <DepositPopup key="Deposit" hideDeposit={this.hideDeposit}/>
+            <DepositPopup walletItems={this.props.walletItems}
+                          key="Deposit" hideDeposit={this.hideDeposit}/>
         );
         this.props.popupManager.addPopup("Withdraw",
-            <WithdrawPopup key="Withdraw" hideDeposit={this.hideWithdraw}/>
+            <WithdrawPopup walletItems={this.props.walletItems}
+                           key="Withdraw" hideDeposit={this.hideWithdraw}/>
         );
     }
 
@@ -172,11 +175,12 @@ class DepositPopup extends Component {
                 <div style={{display: "flex", height: "100%", width: "100%"}}>
                     <div style={{width: "15%"}} onClick={this.props.hideDeposit}/>
                     <div style={{height: "100%", width: "100%"}}>
-                        <div style={{height: "15%"}} onClick={this.props.hideDeposit}/>
+                        <div style={{height: "5%"}} onClick={this.props.hideDeposit}/>
                         <div className="popup-window z-depth-2 center">
                             <div className="popup-title-block indigo z-depth-1">
                                 <h1>Deposit</h1>
                             </div>
+                            <WalletDisplaySect walletItems={this.props.walletItems}/>
                             <div>
                                 <div className="amount-input-container">
                                     <input placeholder="Amount" id="deposit-amount" type="text"/>
@@ -193,7 +197,7 @@ class DepositPopup extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div style={{height: "15%"}} onClick={this.props.hideDeposit}/>
+                        <div style={{height: "5%"}} onClick={this.props.hideDeposit}/>
                     </div>
                     <div style={{width: "15%"}} onClick={this.props.hideDeposit}/>
                 </div>
@@ -210,11 +214,14 @@ class WithdrawPopup extends Component {
                 <div style={{display: "flex", height: "100%", width: "100%"}}>
                     <div style={{width: "15%"}} onClick={this.props.hideDeposit}/>
                     <div style={{height: "100%", width: "100%"}}>
-                        <div style={{height: "15%"}} onClick={this.props.hideDeposit}/>
+                        <div style={{height: "5%"}} onClick={this.props.hideDeposit}/>
                         <div className="popup-window z-depth-2 center">
                             <div className="popup-title-block indigo z-depth-1">
                                 <h1>Withdraw</h1>
                             </div>
+                            <WalletDisplaySect
+                                checkBalance={true}
+                                walletItems={this.props.walletItems}/>
                             <div>
                                 <div className="amount-input-container">
                                     <input placeholder="Amount" id="withdraw-amount" type="text"/>
@@ -231,9 +238,49 @@ class WithdrawPopup extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div style={{height: "15%"}} onClick={this.props.hideDeposit}/>
+                        <div style={{height: "5%"}} onClick={this.props.hideDeposit}/>
                     </div>
                     <div style={{width: "15%"}} onClick={this.props.hideDeposit}/>
+                </div>
+            </div>
+        );
+    }
+}
+
+class WalletDisplaySect extends Component {
+    render() {
+        const xBlock = [];
+        for (var i = 0; i < this.props.walletItems.length; i++) {
+            if (this.props.walletItems[i].balance || !this.props.checkBalance) {
+                xBlock.push(
+                    <li key={i}>
+                        <WalletDisplayItem item={this.props.walletItems[i]}/>
+                    </li>
+                );
+            }
+        }
+
+        return (
+            <div className="wallet-display-toplevel">
+                <ul>
+                    {xBlock}
+                </ul>
+            </div>
+        );
+    }
+}
+
+export class WalletDisplayItem extends Component {
+    render() {
+        const name = this.props.item.name ? this.props.item.name : "";
+        const balance = this.props.item.balance ? func.formatMoney(this.props.item.balance) : "";
+        return (
+            <div className="wallet-item-toplevel display-item">
+                <div className="item-name">
+                    <p>{name}</p>
+                </div>
+                <div className="item-balance">
+                    <p>{balance}</p>
                 </div>
             </div>
         );
