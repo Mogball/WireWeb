@@ -2,6 +2,7 @@
     z-index: 5;
     position: fixed;
     margin: auto;
+    width: 100%;
 }
 
 .nav-container {
@@ -14,21 +15,11 @@
     display: flex;
     flex: 1;
 }
-.container {
-    margin : 0;
-}
+
 .nav-bar {
-
-    margin: 0;
-    padding: 0;
-
-    width: 100%;
-    position: fixed;
-    background-color: #3f51b5;
-
-    overflow-y:scroll;
-
-
+    max-width: 1024px;
+    margin: auto;
+    padding: 0 16px 0 16px;
 }
 
 .nav-bar-button-container.small-margin {

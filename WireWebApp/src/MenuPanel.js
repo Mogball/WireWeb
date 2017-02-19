@@ -49,7 +49,7 @@ class WalletList extends Component {
         return (
             <ul className="wallet-list center">
                 <li>
-                    <a className="btn waves-effect waves-light add-button">
+                    <a className="button btn waves-effect waves-light add-button">
                         <span className="no-drag">Add</span>
                     </a>
                 </li>

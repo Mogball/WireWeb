@@ -28,3 +28,8 @@
     z-index: 999;
     background-color: rgba(0, 0, 0, 0.4);
 }
+
+.header-placeholder {
+    height: 70px;
+    width: 100%;
+}

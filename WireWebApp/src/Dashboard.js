@@ -67,6 +67,7 @@ export default class Dashboard extends Component {
             <div className="dashboard">
                 {popupManager}
                 <Header activeScreen={this.state.activeScreen}/>
+                <div className="header-placeholder"/>
                 <PanelAssembly popupManager={this}/>
             </div>
         );

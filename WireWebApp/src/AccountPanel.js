@@ -113,12 +113,13 @@ class AccountInfo extends Component {
 
     componentDidMount() {
         this.props.popupManager.addPopup("Deposit",
-            <DepositPopup walletItems={this.props.walletItems}
-                          key="Deposit" hideDeposit={this.hideDeposit}/>
+            <WDPopup walletItems={this.props.walletItems} title="Deposit"
+                     key="Deposit" hideDeposit={this.hideDeposit}/>
         );
         this.props.popupManager.addPopup("Withdraw",
-            <WithdrawPopup walletItems={this.props.walletItems}
-                           key="Withdraw" hideDeposit={this.hideWithdraw}/>
+            <WDPopup walletItems={this.props.walletItems} title="Withdraw"
+                     checkBalance={true}
+                     key="Withdraw" hideDeposit={this.hideWithdraw}/>
         );
     }
 
@@ -168,79 +169,63 @@ const InfoItem = function (props) {
     );
 };
 
-class DepositPopup extends Component {
-    render() {
-        return (
-            <div id="Deposit" className="popup-type-1">
-                <div style={{display: "flex", height: "100%", width: "100%"}}>
-                    <div style={{width: "15%"}} onClick={this.props.hideDeposit}/>
-                    <div style={{height: "100%", width: "100%"}}>
-                        <div style={{height: "5%"}} onClick={this.props.hideDeposit}/>
-                        <div className="popup-window z-depth-2 center">
-                            <div className="popup-title-block indigo z-depth-1">
-                                <h1>Deposit</h1>
-                            </div>
-                            <WalletDisplaySect walletItems={this.props.walletItems}/>
-                            <div>
-                                <div className="amount-input-container">
-                                    <input placeholder="Amount" id="deposit-amount" type="text"/>
-                                </div>
-                            </div>
-                            <div className="row popup-buttons">
-                                <div
-                                    onClick={this.props.hideDeposit}
-                                    className="btn-large waves-effect waves-light">
-                                    <span>Cancel</span>
-                                </div>
-                                <div className="btn-large waves-effect waves-light">
-                                    <span>Deposit</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style={{height: "5%"}} onClick={this.props.hideDeposit}/>
-                    </div>
-                    <div style={{width: "15%"}} onClick={this.props.hideDeposit}/>
-                </div>
-            </div>
-        );
+class WDPopup extends Component {
+    constructor(props) {
+        super(props);
+        this.exit = this.exit.bind(this);
+        this.handleWalletItemClick = this.handleWalletItemClick.bind(this);
+        this.state = {clickedItem: null};
     }
-}
 
+    exit() {
+        this.props.hideDeposit();
+        this.refs.popupInputField.value = "";
+        this.setState({clickedItem: null});
+    }
 
-class WithdrawPopup extends Component {
+    handleWalletItemClick(item) {
+        if (item.name === this.state.clickedItem) {
+            this.setState({clickedItem: null});
+        } else {
+            this.setState({clickedItem: item.name});
+        }
+    }
+
     render() {
         return (
-            <div id="Withdraw" className="popup-type-1">
+            <div id={this.props.title} className="popup-type-1">
                 <div style={{display: "flex", height: "100%", width: "100%"}}>
-                    <div style={{width: "15%"}} onClick={this.props.hideDeposit}/>
+                    <div style={{width: "15%"}} onClick={this.exit}/>
                     <div style={{height: "100%", width: "100%"}}>
-                        <div style={{height: "5%"}} onClick={this.props.hideDeposit}/>
+                        <div style={{height: "5%"}} onClick={this.exit}/>
                         <div className="popup-window z-depth-2 center">
                             <div className="popup-title-block indigo z-depth-1">
-                                <h1>Withdraw</h1>
+                                <h1>{this.props.title}</h1>
                             </div>
                             <WalletDisplaySect
-                                checkBalance={true}
+                                clickedItem={this.state.clickedItem}
+                                onClickItem={this.handleWalletItemClick}
+                                checkBalance={!!this.props.checkBalance}
                                 walletItems={this.props.walletItems}/>
                             <div>
                                 <div className="amount-input-container">
-                                    <input placeholder="Amount" id="withdraw-amount" type="text"/>
+                                    <input placeholder="Amount" ref="popupInputField"/>
                                 </div>
                             </div>
                             <div className="row popup-buttons">
                                 <div
-                                    onClick={this.props.hideDeposit}
+                                    onClick={this.exit}
                                     className="btn-large waves-effect waves-light">
                                     <span>Cancel</span>
                                 </div>
                                 <div className="btn-large waves-effect waves-light">
-                                    <span>Withdraw</span>
+                                    <span>{this.props.title}</span>
                                 </div>
                             </div>
                         </div>
-                        <div style={{height: "5%"}} onClick={this.props.hideDeposit}/>
+                        <div className="popup-bottom-stopped" onClick={this.exit}/>
                     </div>
-                    <div style={{width: "15%"}} onClick={this.props.hideDeposit}/>
+                    <div style={{width: "15%"}} onClick={this.exit}/>
                 </div>
             </div>
         );
@@ -248,13 +233,27 @@ class WithdrawPopup extends Component {
 }
 
 class WalletDisplaySect extends Component {
+    constructor(props) {
+        super(props);
+        this.handleClickedItems = this.handleClickedItems.bind(this);
+    }
+
+    handleClickedItems(item) {
+        if (this.props.onClickItem) {
+            this.props.onClickItem(item);
+        }
+    }
+
     render() {
         const xBlock = [];
         for (var i = 0; i < this.props.walletItems.length; i++) {
             if (this.props.walletItems[i].balance || !this.props.checkBalance) {
                 xBlock.push(
                     <li key={i}>
-                        <WalletDisplayItem item={this.props.walletItems[i]}/>
+                        <WalletDisplayItem
+                            clickedItem={this.props.clickedItem}
+                            onClickItem={this.handleClickedItems}
+                            item={this.props.walletItems[i]}/>
                     </li>
                 );
             }
@@ -271,11 +270,25 @@ class WalletDisplaySect extends Component {
 }
 
 export class WalletDisplayItem extends Component {
+    constructor(props) {
+        super(props);
+        this.itemClicked = this.itemClicked.bind(this);
+    }
+
+    itemClicked() {
+        if (this.props.onClickItem) {
+            this.props.onClickItem(this.props.item);
+        }
+    }
+
     render() {
         const name = this.props.item.name ? this.props.item.name : "";
         const balance = this.props.item.balance ? func.formatMoney(this.props.item.balance) : "";
         return (
-            <div className="wallet-item-toplevel display-item">
+            <div
+                onClick={this.itemClicked}
+                className={"wallet-item-toplevel display-item"
+                + (this.props.clickedItem === this.props.item.name ? " active" : "")}>
                 <div className="item-name">
                     <p>{name}</p>
                 </div>

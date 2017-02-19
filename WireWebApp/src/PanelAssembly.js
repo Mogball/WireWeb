@@ -68,12 +68,9 @@ export default class PanelAssembly extends Component {
         }
     }
 
-
     render() {
         return (
             <div className="panel-assembly-section">
-		<div>
-		</div>
                 <div className="account-panel-section">
                     <AccountPanel
                         popupManager={this.props.popupManager}
@@ -92,6 +89,6 @@ export default class PanelAssembly extends Component {
                     </div>
                 </div>
             </div>
-    );
+        );
     }
-    }
+}
