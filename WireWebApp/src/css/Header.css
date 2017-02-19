@@ -14,11 +14,13 @@
     display: flex;
     flex: 1;
 }
-
+.container {
+    margin : 0;
+}
 .nav-bar {
-    max-width: 1024px;
-    margin: auto;
-    padding: 0 16px 0 16px;
+
+    margin: 0;
+    padding: 0;
 
     width: 100%;
     position: fixed;
