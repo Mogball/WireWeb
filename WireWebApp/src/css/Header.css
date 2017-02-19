@@ -1,6 +1,6 @@
 .header-container {
     z-index: 5;
-    position: relative;
+    position: fixed;
     margin: auto;
 }
 
@@ -14,11 +14,21 @@
     display: flex;
     flex: 1;
 }
-
+.container {
+    margin : 0;
+}
 .nav-bar {
-    max-width: 1024px;
-    margin: auto;
-    padding: 0 16px 0 16px;
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    position: fixed;
+    background-color: #3f51b5;
+
+    overflow-y:scroll;
+
+
 }
 
 .nav-bar-button-container.small-margin {
