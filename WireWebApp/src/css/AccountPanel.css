@@ -3,7 +3,7 @@
     width: 100%;
     z-index: 4;
     display: flex;
-    padding-top: 0.85em;
+    padding-top: 8.5em;
 }
 
 .container {
@@ -245,12 +245,12 @@
 @media only screen and (max-width: 992px) {
     .account-panel-container ul {
         flex-direction: column;
-        padding-top: 0.8em;
+        padding-top: 75px;
     }
 
     .account-panel-section-block {
         padding-bottom: 0.3em;
-        padding-top: 0;
+        padding-top: 75px;
     }
 
 }

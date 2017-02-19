@@ -19,6 +19,14 @@
     max-width: 1024px;
     margin: auto;
     padding: 0 16px 0 16px;
+
+    width: 100%;
+    position: fixed;
+    background-color: #3f51b5;
+
+    overflow-y:scroll;         
+  
+
 }
 
 .nav-bar-button-container.small-margin {
