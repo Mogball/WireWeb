@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import Header from './Header';
 import PanelAssembly from './PanelAssembly';
-import './css/Dashboard.css';
+import StorePanelAssembly from './StorePanelAssembly';
+import ManagePanelAssembly from './ManagePanelAssembly';
 import update from 'immutability-helper';
+import './css/Dashboard.css';
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -16,16 +18,15 @@ export default class Dashboard extends Component {
         this.popups = {};
 
         // Bind functions
+        this.navClick = this.navClick.bind(this);
         this.showPopup = this.showPopup.bind(this);
         this.hidePopup = this.hidePopup.bind(this);
         this.addPopup = this.addPopup.bind(this);
         this.removePopup = this.removePopup.bind(this);
     }
 
-    componentWillMount() {
-    }
-
-    componentDidMount() {
+    navClick(screen) {
+        this.setState({activeScreen: screen});
     }
 
     showPopup(name) {
@@ -70,12 +71,28 @@ export default class Dashboard extends Component {
         const popupManager = (
             <PopupManager popups={popups} active={active !== 0}/>
         );
+        var activeScreen;
+        if (this.state.activeScreen === "Home") {
+            activeScreen = (
+                <PanelAssembly popupManager={this}/>
+            );
+        } else if (this.state.activeScreen === "Store") {
+            activeScreen = (
+                <StorePanelAssembly popupManager={this}/>
+            );
+        } else if (this.state.activeScreen === "Manage") {
+            activeScreen = (
+                <ManagePanelAssembly popupManager={this}/>
+            );
+        } else {
+            activeScreen = null;
+        }
         return (
             <div className="dashboard">
                 {popupManager}
-                <Header activeScreen={this.state.activeScreen}/>
+                <Header navClick={this.navClick} activeScreen={this.state.activeScreen}/>
                 <div className="header-placeholder"/>
-                <PanelAssembly popupManager={this}/>
+                {activeScreen}
             </div>
         );
     }

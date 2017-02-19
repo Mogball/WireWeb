@@ -52,10 +52,17 @@ class WalletList extends Component {
         this.clickedItem = this.clickedItem.bind(this);
         this.hideRemove = this.hideRemove.bind(this);
         this.getClicked = this.getClicked.bind(this);
+        this.showAdd = this.showAdd.bind(this);
+        this.hideAdd = this.hideAdd.bind(this);
     }
 
     getClicked() {
         return this.state.clicked;
+    }
+
+    showAdd() {
+        this.props.popupMan.showPopup("Add");
+        document.getElementById("Add").className = "popup-type-1 show";
     }
 
     hideRemove() {
@@ -63,10 +70,18 @@ class WalletList extends Component {
         document.getElementById("Remove").className = "popup-type-1";
     }
 
+    hideAdd() {
+        this.props.popupMan.hidePopup("Add");
+        document.getElementById("Add").className = "popup-type-1";
+    }
+
     componentDidMount() {
         this.props.popupMan.addPopup("Remove",
             <RemovePopup key="Remove" title="Remove" hideDeposit={this.hideRemove}
                          getClicked={this.getClicked}/>
+        );
+        this.props.popupMan.addPopup("Add",
+            <AddPopup key="Add" title="Add" hideDeposit={this.hideAdd}/>
         );
     }
 
@@ -94,7 +109,8 @@ class WalletList extends Component {
         return (
             <ul className="wallet-list center">
                 <li>
-                    <a className="button btn waves-effect waves-light add-button">
+                    <a onClick={this.showAdd}
+                       className="button btn waves-effect waves-light add-button">
                         <span className="no-drag">Add</span>
                     </a>
                 </li>
@@ -174,6 +190,161 @@ class RemovePopup extends Component {
                                     <span>Cancel</span>
                                 </div>
                                 <div className="btn-large waves-effect waves-light purple-btn">
+                                    <span>{this.props.title}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="BT-padding" onClick={this.exit}/>
+                    </div>
+                    <div style={{flex: 1}} onClick={this.exit}/>
+                </div>
+            </div>
+        );
+    }
+}
+
+class AddPopup extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {radio: "none"};
+        this.exit = this.exit.bind(this);
+        this.clicked = this.clicked.bind(this);
+        this.empty = this.empty.bind(this);
+    }
+
+    clicked() {
+        this.setState({radio: "clicked"});
+    }
+
+    exit() {
+        const radios = document.getElementsByName("group1");
+        for (var i = 0; i < radios.length; i++) {
+            radios[i].checked = false;
+        }
+        this.forceUpdate();
+        this.empty();
+        this.props.hideDeposit();
+    }
+
+    empty() {
+        for (var i = 1; i <= 8; i++) {
+            const name = "field" + i;
+            if (this.refs[name]) {
+                this.refs[name].value = "";
+            }
+        }
+    }
+
+    render() {
+        var optionFields;
+        const radios = document.getElementsByName("group1");
+        var value;
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                value = radios[i].value;
+                break;
+            }
+        }
+        if (value === "card") {
+            optionFields = (
+                <div className="add-option-field">
+                    <input placeholder="Card Number"
+                           ref="field1"/>
+                    <input placeholder="Expiry Date"
+                           ref="field2"/>
+                    <input placeholder="CSV"
+                           ref="field3"/>
+                </div>
+            );
+        } else if (value === "bank") {
+            optionFields = (
+                <div className="add-option-field">
+                    <div className="row">
+                        <div className="input-field col s6">
+                            <input placeholder="First Name" ref="field5"/>
+                        </div>
+                        <div className="input-field col s6">
+                            <input placeholder="Last Name" ref="field6"/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="input-field col s12">
+                            <input placeholder="Account Number"
+                                   ref="field4"/>
+                        </div>
+                    </div>
+                </div>
+            );
+        } else if (value === "paypal") {
+            optionFields = (
+                <div className="add-option-field">
+                    <div className="row">
+                        <div className="input-field col s12">
+                            <input placeholder="PayPal Email"
+                                   ref="field7"/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="input-field col s12">
+                            <input type="password" placeholder="Password"
+                                   ref="field8"/>
+                        </div>
+                    </div>
+                </div>
+            );
+        } else {
+            optionFields = null;
+        }
+        return (
+            <div id={this.props.title} className="popup-type-1">
+                <div style={{display: "flex", height: "100%", width: "100%"}}>
+                    <div style={{flex: 1}} onClick={this.exit}/>
+                    <div style={{
+                        height: "100%", width: "100%", display: "flex",
+                        flexDirection: 'column', maxWidth: 800, margin: 'auto'
+                    }}>
+                        <div className="BT-padding" onClick={this.exit}/>
+                        <div className="popup-window z-depth-2 center">
+                            <div className="popup-title-block indigo z-depth-1">
+                                <h1>{this.props.title}</h1>
+                            </div>
+                            <div className="add-wallet-item">
+                                <div className="add-options" onClick={this.clicked}>
+                                    <form ref="addForm" style={{minHeight: 110, minWidth: 130}}>
+                                        <p>
+                                            <input
+                                                onClick={this.empty}
+                                                value="card"
+                                                name="group1" type="radio" id="addOp1"/>
+                                            <label htmlFor="addOp1">Credit/Debit</label>
+                                        </p>
+                                        <p>
+                                            <input
+                                                onClick={this.empty}
+                                                value="bank"
+                                                name="group1" type="radio" id="addOp2"/>
+                                            <label htmlFor="addOp2">Bank Account</label>
+                                        </p>
+                                        <p>
+                                            <input
+                                                onClick={this.empty}
+                                                value="paypal"
+                                                name="group1" type="radio" id="addOp3"/>
+                                            <label htmlFor="addOp3">PayPal</label>
+                                        </p>
+                                    </form>
+                                </div>
+                                <div className="add-fields center">
+                                    {optionFields}
+                                </div>
+                            </div>
+                            <div className="row popup-buttons">
+                                <div
+                                    onClick={this.exit}
+                                    className="btn-large waves-effect waves-light">
+                                    <span>Cancel</span>
+                                </div>
+                                <div className="btn-large waves-effect waves-light">
                                     <span>{this.props.title}</span>
                                 </div>
                             </div>

@@ -20,7 +20,7 @@ export default class Header extends Component {
         if (buttonLabel !== this.state.activeButton) {
             // Novel clicked button
             this.setActive(buttonLabel);
-            // TODO Handle navigation button click
+            this.props.navClick(buttonLabel);
         }
     }
 
