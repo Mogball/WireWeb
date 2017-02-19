@@ -14,6 +14,7 @@ export default class AccountPanel extends Component {
                                 accountCompletion={this.props.accountCompletion}
                                 accountPhoto={this.props.accountPhoto}/>
                             <AccountInfo
+                                user={this.props.user}
                                 popupManager={this.props.popupManager}
                                 walletItems={this.props.walletItems}/>
                         </ul>
@@ -76,15 +77,6 @@ class AccountDisplay extends Component {
 class AccountInfo extends Component {
     constructor(props) {
         super(props);
-
-        // Initialize state
-        this.state = {
-            // STUB data
-            firstName: 'Emeritus',
-            lastName: 'Pachementyke',
-            balance: 3354743562,
-            balancePoints: 23145252,
-        };
         this.hideDeposit = this.hideDeposit.bind(this);
         this.hideWithdraw = this.hideWithdraw.bind(this);
         this.clickedDeposit = this.clickedDeposit.bind(this);
@@ -124,7 +116,7 @@ class AccountInfo extends Component {
     }
 
     render() {
-        const name = this.state.firstName + " " + this.state.lastName;
+        const name = this.props.user.firstName + " " + this.props.user.lastName;
         return (
             <li className="account-info-toplevel">
                 <h4>{name}</h4>
@@ -135,8 +127,8 @@ class AccountInfo extends Component {
                             <InfoItem>Points</InfoItem>
                         </div>
                         <div className="value-block spread-vertical">
-                            <InfoItem>{func.formatMoney(this.state.balance)}</InfoItem>
-                            <InfoItem>{func.formatComma(this.state.balancePoints)}</InfoItem>
+                            <InfoItem>{func.formatMoney(this.props.user.balance)}</InfoItem>
+                            <InfoItem>{func.formatComma(this.props.user.balancePoints)}</InfoItem>
                         </div>
                     </div>
                     <div className="account-actions">
@@ -196,8 +188,10 @@ class WDPopup extends Component {
             <div id={this.props.title} className="popup-type-1">
                 <div style={{display: "flex", height: "100%", width: "100%"}}>
                     <div style={{flex: 1}} onClick={this.exit}/>
-                    <div style={{height: "100%", width: "100%", display: "flex", flexDirection: 'column',
-                        maxWidth: 900}}>
+                    <div style={{
+                        height: "100%", width: "100%", display: "flex", flexDirection: 'column',
+                        maxWidth: 900
+                    }}>
                         <div className="BT-padding" onClick={this.exit}/>
                         <div className="popup-window z-depth-2 center">
                             <div className="popup-title-block indigo z-depth-1">
@@ -224,7 +218,7 @@ class WDPopup extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div  className="BT-padding" onClick={this.exit}/>
+                        <div className="BT-padding" onClick={this.exit}/>
                     </div>
                     <div style={{flex: 1}} onClick={this.exit}/>
                 </div>

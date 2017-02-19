@@ -17,7 +17,8 @@ var cfg = {
     actionPanel: {
         actionLabels: [
             "Send",
-            "Request"
+            "Request",
+            "Account"
         ]
     },
 

@@ -170,6 +170,14 @@
     padding: 3em 2em 3em 2em;
 }
 
+.popup-type-1 div div div div div.add-options {
+    z-index: -100;
+}
+
+.popup-type-1.show div div div div div.add-options {
+    z-index: 50;
+}
+
 [type="radio"] + label {
     font-weight: 300;
 }

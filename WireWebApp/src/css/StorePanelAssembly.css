@@ -1,0 +1,173 @@
+.account-actions.store {
+    flex: 3;
+}
+
+.value-block.store {
+    flex: 0.3;
+}
+
+.account-actions.store.isub-block-1 span h5 {
+    font-weight: 200;
+    color: #fff;
+}
+
+.account-actions.store div.center h5 {
+    font-weight: 200;
+    color: #fff;
+}
+
+.account-actions.store div.center p {
+    max-height: 45px;
+    margin: 0;
+    color: #fff;
+    font-weight: 300;
+}
+
+.action-panel-block.store.center ul li {
+    padding: 0;
+}
+
+.action-panel-block.store.center ul li input {
+    margin: 0;
+    max-height: 20px;
+    line-height: 1.5;
+}
+
+.store-assembly {
+    z-index: 4;
+}
+
+.store.action-panel-toplevel {
+    z-index: 4;
+}
+
+.store.button-container {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    -webkit-transition: ease-out 0.2s;
+    -moz-transition: ease-out 0.2s;
+    -o-transition: ease-out 0.2s;
+    transition: ease-out 0.2s;
+    position: relative;
+    z-index: 2;
+}
+
+.store.button-container.focus {
+    cursor: text;
+}
+
+.store.button-container.focus a span {
+    cursor: text;
+}
+
+.store.button-container.focused {
+    border-radius: 0.7em;
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+.profile-picture-container.small {
+    width: 3.6em;
+    height: 3.6em;
+    margin: auto;
+}
+
+.sub-block-2.small {
+    width: 90%;
+    height: 90%;
+}
+
+.profile-picture.small {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.profile-picture.small:hover {
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
+    0 1px 7px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.posting-toplevel {
+    display: flex;
+    background-color: #fbfbfb;
+    margin: 1.2em 0 1.2em 0;
+    -webkit-transition: ease-out 0.2s;
+    -moz-transition: ease-out 0.2s;
+    -o-transition: ease-out 0.2s;
+    transition: ease-out 0.2s;
+    position: relative;
+    z-index: 1;
+    border-radius: 0.15em;
+    height: 160px;
+}
+
+.posting-toplevel:hover {
+    background-color: #fff;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
+    0 1px 7px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.posting-toplevel.active {
+    box-shadow: none !important;
+    background-color: #fff;
+}
+
+.posting-info-container {
+    flex: 1;
+}
+
+.posting-account-display-container {
+    display: flex;
+    width: 21%;
+    margin: 0.5em 0.5em 0.5em 0;
+    padding-left: 0.5em;
+    border-left-color: #888;
+    border-left-style: solid;
+    border-left-width: 1px;
+}
+
+.posting-account-display-block {
+    flex: 1;
+    margin: auto;
+}
+
+.user-information {
+    width: 100%
+}
+
+.user-information h6 {
+    margin: 0.2em 0 0 0;
+    text-align: center;
+    font-weight: 300;
+    font-size: 0.84rem;
+}
+
+.store-panel div.body ul {
+    margin: 2em 0 2em 0;
+}
+
+.reputation-bar {
+    height: 0.5em;
+    border-radius: 0.15em;
+    margin: 0.5em 0.7em 0.2em 0.7em;
+    background-color: rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.reputation-bar.vertical {
+    height: auto;
+    width: 0.5em;
+    margin: 1em;
+}
+
+.reputation-bar-filled {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #76ff03;
+    height: 100%;
+    border-radius: 0.15em;
+    width: 100%;
+}
