@@ -1,6 +1,6 @@
 .header-container {
     z-index: 5;
-    position: relative;
+    position: fixed;
     margin: auto;
 }
 
@@ -26,8 +26,8 @@
     position: fixed;
     background-color: #3f51b5;
 
-    overflow-y:scroll;         
-  
+    overflow-y:scroll;
+
 
 }
 
