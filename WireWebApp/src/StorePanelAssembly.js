@@ -328,21 +328,30 @@ export default class StorePanelAssembly extends Component {
         super(props);
         this.clickedOnProfile = this.clickedOnProfile.bind(this);
         this.clickedOnPosting = this.clickedOnPosting.bind(this);
+        this.closePopup = this.closePopup.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.popupManager.addPopup("Profile",
+            <ProfilePopup key="Profile" closePopup={this.closePopup}/>
+        )
     }
 
     clickedOnProfile(user) {
-
+        this.props.popupManager.addPopup("Profile",
+            <ProfilePopup key="Profile" user={user} closePopup={this.closePopup}/>
+        );
+        this.props.popupManager.showPopup("Profile");
+        document.getElementById("Profile").className = "popup-type-2 show";
     }
 
     clickedOnPosting(posting) {
 
     }
 
-    componentDidMount() {
-        this.props.popupManager.addPopup("Test",
-            <ProfilePopup key={1} user={this.props.postings[0].user}/>
-        );
-        this.props.popupManager.showPopup("Test");
+    closePopup(popup) {
+        this.props.popupManager.hidePopup(popup);
+        document.getElementById(popup).className = "popup-type-2";
     }
 
     render() {
@@ -383,6 +392,11 @@ class Posting extends Component {
         this.clickedOut = this.clickedOut.bind(this);
         this.stopClick = this.stopClick.bind(this);
         this.startClick = this.startClick.bind(this);
+        this.clickedOnProfile = this.clickedOnProfile.bind(this);
+    }
+
+    clickedOnProfile() {
+        this.props.clickedOnProfile(this.props.posting.user);
     }
 
     clickedIn() {
@@ -545,12 +559,6 @@ class AccountDisplay extends Component {
     constructor(props) {
         super(props);
 
-        // Initialize state
-        this.state = {
-            // STUB data
-            accountCompletion: props.accountCompletion ? props.accountCompletion : 0,
-            accountPhoto: props.accountPhoto ? props.accountPhoto : null
-        };
         this.classes = props.notSmall ? [
             "profile-picture-container center-profile",
             "profile-picture-assembly",
@@ -563,25 +571,36 @@ class AccountDisplay extends Component {
             "profile-picture small"
         ];
         // Bind functions
+        this.drawDisplay = this.drawDisplay.bind(this);
     }
 
-    componentDidMount() {
+    drawDisplay() {
         const canvas = this.refs.accountProgress;
         const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         const hw = canvas.width / 2;
         const hh = canvas.height / 2;
         ctx.fillStyle = '#b2ff59';
         ctx.beginPath();
         ctx.moveTo(hw, hh);
-        ctx.arc(hw, hh, 2 * hh, 0, Math.PI * this.state.accountCompletion / 50, false);
+        ctx.arc(hw, hh, 2 * hh, 0, Math.PI * this.props.accountCompletion / 50, false);
         ctx.fill();
+    }
+
+    componentDidMount() {
+        this.drawDisplay();
+    }
+
+    componentDidUpdate() {
+        this.drawDisplay();
     }
 
     render() {
         return (
             <div className={this.classes[0]}
                  onMouseEnter={this.props.posting ? this.props.posting.stopClick : null}
-                 onMouseLeave={this.props.posting ? this.props.posting.startClick : null}>
+                 onMouseLeave={this.props.posting ? this.props.posting.startClick : null}
+                 onClick={this.props.posting ? this.props.posting.clickedOnProfile : null}>
                 <div className="block">
                     <div className={this.classes[1]}>
                         <canvas ref="accountProgress"/>
@@ -589,7 +608,7 @@ class AccountDisplay extends Component {
                             <div className={this.classes[2]}>
                                 <div className={this.classes[3]}>
                                     <img alt="profilePic"
-                                         src={this.state.accountPhoto}/>
+                                         src={this.props.accountPhoto}/>
                                 </div>
                             </div>
                         </div>
@@ -664,60 +683,64 @@ class ProfilePopup extends Component {
     }
 
     exit() {
-
+        this.props.closePopup("Profile");
     }
 
     render() {
         const user = this.props.user;
         return (
-            <PopupContainer popupId={user.id} exit={this.exit}>
-                <div className="posting-popup-toplevel z-depth-2">
-                    <div className="popup-close-button"/>
-                    <AccountDisplay
-                        notSmall={true}
-                        accountCompletion={user.completion}
-                        accountPhoto={user.photo}/>
-                    <h5>{user.firstName + " " + user.lastName}</h5>
-                    <div className="reputation-container">
-                        <div className="reputation-bar z-depth-1 big">
-                            <div className="reputation-bar-filled"
-                                 style={{width: user.reputation + "%"}}/>
+            <PopupContainer popupId="Profile" exit={this.exit}>
+                {user ? (
+                    <div className="profile-popup-toplevel z-depth-2">
+                        <div className="popup-close-button">
+                            <i className="material-icons waves-effect"
+                               onClick={this.exit}>close</i>
                         </div>
-                        <p className="big">{user.ratings}</p>
-                    </div>
-                    <div className="profile-popup-info-container">
-                        <div className="profile-popup-info-block">
-                            <ul>
-                                <li>
-                                    <div className="profile-popup-contact-info">
-                                        {user.phone ? <p>{user.phone}</p> : null}
-                                        {user.email ? <p>{user.email}</p> : null}
-                                    </div>
-                                </li>
-                                <li>
-                                    {user.location ? (
-                                        <div className="profile-popup-location-info">
-                                            {user.location.city ? <p>{user.location.city}</p> : null}
-                                            {user.location.state ? <p>{user.location.state}</p> : null}
-                                            {user.location.country ? <p>{user.location.country}</p> : null}
+                        <AccountDisplay
+                            notSmall={true}
+                            accountCompletion={user.completion}
+                            accountPhoto={user.photo}/>
+                        <h5>{user.firstName + " " + user.lastName}</h5>
+                        <div className="reputation-container">
+                            <div className="reputation-bar z-depth-1 big">
+                                <div className="reputation-bar-filled"
+                                     style={{width: user.reputation + "%"}}/>
+                            </div>
+                            <p className="big">{user.ratings}</p>
+                        </div>
+                        <div className="profile-popup-info-container">
+                            <div className="profile-popup-info-block">
+                                <ul>
+                                    <li>
+                                        <div className="profile-popup-contact-info">
+                                            {user.phone ? <p>{user.phone}</p> : null}
+                                            {user.email ? <p>{user.email}</p> : null}
                                         </div>
-                                    ) : null}
-                                </li>
-                            </ul>
-                            {user.postings > 0 ? (
-                                <p className="profile-other-postings">
-                                    {user.firstName + " has " + user.postings + " other posting"
-                                    + (user.postings > 1 ? "s" : "")}
-                                </p>
-                            ) : null}
-                            <div className="profile-other-calltoaction">
-                                <a className="button btn-large waves-effect waves-light">
-                                    See profile
-                                </a>
+                                    </li>
+                                    <li>
+                                        {user.location ? (
+                                            <div className="profile-popup-location-info">
+                                                {user.location.city ? <p>{user.location.city}</p> : null}
+                                                {user.location.state ? <p>{user.location.state}</p> : null}
+                                                {user.location.country ? <p>{user.location.country}</p> : null}
+                                            </div>
+                                        ) : null}
+                                    </li>
+                                </ul>
+                                {user.postings > 0 ? (
+                                    <p className="profile-other-postings">
+                                        {user.firstName + " has " + user.postings + " other posting"
+                                        + (user.postings > 1 ? "s" : "")}
+                                    </p>
+                                ) : null}
+                                <div className="profile-other-calltoaction">
+                                    <a className="button btn-large waves-effect waves-light">
+                                        See profile
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div>) : null}
             </PopupContainer>
         );
     }
@@ -735,13 +758,13 @@ class PopupContainer extends Component {
 
     render() {
         return (
-            <div id={this.props.popupId} className="popup-type-2 show">
+            <div id={this.props.popupId} className="popup-type-2">
                 <div className="popup-type-2-toplevel">
                     <div className="popup-type-2-vertB" onClick={this.exit}/>
                     <div className="popup-type-2-container">
-                        <div className="popup-type-2-vertB"/>
+                        <div className="popup-type-2-vertB" onClick={this.exit}/>
                         {this.props.children}
-                        <div className="popup-type-2-vertB"/>
+                        <div className="popup-type-2-vertB" onClick={this.exit}/>
                     </div>
                     <div className="popup-type-2-vertB" onClick={this.exit}/>
                 </div>

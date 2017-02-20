@@ -43,7 +43,6 @@ class WalletListPanel extends Component {
         );
     }
 }
-;
 
 class WalletList extends Component {
     constructor(props) {

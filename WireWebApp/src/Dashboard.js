@@ -142,8 +142,8 @@ export default class Dashboard extends Component {
 
     render() {
         const popups = [];
-        var active = 0;
-        for (var name in this.popups) {
+        let active = 0;
+        for (let name in this.popups) {
             if (this.popups.hasOwnProperty(name)) {
                 if (this.state.shows[name]) {
                     active++;
@@ -156,7 +156,7 @@ export default class Dashboard extends Component {
         const popupManager = (
             <PopupManager popups={popups} active={active !== 0}/>
         );
-        var activeScreen;
+        let activeScreen;
         if (this.state.activeScreen === "Home") {
             activeScreen = (
                 <PanelAssembly
