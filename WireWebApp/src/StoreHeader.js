@@ -77,9 +77,6 @@ class AccountInfo extends Component {
     render() {
         const user = this.props.user;
         const name = user.firstName + " " + user.lastName;
-        const location = "{0}, {1}, {2}".format(user.location.city,
-            user.location.state,
-            user.location.country);
         return (
             <li className="account-info-toplevel">
                 <h4>{name}</h4>
@@ -94,13 +91,16 @@ class AccountInfo extends Component {
                             <InfoItem>{this.props.user.postings}</InfoItem>
                         </div>
                     </div>
-                    <div className="account-actions store">
-                        <div className="center">
-                            <div className="location-title-container">
-                                <h5>Location</h5>
+                    <div className="account-actions">
+                        <div className="button-assembly store">
+                            <div
+                                className="button btn waves-effect waves-light">
+                                <span>Make Posting</span>
                             </div>
-                            <p style={{textAlign: 'center',
-                            paddingLeft: "10%", paddingRight: "10%"}}>{location}</p>
+                            <div
+                                className="button btn waves-effect waves-light">
+                                <span>My Postings</span>
+                            </div>
                         </div>
                     </div>
                 </div>

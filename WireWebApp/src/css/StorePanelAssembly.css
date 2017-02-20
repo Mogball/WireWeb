@@ -65,6 +65,10 @@
     background-color: rgba(0, 0, 0, 0.10);
 }
 
+.button-assembly.store div.button {
+    width: 70%;
+}
+
 .profile-picture-container.small {
     width: 3.6em;
     height: 3.6em;
@@ -370,6 +374,10 @@ div.preview-container img {
     height: 100%;
     width: 100%;
     border-radius: 0.5em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 div.preview-section ul li p.preview-money {
@@ -422,7 +430,6 @@ div.popup-type-2-vertB {
     position: absolute;
     right: 0;
     top: 0;
-    cursor: pointer;
     padding: 0.5em;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -438,6 +445,7 @@ div.popup-type-2-vertB {
     -moz-transition: ease-out 0.2s;
     -o-transition: ease-out 0.2s;
     transition: ease-out 0.2s;
+    cursor: pointer;
 }
 
 .profile-popup-toplevel div.popup-close-button i:hover {
@@ -471,6 +479,8 @@ div.reputation-container p.big {
 .profile-popup-info-block ul {
     display: flex;
     margin: 1.2em 0 1.5em 0;
+    padding-right: 0.75em;
+    padding-left: 0.75em;
 }
 
 .profile-popup-info-block ul li div p {
@@ -506,6 +516,9 @@ div.reputation-container p.big {
     line-height: 3rem;
     height: 3rem;
     margin-bottom: 0.25em;
+    padding-left: 2em;
+    padding-right: 2em;
+    width: auto;
 }
 
 .profile-popup-info-block p.profile-other-postings {

@@ -90,7 +90,7 @@ export default class StorePanelAssembly extends Component {
                     + " Ryan Pelchat's Swag Store.",
                     thumbnail: null,
 
-                    hideUser: false,
+                    hideUser: true,
                     location: {
                         country: "Equinox",
                         state: "Harvestar Kingdom",
@@ -251,7 +251,7 @@ export default class StorePanelAssembly extends Component {
                     description: "The crispiest McNuggets you'll ever taste.",
                     thumbnail: require("./res/stubPostingPic.png"),
 
-                    hideUser: true,
+                    hideUser: false,
                     location: {
                         country: "Canada",
                         state: "Ontario",
@@ -597,11 +597,11 @@ class AccountDisplay extends Component {
 
     render() {
         return (
-            <div className={this.classes[0]}
-                 onMouseEnter={this.props.posting ? this.props.posting.stopClick : null}
-                 onMouseLeave={this.props.posting ? this.props.posting.startClick : null}
-                 onClick={this.props.posting ? this.props.posting.clickedOnProfile : null}>
-                <div className="block">
+            <div className={this.classes[0]}>
+                <div className="block"
+                     onMouseEnter={this.props.posting ? this.props.posting.stopClick : null}
+                     onMouseLeave={this.props.posting ? this.props.posting.startClick : null}
+                     onClick={this.props.posting ? this.props.posting.clickedOnProfile : null}>
                     <div className={this.classes[1]}>
                         <canvas ref="accountProgress"/>
                         <div className="sub-block-1">
