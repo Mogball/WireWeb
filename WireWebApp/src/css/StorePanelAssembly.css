@@ -253,6 +253,10 @@ li.posting-title-container {
     border-radius: 1em;
     margin: 11px 0 6px 0;
     line-height: 1.3rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .posting-text-info ul li:not(.posting-title-container) {
@@ -272,7 +276,7 @@ li.posting-title-container {
 }
 
 div.auction-info-block ul li:not(.values) {
-    padding-right: 0.5em;
+    padding-right: 0.65em;
 }
 
 div.auction-info-block ul li p {
@@ -303,4 +307,46 @@ div.auction-info-block p.values {
     font-size: 1.5rem;
     line-height: 1.7rem;
     padding-bottom: 0;
+}
+
+div.restaurant-info-block li.restaurant-location-block {
+    padding-right: 0.19em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+div.restaurant-info-block li.restaurant-location-block p {
+    margin: 0;
+    font-weight: 300;
+    padding-bottom: 0.3em;
+}
+
+div.preview-section ul {
+    display: flex;
+}
+
+div.preview-section ul li p {
+    margin: 0;
+    line-height: 1.1rem;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+div.restaurant-info-block ul {
+    display: flex;
+}
+
+div.preview-container {
+    width: 3.5em;
+    height: 3.5em;
+}
+
+div.preview-container img {
+    height: 100%;
+    width: 100%;
+}
+
+div.preview-section ul li p.preview-money {
+    color: #33aa88;
 }

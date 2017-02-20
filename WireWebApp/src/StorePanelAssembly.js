@@ -242,28 +242,33 @@ export default class StorePanelAssembly extends Component {
                         country: "Canada",
                         state: "Ontario",
                         city: "Aurora",
+                        address: "2147 Meme Street",
                         distance: 24
                     },
+                    preview: true,
+                    showName: true,
+                    showPrice: true,
                     restaurant: [
                         {
                             name: "McNuggets",
-                            description: "",
-                            price: 1200
+                            price: 1200,
+                            photo: require("./res/stubPreviewPic.jpg")
                         },
                         {
                             name: "Big Mac",
                             description: "Is a giant Big Mac still a Big Mac.",
-                            price: 800
+                            price: 800,
+                            photo: require("./res/stubPreviewPic.jpg")
                         },
                         {
                             name: "McChicken",
-                            description: "",
                             price: 600
                         },
                         {
                             name: "Zuckerburger",
                             description: "Made from real Marks",
-                            price: 99999
+                            price: 99999,
+                            photo: require("./res/stubPreviewPic.jpg")
                         }
                     ]
                 }
@@ -356,6 +361,41 @@ class Posting extends Component {
                     <li className="values">
                         {posting.auction.buyout ? <p>{func.formatMoney(posting.auction.buyout)}</p> : null}
                         {posting.auction.minBid ? <p>{func.formatMoney(posting.auction.minBid)}</p> : null}
+                    </li>
+                </ul>
+            </div>
+        ) : posting.type === "restaurant" ? (
+            <div className="restaurant-info-block">
+                <ul>
+                    {posting.preview ? (
+                        <li>
+                            <div className="preview-section">
+                                <ul>
+                                    {posting.restaurant.map((item) => {
+                                        return (
+                                            <li key={item.name}>
+                                                <div className="preview-container">
+                                                    {item.photo ? (
+                                                        <img src={item.photo} alt="preview"/>
+                                                    ) : null}
+                                                </div>
+                                                {posting.showName && item.name ? (
+                                                    <p>{item.name}</p>
+                                                ) : null}
+                                                {posting.showPrice && item.price ? (
+                                                    <p className="preview-money">
+                                                        {func.formatMoney(item.price)}
+                                                    </p>
+                                                ) : null}
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </div>
+                        </li>
+                    ) : null}
+                    <li className="restaurant-location-block">
+                        <p>{posting.location.address}</p>
                     </li>
                 </ul>
             </div>
