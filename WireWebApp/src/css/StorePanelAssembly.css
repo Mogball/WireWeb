@@ -193,6 +193,9 @@
 li.posting-description-toplevel {
     flex: 1;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .posting-text-info {
@@ -222,10 +225,8 @@ li.posting-description-toplevel {
 }
 
 .posting-type-info {
-    position: absolute;
-    bottom: 0;
-    right: 0;
     margin: 0 1em 0.5em 1em;
+    align-self: stretch;
 }
 
 .posting-price {
@@ -316,14 +317,33 @@ div.restaurant-info-block li.restaurant-location-block {
     justify-content: flex-end;
 }
 
+div.restaurant-info-block ul li:not(.restaurant-location-block) {
+    flex: 1;
+    padding-right: 1em;
+}
+
+div.restaurant-info-block ul {
+    display: flex;
+}
+
 div.restaurant-info-block li.restaurant-location-block p {
     margin: 0;
     font-weight: 300;
     padding-bottom: 0.3em;
+    white-space: nowrap;
 }
 
 div.preview-section ul {
     display: flex;
+    justify-content: space-between;
+}
+
+div.preview-section ul li div {
+    margin: auto;
+}
+
+div.preview-section ul li {
+    padding: 0 !important;
 }
 
 div.preview-section ul li p {
@@ -335,16 +355,18 @@ div.preview-section ul li p {
 
 div.restaurant-info-block ul {
     display: flex;
+    justify-content: space-between;
 }
 
 div.preview-container {
-    width: 3.5em;
-    height: 3.5em;
+    width: 48px;
+    height: 48px;
 }
 
 div.preview-container img {
     height: 100%;
     width: 100%;
+    border-radius: 0.5em;
 }
 
 div.preview-section ul li p.preview-money {

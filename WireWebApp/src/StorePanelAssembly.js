@@ -87,41 +87,47 @@ export default class StorePanelAssembly extends Component {
                     + " Ryan Pelchat's Swag Store.",
                     thumbnail: null,
 
-                    hideUser: true,
+                    hideUser: false,
                     location: {
                         country: "Equinox",
                         state: "Harvestar Kingdom",
                         city: "Malakath",
+                        address: "123 Easy Rd",
                         distance: 67000425
                     },
+                    preview: true,
                     retail: [
                         {
                             name: "Swag1",
                             description: "Lorem ipsum dolor sit amet, consectetur adipiscing " +
                             "elit. Aenean nisl nibh, rhoncus faucibus nunc at, pretium fringilla " +
                             "augue. Vestibulum nec pharetra diam, vitae elementum purus.",
-                            price: 3500
+                            price: 3500,
+                            photo: require("./res/stubPreviewPic.jpg")
                         },
                         {
                             name: "Swag2",
                             description: "Lorem ipsum dolor sit amet, consectetur adipiscing " +
                             "elit. Aenean nisl nibh, rhoncus faucibus nunc at, pretium fringilla " +
                             "augue. Vestibulum nec pharetra diam, vitae elementum purus.",
-                            price: 5000
+                            price: 5000,
+                            photo: require("./res/stubPreviewPic.jpg")
                         },
                         {
                             name: "Swag3",
                             description: "Lorem ipsum dolor sit amet, consectetur adipiscing " +
                             "elit. Aenean nisl nibh, rhoncus faucibus nunc at, pretium fringilla " +
                             "augue. Vestibulum nec pharetra diam, vitae elementum purus.",
-                            price: 7000
+                            price: 7000,
+                            photo: require("./res/stubPreviewPic.jpg")
                         },
                         {
                             name: "Swag4",
                             description: "Lorem ipsum dolor sit amet, consectetur adipiscing " +
                             "elit. Aenean nisl nibh, rhoncus faucibus nunc at, pretium fringilla " +
                             "augue. Vestibulum nec pharetra diam, vitae elementum purus.",
-                            price: 3000
+                            price: 3000,
+                            photo: require("./res/stubPreviewPic.jpg")
                         }
                     ]
                 },
@@ -246,8 +252,6 @@ export default class StorePanelAssembly extends Component {
                         distance: 24
                     },
                     preview: true,
-                    showName: true,
-                    showPrice: true,
                     restaurant: [
                         {
                             name: "McNuggets",
@@ -269,7 +273,43 @@ export default class StorePanelAssembly extends Component {
                             description: "Made from real Marks",
                             price: 99999,
                             photo: require("./res/stubPreviewPic.jpg")
-                        }
+                        },
+                        {
+                            name: "Food1",
+                            description: "Lorem ipsum muindat nuggerfurger",
+                            price: 1000,
+                            photo: require("./res/stubPreviewPic.jpg")
+                        },
+                        {
+                            name: "Food2",
+                            description: "Lorem ipsum muindat nuggerfurger",
+                            price: 1000,
+                            photo: require("./res/stubPreviewPic.jpg")
+                        },
+                        {
+                            name: "Food3",
+                            description: "Lorem ipsum muindat nuggerfurger",
+                            price: 1000,
+                            photo: require("./res/stubPreviewPic.jpg")
+                        },
+                        {
+                            name: "Food4",
+                            description: "Lorem ipsum muindat nuggerfurger",
+                            price: 1000,
+                            photo: require("./res/stubPreviewPic.jpg")
+                        },
+                        {
+                            name: "Food5",
+                            description: "Lorem ipsum muindat nuggerfurger",
+                            price: 1000,
+                            photo: require("./res/stubPreviewPic.jpg")
+                        },
+                        {
+                            name: "Food6",
+                            description: "Lorem ipsum muindat nuggerfurger",
+                            price: 1000,
+                            photo: require("./res/stubPreviewPic.jpg")
+                        },
                     ]
                 }
             ]
@@ -353,7 +393,7 @@ class Posting extends Component {
             <div className="auction-info-block">
                 {posting.auction.current ? <p className="values">{func.formatMoney(posting.auction.current)}</p> : null}
                 {posting.auction.current ? <p className="labels">Current offer</p> : null}
-                <ul>
+                <ul className="right">
                     <li className="labels">
                         {posting.auction.buyout ? <p>Buy now</p> : null}
                         {posting.auction.minBid ? <p>Minimum</p> : null}
@@ -367,33 +407,34 @@ class Posting extends Component {
         ) : posting.type === "restaurant" ? (
             <div className="restaurant-info-block">
                 <ul>
-                    {posting.preview ? (
-                        <li>
-                            <div className="preview-section">
-                                <ul>
-                                    {posting.restaurant.map((item) => {
-                                        return (
-                                            <li key={item.name}>
-                                                <div className="preview-container">
-                                                    {item.photo ? (
-                                                        <img src={item.photo} alt="preview"/>
-                                                    ) : null}
-                                                </div>
-                                                {posting.showName && item.name ? (
-                                                    <p>{item.name}</p>
-                                                ) : null}
-                                                {posting.showPrice && item.price ? (
-                                                    <p className="preview-money">
-                                                        {func.formatMoney(item.price)}
-                                                    </p>
-                                                ) : null}
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
-                            </div>
-                        </li>
-                    ) : null}
+                    <li>
+                        <div className="preview-section"
+                             id={"toplevelLI:" + posting.type + ":" + posting.id}>
+                            {posting.preview ? (
+                                <RestaurantPreview
+                                    parentId={"toplevelLI:" + posting.type + ":" + posting.id}
+                                    restaurant={posting.restaurant}/>
+                            ) : null}
+                        </div>
+                    </li>
+                    <li className="restaurant-location-block">
+                        <p>{posting.location.address}</p>
+                    </li>
+                </ul>
+            </div>
+        ) : posting.type === "retailStore" ? (
+            <div className="restaurant-info-block">
+                <ul>
+                    <li>
+                        <div className="preview-section"
+                             id={"toplevelLI:" + posting.type + ":" + posting.id}>
+                            {posting.preview ? (
+                                <RestaurantPreview
+                                    parentId={"toplevelLI:" + posting.type + ":" + posting.id}
+                                    restaurant={posting.retail}/>
+                            ) : null}
+                        </div>
+                    </li>
                     <li className="restaurant-location-block">
                         <p>{posting.location.address}</p>
                     </li>
@@ -401,8 +442,9 @@ class Posting extends Component {
             </div>
         ) : null;
         return (
-            <li className={"posting-toplevel "
-            + (this.state.clicked ? "active " : "") + "z-depth-1 waves-effect"}
+            <li id={posting.type + ":" + posting.id}
+                className={"posting-toplevel "
+                + (this.state.clicked ? "active " : "") + "z-depth-1 waves-effect"}
                 onMouseDown={this.clickedIn} onMouseUp={this.clickedOut}
                 onMouseLeave={this.clickedOut}>
                 <div className="posting-info-container">
@@ -511,6 +553,63 @@ class AccountDisplay extends Component {
                     </div>
                 </div>
             </div>
+        );
+    }
+}
+
+class RestaurantPreview extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {previews: 0};
+        this.calculatePreviews = this.calculatePreviews.bind(this);
+    }
+
+    componentDidMount() {
+        this.calculatePreviews();
+        window.addEventListener('resize', this.calculatePreviews);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.calculatePreviews);
+    }
+
+    calculatePreviews() {
+        const element = this.refs[this.props.restaurant[0].name];
+        if (element) {
+            const style = element.currentStyle || window.getComputedStyle(element);
+            if (style.marginRight.charAt(0) === '0') {
+                this.setState({previews: this.state.previews - 1});
+                return;
+            }
+        }
+        const width = document.getElementById(this.props.parentId).offsetWidth;
+        const nextPreviews = Math.floor(width / 48);
+        if (this.state.previews !== nextPreviews) {
+            this.setState({previews: nextPreviews});
+        }
+    }
+
+    render() {
+        const previewBlock = [];
+        var i = 0, index = 0;
+        while (i < this.state.previews && this.props.restaurant[index] && index < 100) {
+            if (this.props.restaurant[index].photo) {
+                previewBlock.push(
+                    <li key={this.props.restaurant[index].name}>
+                        <div className="preview-container"
+                             ref={this.props.restaurant[index].name}>
+                            <img alt="preview" src={this.props.restaurant[index].photo}/>
+                        </div>
+                    </li>
+                );
+                i++;
+            }
+            index++;
+        }
+        return (
+            <ul>
+                {previewBlock}
+            </ul>
         );
     }
 }
