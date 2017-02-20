@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bd7f4af-f454-4970-b09b-58749549e208" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/stubPostingPic.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/StoreActionBar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/StoreHeader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/css/StorePanelAssembly.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/res/mingYao.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AccountPanel.js" afterPath="$PROJECT_DIR$/src/AccountPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dashboard.js" afterPath="$PROJECT_DIR$/src/Dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PanelAssembly.js" afterPath="$PROJECT_DIR$/src/PanelAssembly.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/StorePanelAssembly.js" afterPath="$PROJECT_DIR$/src/StorePanelAssembly.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config.js" afterPath="$PROJECT_DIR$/src/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/AccountActionPanel.css" afterPath="$PROJECT_DIR$/src/css/AccountActionPanel.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/MenuPanel.css" afterPath="$PROJECT_DIR$/src/css/MenuPanel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/StorePanelAssembly.css" afterPath="$PROJECT_DIR$/src/css/StorePanelAssembly.css" />
     </list>
     <ignored path="WireWebApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,18 +32,17 @@
           <file leaf-file-name="StorePanelAssembly.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/StorePanelAssembly.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="544">
-                  <caret line="323" column="61" selection-start-line="323" selection-start-column="61" selection-end-line="323" selection-end-column="61" />
+                <state relative-caret-position="573">
+                  <caret line="315" column="34" selection-start-line="315" selection-start-column="34" selection-end-line="315" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
-                    <element signature="e#317#1389#0" expanded="false" />
-                    <element signature="e#1407#2439#0" expanded="false" />
-                    <element signature="e#2457#5490#0" expanded="false" />
-                    <element signature="e#3750#5472#0" expanded="false" />
-                    <element signature="e#5508#6636#0" expanded="false" />
-                    <element signature="e#6654#7749#0" expanded="false" />
-                    <element signature="e#7767#9843#0" expanded="false" />
-                    <element signature="e#9008#9825#0" expanded="false" />
+                    <element signature="e#1396#2439#0" expanded="false" />
+                    <element signature="e#2457#5488#0" expanded="false" />
+                    <element signature="e#3748#5470#0" expanded="false" />
+                    <element signature="e#5506#6634#0" expanded="false" />
+                    <element signature="e#6652#7747#0" expanded="false" />
+                    <element signature="e#7765#9841#0" expanded="false" />
+                    <element signature="e#9006#9823#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -68,8 +55,8 @@
           <file leaf-file-name="StorePanelAssembly.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/css/StorePanelAssembly.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1438">
-                  <caret line="171" column="16" selection-start-line="171" selection-start-column="16" selection-end-line="171" selection-end-column="16" />
+                <state relative-caret-position="656">
+                  <caret line="201" column="27" selection-start-line="201" selection-start-column="27" selection-end-line="201" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -329,12 +316,12 @@
       <workItem from="1487340025335" duration="16245000" />
       <workItem from="1487381566119" duration="7807000" />
       <workItem from="1487425376945" duration="47698000" />
-      <workItem from="1487517596531" duration="26604000" />
+      <workItem from="1487517596531" duration="29227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158521000" />
+    <option name="totallyTimeSpent" value="161144000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -372,7 +359,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -708,26 +695,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/css/StorePanelAssembly.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1438">
-          <caret line="171" column="16" selection-start-line="171" selection-start-column="16" selection-end-line="171" selection-end-column="16" />
+        <state relative-caret-position="656">
+          <caret line="201" column="27" selection-start-line="201" selection-start-column="27" selection-end-line="201" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StorePanelAssembly.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="323" column="61" selection-start-line="323" selection-start-column="61" selection-end-line="323" selection-end-column="61" />
+        <state relative-caret-position="573">
+          <caret line="315" column="34" selection-start-line="315" selection-start-column="34" selection-end-line="315" selection-end-column="34" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#317#1389#0" expanded="false" />
-            <element signature="e#1407#2439#0" expanded="false" />
-            <element signature="e#2457#5490#0" expanded="false" />
-            <element signature="e#3750#5472#0" expanded="false" />
-            <element signature="e#5508#6636#0" expanded="false" />
-            <element signature="e#6654#7749#0" expanded="false" />
-            <element signature="e#7767#9843#0" expanded="false" />
-            <element signature="e#9008#9825#0" expanded="false" />
+            <element signature="e#1396#2439#0" expanded="false" />
+            <element signature="e#2457#5488#0" expanded="false" />
+            <element signature="e#3748#5470#0" expanded="false" />
+            <element signature="e#5506#6634#0" expanded="false" />
+            <element signature="e#6652#7747#0" expanded="false" />
+            <element signature="e#7765#9841#0" expanded="false" />
+            <element signature="e#9006#9823#0" expanded="false" />
           </folding>
         </state>
       </provider>

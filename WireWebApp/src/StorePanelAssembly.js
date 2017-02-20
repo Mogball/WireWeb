@@ -28,7 +28,7 @@ export default class StorePanelAssembly extends Component {
                     type: "singleItem",
                     title: "Rare Draemora Artifact",
                     description: "Found lying on the side of the road,"
-                    + "emanates strong energy when near magnets.",
+                    + " turns pigs into flying sheep.",
                     thumbnail: require("./res/stubPostingPic.png"),
 
                     price: 35000
@@ -53,8 +53,8 @@ export default class StorePanelAssembly extends Component {
                     },
                     type: "singleItem",
                     title: "Ouroboros energy orb",
-                    description: "One of the twelve needed to complete the"
-                    + "the Ouroboros.",
+                    description: "Place it near fires and a genie will appear to "
+                    + "eat your children.",
                     thumbnail: require("./res/stubPostingPic.png"),
 
                     price: 600000
@@ -80,7 +80,7 @@ export default class StorePanelAssembly extends Component {
                     type: "retailStore",
                     title: "Ryan Pelchat's Swag Store",
                     description: "Find the sickest swag you'll ever see at"
-                    + "at Ryan Pelchat's Swag Store.",
+                    + " Ryan Pelchat's Swag Store.",
                     thumbnail: null,
 
                     hideUser: true,
@@ -297,15 +297,26 @@ class Posting extends Component {
         ) : (
             <PostingAccountDisplay user={user} posting={this}/>
         );
+        const thumbnail = !posting.thumbnail ? null : (
+            <div className="photo-container">
+                <img src={posting.thumbnail} alt="thumbnail"/>
+            </div>
+        );
         return (
             <li className={"posting-toplevel "
             + (this.state.clicked ? "active " : "") + "z-depth-1 waves-effect"}
                 onMouseDown={this.clickedIn} onMouseUp={this.clickedOut}
                 onMouseLeave={this.clickedOut}>
                 <div className="posting-info-container">
-                    <div className="photo-container">
-                        <img src={posting.thumbnail}/>
-                    </div>
+                    <ul>
+                        <li>{thumbnail}</li>
+                        <li>
+                            <div className="posting-text-info">
+                                <h5>{posting.title}</h5>
+                                <p>{posting.description}</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 {sideDisplay}
             </li>
