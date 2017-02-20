@@ -11,11 +11,14 @@ export default class StoreActionBar extends Component {
     }
 
     focusSearch() {
+        this.refs.searchField.setSelectionRange(0, this.refs.searchField.value.length);
         this.setState({searchFocus: true});
     }
 
     focusOutSearch() {
-        this.setState({searchFocus: false});
+        if (this.refs.searchField.value === "") {
+            this.setState({searchFocus: false});
+        }
     }
 
     render() {
