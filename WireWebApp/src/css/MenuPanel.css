@@ -147,7 +147,6 @@
 .add-button:active {
     -webkit-transition: ease-out 0.15s;
     -moz-transition: ease-out 0.15s;
-    -ms-transition: ease-out 0.15s;
     -o-transition: ease-out 0.15s;
     transition: ease-out 0.15s;
 }
@@ -158,8 +157,8 @@
 }
 
 .remove-popup-item-block {
-    max-width: 250px;
-    min-width: 170px;
+    max-width: 15em;
+    min-width: 11em;
     display: table;
     margin: auto;
     margin-top: 0.6em;

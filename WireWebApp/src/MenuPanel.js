@@ -136,7 +136,7 @@ class WalletItem extends Component {
         const balance = this.props.item.balance ? func.formatMoney(this.props.item.balance) : "";
         return (
             <div onClick={this.clicked}
-                 className="wallet-item-toplevel">
+                 className="wallet-item-toplevel waves-effect">
                 <div className="item-name">
                     <p>{name}</p>
                 </div>
@@ -217,7 +217,7 @@ class AddPopup extends Component {
 
     exit() {
         const radios = document.getElementsByName("group1");
-        for (var i = 0; i < radios.length; i++) {
+        for (let i = 0; i < radios.length; i++) {
             radios[i].checked = false;
         }
         this.forceUpdate();
@@ -226,7 +226,7 @@ class AddPopup extends Component {
     }
 
     empty() {
-        for (var i = 1; i <= 8; i++) {
+        for (let i = 1; i <= 8; i++) {
             const name = "field" + i;
             if (this.refs[name]) {
                 this.refs[name].value = "";
@@ -235,10 +235,10 @@ class AddPopup extends Component {
     }
 
     render() {
-        var optionFields;
+        let optionFields;
         const radios = document.getElementsByName("group1");
-        var value;
-        for (var i = 0; i < radios.length; i++) {
+        let value;
+        for (let i = 0; i < radios.length; i++) {
             if (radios[i].checked) {
                 value = radios[i].value;
                 break;
@@ -309,7 +309,7 @@ class AddPopup extends Component {
                             </div>
                             <div className="add-wallet-item">
                                 <div className="add-options" onClick={this.clicked}>
-                                    <form ref="addForm" style={{minHeight: 110, minWidth: 130}}>
+                                    <form ref="addForm" style={{minHeight: "8em", minWidth: "8.7em"}}>
                                         <p>
                                             <input
                                                 onClick={this.empty}

@@ -282,7 +282,7 @@ class WalletDisplayItem extends Component {
         return (
             <div
                 onClick={this.itemClicked}
-                className={"wallet-item-toplevel display-item"
+                className={"wallet-item-toplevel display-item waves-effect"
                 + (this.props.clickedItem === this.props.item.name ? " active" : "")}>
                 <div className="item-name">
                     <p>{name}</p>
