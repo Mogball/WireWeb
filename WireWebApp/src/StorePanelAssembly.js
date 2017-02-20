@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import StoreHeader from './StoreHeader';
 import StoreActionBar from './StoreActionBar';
 import './css/StorePanelAssembly.css';
+import func from './helper';
 
 export default class StorePanelAssembly extends Component {
     static get defaultProps() {
@@ -16,6 +17,7 @@ export default class StorePanelAssembly extends Component {
                         email: "j.mcarthur@gmail.com",
                         phone: "19056662341",
                         reputation: 93,
+                        ratings: 23,
                         location: {
                             country: "Canada",
                             state: "Ontario",
@@ -42,6 +44,7 @@ export default class StorePanelAssembly extends Component {
                         email: "",
                         phone: "17673342314",
                         reputation: 75,
+                        ratings: 185,
                         location: {
                             country: "Canada",
                             state: "Ontario",
@@ -55,7 +58,7 @@ export default class StorePanelAssembly extends Component {
                     title: "Ouroboros energy orb",
                     description: "Place it near fires and a genie will appear to "
                     + "eat your children.",
-                    thumbnail: require("./res/stubPostingPic.png"),
+                    thumbnail: null,
 
                     price: 600000
                 },
@@ -68,6 +71,7 @@ export default class StorePanelAssembly extends Component {
                         email: "ryan.pelchat@hotmail.com",
                         phone: "",
                         reputation: 45,
+                        ratings: 654,
                         location: {
                             country: "Equinox",
                             state: "Harvestar Kingdom",
@@ -130,6 +134,7 @@ export default class StorePanelAssembly extends Component {
                         email: "forerunner.adyen@enclave.pro",
                         phone: "14253344521",
                         reputation: 10,
+                        ratings: 2,
                         location: {
                             country: "Prothean Fleet",
                             state: "Starship Meldorne",
@@ -142,11 +147,41 @@ export default class StorePanelAssembly extends Component {
                     type: "auction",
                     title: "Some powerful item",
                     description: "Buy it because it's so stronk.",
-                    thumbnail: require("./res/stubPostingPic.png"),
+                    thumbnail: null,
 
                     auction: {
                         minBid: 2000,
                         current: 4000
+                    }
+                },
+                {
+                    id: "572048175624",
+                    user: {
+                        firstName: "Forerunner",
+                        lastName: "Adyen",
+                        uid: "593432432903",
+                        email: "forerunner.adyen@enclave.pro",
+                        phone: "14253344521",
+                        reputation: 10,
+                        ratings: 2,
+                        location: {
+                            country: "Prothean Fleet",
+                            state: "Starship Meldorne",
+                            city: "Sector 1A-78",
+                            distance: 44535253124
+                        },
+                        photo: require("./res/stubProfilePic.jpg"),
+                        completion: 10
+                    },
+                    type: "auction",
+                    title: "A giant donut",
+                    description: "Gimme some of that lorem ipsum.",
+                    thumbnail: require("./res/stubPostingPic.png"),
+
+                    auction: {
+                        minBid: 1250,
+                        current: 3530,
+                        buyout: 10020
                     }
                 },
                 {
@@ -158,6 +193,7 @@ export default class StorePanelAssembly extends Component {
                         email: "forerunner.adyen@enclave.pro",
                         phone: "14253344521",
                         reputation: 10,
+                        ratings: 2,
                         location: {
                             country: "Prothean Fleet",
                             state: "Starship Meldorne",
@@ -173,7 +209,8 @@ export default class StorePanelAssembly extends Component {
                     thumbnail: require("./res/stubPostingPic.png"),
 
                     auction: {
-                        current: 4000
+                        current: 4000,
+                        buyout: 10000
                     }
                 },
                 {
@@ -185,6 +222,7 @@ export default class StorePanelAssembly extends Component {
                         email: "emeritus.pachementyke@terran.cdn",
                         phone: "11111111111",
                         reputation: 100,
+                        ratings: 128,
                         location: {
                             country: "Terran Confederation",
                             state: "Hyperion",
@@ -197,7 +235,7 @@ export default class StorePanelAssembly extends Component {
                     type: "restaurant",
                     title: "McDonald's",
                     description: "The crispiest McNuggets you'll ever taste.",
-                    thumbnail: null,
+                    thumbnail: require("./res/stubPostingPic.png"),
 
                     hideUser: true,
                     location: {
@@ -302,6 +340,26 @@ class Posting extends Component {
                 <img src={posting.thumbnail} alt="thumbnail"/>
             </div>
         );
+        const typeInfo = posting.type === "singleItem" ? (
+            <div style={{textAlign: 'right'}}>
+                <p className="posting-price">{func.formatMoney(posting.price)}</p>
+            </div>
+        ) : posting.type === "auction" ? (
+            <div className="auction-info-block">
+                {posting.auction.current ? <p className="values">{func.formatMoney(posting.auction.current)}</p> : null}
+                {posting.auction.current ? <p className="labels">Current offer</p> : null}
+                <ul>
+                    <li className="labels">
+                        {posting.auction.buyout ? <p>Buy now</p> : null}
+                        {posting.auction.minBid ? <p>Minimum</p> : null}
+                    </li>
+                    <li className="values">
+                        {posting.auction.buyout ? <p>{func.formatMoney(posting.auction.buyout)}</p> : null}
+                        {posting.auction.minBid ? <p>{func.formatMoney(posting.auction.minBid)}</p> : null}
+                    </li>
+                </ul>
+            </div>
+        ) : null;
         return (
             <li className={"posting-toplevel "
             + (this.state.clicked ? "active " : "") + "z-depth-1 waves-effect"}
@@ -310,10 +368,22 @@ class Posting extends Component {
                 <div className="posting-info-container">
                     <ul>
                         <li>{thumbnail}</li>
-                        <li>
+                        <li className="posting-description-toplevel">
                             <div className="posting-text-info">
-                                <h5>{posting.title}</h5>
+                                <ul>
+                                    <li className="posting-title-container">
+                                        <h5>{posting.title}</h5>
+                                    </li>
+                                    <li>
+                                        <div className="type-tag">
+                                            {func.mapTypeToLabel(posting.type)}
+                                        </div>
+                                    </li>
+                                </ul>
                                 <p>{posting.description}</p>
+                            </div>
+                            <div className="posting-type-info">
+                                {typeInfo}
                             </div>
                         </li>
                     </ul>
@@ -334,9 +404,12 @@ const PostingAccountDisplay = function (props) {
                                     accountPhoto={user.photo}
                                     posting={props.posting}/>
                     <h6>{"{0} {1}".format(user.firstName, user.lastName)}</h6>
-                    <div className="reputation-bar z-depth-1">
-                        <div className="reputation-bar-filled"
-                             style={{width: user.reputation + "%"}}/>
+                    <div className="reputation-container">
+                        <div className="reputation-bar z-depth-1">
+                            <div className="reputation-bar-filled"
+                                 style={{width: user.reputation + "%"}}/>
+                        </div>
+                        <p>{user.ratings}</p>
                     </div>
                 </div>
             </div>
@@ -352,7 +425,6 @@ const PostingRepDisplay = function (props) {
         </div>
     )
 };
-
 
 class AccountDisplay extends Component {
     constructor(props) {
@@ -386,11 +458,11 @@ class AccountDisplay extends Component {
                  onMouseEnter={this.props.posting.stopClick}
                  onMouseLeave={this.props.posting.startClick}>
                 <div className="block">
-                    <div className="profile-picture-assembly">
+                    <div className="profile-picture-assembly z-depth-1 waves-effect">
                         <canvas ref="accountProgress"/>
                         <div className="sub-block-1">
                             <div className="sub-block-2 small">
-                                <div className="profile-picture small waves-effect">
+                                <div className="profile-picture small">
                                     <img alt="profilePic"
                                          src={this.state.accountPhoto}/>
                                 </div>

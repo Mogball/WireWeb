@@ -5,6 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/StorePanelAssembly.js" afterPath="$PROJECT_DIR$/src/StorePanelAssembly.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/StorePanelAssembly.css" afterPath="$PROJECT_DIR$/src/css/StorePanelAssembly.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/helper.js" afterPath="$PROJECT_DIR$/src/helper.js" />
     </list>
     <ignored path="WireWebApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,24 +27,44 @@
     <favorites_list name="WireWebApp" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.6222812">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
           <file leaf-file-name="StorePanelAssembly.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/StorePanelAssembly.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="573">
-                  <caret line="315" column="34" selection-start-line="315" selection-start-column="34" selection-end-line="315" selection-end-column="34" />
+                <state relative-caret-position="229">
+                  <caret line="127" column="16" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
-                    <element signature="e#1396#2439#0" expanded="false" />
-                    <element signature="e#2457#5488#0" expanded="false" />
-                    <element signature="e#3748#5470#0" expanded="false" />
-                    <element signature="e#5506#6634#0" expanded="false" />
-                    <element signature="e#6652#7747#0" expanded="false" />
-                    <element signature="e#7765#9841#0" expanded="false" />
-                    <element signature="e#9006#9823#0" expanded="false" />
+                    <element signature="e#346#1444#0" expanded="false" />
+                    <element signature="e#1462#2512#0" expanded="false" />
+                    <element signature="e#1530#2203#0" expanded="false" />
+                    <element signature="e#2530#5599#0" expanded="false" />
+                    <element signature="e#5617#6750#0" expanded="false" />
+                    <element signature="e#5685#6411#0" expanded="false" />
+                    <element signature="e#6768#7967#0" expanded="false" />
+                    <element signature="e#7985#9155#0" expanded="false" />
+                    <element signature="e#9173#11318#0" expanded="false" />
+                    <element signature="e#10483#11300#0" expanded="false" />
+                    <element signature="e#11364#12206#0" expanded="false" />
+                    <element signature="n#!!block;n#constructor#0;n#Posting#0" expanded="false" />
+                    <element signature="n#!!block;n#clickedIn#0;n#Posting#0" expanded="false" />
+                    <element signature="n#!!block;n#clickedOut#0;n#Posting#0" expanded="false" />
+                    <element signature="n#!!block;n#stopClick#0;n#Posting#0" expanded="false" />
+                    <element signature="n#!!block;n#startClick#0;n#Posting#0" expanded="false" />
+                    <element signature="e#16961#17174#0" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="helper.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/helper.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1004">
+                  <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -55,8 +76,8 @@
           <file leaf-file-name="StorePanelAssembly.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/css/StorePanelAssembly.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="656">
-                  <caret line="201" column="27" selection-start-line="201" selection-start-column="27" selection-end-line="201" selection-end-column="27" />
+                <state relative-caret-position="333">
+                  <caret line="285" column="24" selection-start-line="285" selection-start-column="24" selection-end-line="285" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -66,7 +87,7 @@
             <entry file="file://$PROJECT_DIR$/src/css/materialize.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="396">
-                  <caret line="2585" column="4" selection-start-line="2585" selection-start-column="4" selection-end-line="2585" selection-end-column="4" />
+                  <caret line="2585" column="9" selection-start-line="2585" selection-start-column="9" selection-end-line="2585" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -101,7 +122,6 @@
         <option value="$PROJECT_DIR$/src/css/index.css" />
         <option value="$PROJECT_DIR$/../../WireMobile/app/DashboardHistoryScreen.js" />
         <option value="$PROJECT_DIR$/src/effects.js" />
-        <option value="$PROJECT_DIR$/src/helper.js" />
         <option value="$PROJECT_DIR$/src/css/PanelAssembly.css" />
         <option value="$PROJECT_DIR$/src/HomePanel.js" />
         <option value="$PROJECT_DIR$/src/css/TopLevelApp.css" />
@@ -125,6 +145,7 @@
         <option value="$PROJECT_DIR$/src/AccountPanel.js" />
         <option value="$PROJECT_DIR$/src/StoreActionBar.js" />
         <option value="$PROJECT_DIR$/src/StoreHeader.js" />
+        <option value="$PROJECT_DIR$/src/helper.js" />
         <option value="$PROJECT_DIR$/src/css/materialize.css" />
         <option value="$PROJECT_DIR$/src/css/StorePanelAssembly.css" />
         <option value="$PROJECT_DIR$/src/StorePanelAssembly.js" />
@@ -316,12 +337,12 @@
       <workItem from="1487340025335" duration="16245000" />
       <workItem from="1487381566119" duration="7807000" />
       <workItem from="1487425376945" duration="47698000" />
-      <workItem from="1487517596531" duration="29227000" />
+      <workItem from="1487517596531" duration="35990000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161144000" />
+    <option name="totallyTimeSpent" value="167907000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -359,7 +380,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -451,14 +472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/helper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -661,14 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/materialize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="2585" column="4" selection-start-line="2585" selection-start-column="4" selection-end-line="2585" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/AccountPanel.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2013">
@@ -693,27 +698,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/helper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1004">
+          <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/materialize.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="2585" column="9" selection-start-line="2585" selection-start-column="9" selection-end-line="2585" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/StorePanelAssembly.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="201" column="27" selection-start-line="201" selection-start-column="27" selection-end-line="201" selection-end-column="27" />
+        <state relative-caret-position="333">
+          <caret line="285" column="24" selection-start-line="285" selection-start-column="24" selection-end-line="285" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StorePanelAssembly.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="315" column="34" selection-start-line="315" selection-start-column="34" selection-end-line="315" selection-end-column="34" />
+        <state relative-caret-position="229">
+          <caret line="127" column="16" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#1396#2439#0" expanded="false" />
-            <element signature="e#2457#5488#0" expanded="false" />
-            <element signature="e#3748#5470#0" expanded="false" />
-            <element signature="e#5506#6634#0" expanded="false" />
-            <element signature="e#6652#7747#0" expanded="false" />
-            <element signature="e#7765#9841#0" expanded="false" />
-            <element signature="e#9006#9823#0" expanded="false" />
+            <element signature="e#346#1444#0" expanded="false" />
+            <element signature="e#1462#2512#0" expanded="false" />
+            <element signature="e#1530#2203#0" expanded="false" />
+            <element signature="e#2530#5599#0" expanded="false" />
+            <element signature="e#5617#6750#0" expanded="false" />
+            <element signature="e#5685#6411#0" expanded="false" />
+            <element signature="e#6768#7967#0" expanded="false" />
+            <element signature="e#7985#9155#0" expanded="false" />
+            <element signature="e#9173#11318#0" expanded="false" />
+            <element signature="e#10483#11300#0" expanded="false" />
+            <element signature="e#11364#12206#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#Posting#0" expanded="false" />
+            <element signature="n#!!block;n#clickedIn#0;n#Posting#0" expanded="false" />
+            <element signature="n#!!block;n#clickedOut#0;n#Posting#0" expanded="false" />
+            <element signature="n#!!block;n#stopClick#0;n#Posting#0" expanded="false" />
+            <element signature="n#!!block;n#startClick#0;n#Posting#0" expanded="false" />
+            <element signature="e#16961#17174#0" expanded="false" />
           </folding>
         </state>
       </provider>

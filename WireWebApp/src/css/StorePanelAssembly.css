@@ -72,20 +72,16 @@
 }
 
 .sub-block-2.small {
-    width: 90%;
-    height: 90%;
+    width: 87%;
+    height: 87%;
 }
 
 .profile-picture.small {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12),
-    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: none !important;
 }
 
 .profile-picture.small:hover {
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
-    0 1px 7px 0 rgba(0, 0, 0, 0.12),
-    0 3px 1px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: none !important;
 }
 
 .posting-toplevel {
@@ -151,7 +147,7 @@
 .reputation-bar {
     height: 0.5em;
     border-radius: 0.15em;
-    margin: 0.5em 0.7em 0.2em 0.7em;
+    margin: 0.5em 0.7em 0.3em 0.7em;
     background-color: rgba(0, 0, 0, 0.05);
     position: relative;
 }
@@ -160,6 +156,7 @@
     height: auto;
     width: 0.5em;
     margin: 1em;
+    margin-left: 0;
 }
 
 .reputation-bar-filled {
@@ -190,6 +187,12 @@
 .posting-toplevel div.posting-info-container ul {
     margin: 0;
     display: flex;
+    height: 100%;
+}
+
+li.posting-description-toplevel {
+    flex: 1;
+    position: relative;
 }
 
 .posting-text-info {
@@ -199,10 +202,105 @@
 .posting-text-info h5 {
     font-weight: 200;
     font-size: 1.5rem;
-    margin: 0.5em 0 0.5em 0;
+    margin: 11px 0 6px 0;
 }
 
 .posting-text-info p {
     font-weight: 300;
     margin: 0;
+}
+
+.reputation-container {
+    text-align: center;
+}
+
+.reputation-container p {
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1rem;
+}
+
+.posting-type-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 1em 0.5em 1em;
+}
+
+.posting-price {
+    margin: 0;
+    color: #33aa88;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.posting-text-info ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+li.posting-title-container {
+    flex: 1;
+}
+
+.posting-text-info ul li div.type-tag {
+    font-weight: 200;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0 1em 0 1em;
+    border-radius: 1em;
+    margin: 11px 0 6px 0;
+    line-height: 1.3rem;
+}
+
+.posting-text-info ul li:not(.posting-title-container) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture-assembly.z-depth-1:hover {
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
+    0 1px 7px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.profile-picture-assembly.z-depth-1:active {
+    box-shadow: none !important;
+}
+
+div.auction-info-block ul li:not(.values) {
+    padding-right: 0.5em;
+}
+
+div.auction-info-block ul li p {
+    margin: 0;
+    font-weight: 300;
+    padding-bottom: 0.1em;
+}
+
+
+div.auction-info-block ul li {
+    padding: 0.5em 0 0.1em 0;
+}
+
+div.auction-info-block ul li.values {
+    color: #33aa88;
+}
+
+div.auction-info-block p {
+    font-weight: 300;
+    margin: 0;
+    text-align: right;
+    line-height: 1rem;
+    padding-bottom: 0.3em;
+}
+
+div.auction-info-block p.values {
+    color: #33aa88;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    padding-bottom: 0;
 }

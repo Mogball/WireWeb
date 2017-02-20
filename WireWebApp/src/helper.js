@@ -17,7 +17,22 @@ var formatComma = function (n, c) {
     var j = i.length > 3 ? i.length % 3 : 0;
     return s + (j ? i.substr(0, j) + ',' : '')
         + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1,");
-}
+};
+
+var mapTypeToLabel = function (type) {
+    switch (type) {
+        case "singleItem":
+            return "Item";
+        case "auction":
+            return "Auction";
+        case "retailStore":
+            return "Store";
+        case "restaurant":
+            return "Restaurant";
+        default:
+            return "Custom";
+    }
+};
 
 // eslint-disable-next-line
 String.prototype.format = function () {
@@ -44,3 +59,5 @@ var formatDate = function (date, showYear) {
 exports.formatMoney = formatMoney;
 exports.formatComma = formatComma;
 exports.formatDate = formatDate;
+
+exports.mapTypeToLabel = mapTypeToLabel;
