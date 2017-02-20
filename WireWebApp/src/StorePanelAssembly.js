@@ -18,6 +18,7 @@ export default class StorePanelAssembly extends Component {
                         phone: "19056662341",
                         reputation: 93,
                         ratings: 23,
+                        postings: 12,
                         location: {
                             country: "Canada",
                             state: "Ontario",
@@ -45,6 +46,7 @@ export default class StorePanelAssembly extends Component {
                         phone: "17673342314",
                         reputation: 75,
                         ratings: 185,
+                        postings: 6,
                         location: {
                             country: "Canada",
                             state: "Ontario",
@@ -72,6 +74,7 @@ export default class StorePanelAssembly extends Component {
                         phone: "",
                         reputation: 45,
                         ratings: 654,
+                        postings: 54,
                         location: {
                             country: "Equinox",
                             state: "Harvestar Kingdom",
@@ -141,6 +144,7 @@ export default class StorePanelAssembly extends Component {
                         phone: "14253344521",
                         reputation: 10,
                         ratings: 2,
+                        postings: 3,
                         location: {
                             country: "Prothean Fleet",
                             state: "Starship Meldorne",
@@ -170,6 +174,7 @@ export default class StorePanelAssembly extends Component {
                         phone: "14253344521",
                         reputation: 10,
                         ratings: 2,
+                        postings: 3,
                         location: {
                             country: "Prothean Fleet",
                             state: "Starship Meldorne",
@@ -200,6 +205,7 @@ export default class StorePanelAssembly extends Component {
                         phone: "14253344521",
                         reputation: 10,
                         ratings: 2,
+                        postings: 3,
                         location: {
                             country: "Prothean Fleet",
                             state: "Starship Meldorne",
@@ -229,6 +235,7 @@ export default class StorePanelAssembly extends Component {
                         phone: "11111111111",
                         reputation: 100,
                         ratings: 128,
+                        postings: 25,
                         location: {
                             country: "Terran Confederation",
                             state: "Hyperion",
@@ -236,7 +243,8 @@ export default class StorePanelAssembly extends Component {
                             distance: -1
                         },
                         photo: require('./res/stubProfilePic.jpg'),
-                        completion: 55
+                        completion: 55,
+
                     },
                     type: "restaurant",
                     title: "McDonald's",
@@ -316,9 +324,34 @@ export default class StorePanelAssembly extends Component {
         };
     }
 
+    constructor(props) {
+        super(props);
+        this.clickedOnProfile = this.clickedOnProfile.bind(this);
+        this.clickedOnPosting = this.clickedOnPosting.bind(this);
+    }
+
+    clickedOnProfile(user) {
+
+    }
+
+    clickedOnPosting(posting) {
+
+    }
+
+    componentDidMount() {
+        this.props.popupManager.addPopup("Test",
+            <ProfilePopup key={1} user={this.props.postings[0].user}/>
+        );
+        this.props.popupManager.showPopup("Test");
+    }
+
     render() {
         const postings = this.props.postings.map((posting) => {
-            return (<Posting key={posting.id} posting={posting}/>);
+            return (
+                <Posting key={posting.id} posting={posting}
+                         clickedOnProfile={this.clickedOnProfile}
+                         clickedOnPosting={this.clickedOnPosting}/>
+            );
         });
         return (
             <div className="store-assembly">
@@ -518,7 +551,17 @@ class AccountDisplay extends Component {
             accountCompletion: props.accountCompletion ? props.accountCompletion : 0,
             accountPhoto: props.accountPhoto ? props.accountPhoto : null
         };
-
+        this.classes = props.notSmall ? [
+            "profile-picture-container center-profile",
+            "profile-picture-assembly",
+            "sub-block-2",
+            "profile-picture waves-effect"
+        ] : [
+            "profile-picture-container small",
+            "profile-picture-assembly z-depth-1 waves-effect",
+            "sub-block-2 small",
+            "profile-picture small"
+        ];
         // Bind functions
     }
 
@@ -536,15 +579,15 @@ class AccountDisplay extends Component {
 
     render() {
         return (
-            <div className="profile-picture-container small"
-                 onMouseEnter={this.props.posting.stopClick}
-                 onMouseLeave={this.props.posting.startClick}>
+            <div className={this.classes[0]}
+                 onMouseEnter={this.props.posting ? this.props.posting.stopClick : null}
+                 onMouseLeave={this.props.posting ? this.props.posting.startClick : null}>
                 <div className="block">
-                    <div className="profile-picture-assembly z-depth-1 waves-effect">
+                    <div className={this.classes[1]}>
                         <canvas ref="accountProgress"/>
                         <div className="sub-block-1">
-                            <div className="sub-block-2 small">
-                                <div className="profile-picture small">
+                            <div className={this.classes[2]}>
+                                <div className={this.classes[3]}>
                                     <img alt="profilePic"
                                          src={this.state.accountPhoto}/>
                                 </div>
@@ -610,6 +653,99 @@ class RestaurantPreview extends Component {
             <ul>
                 {previewBlock}
             </ul>
+        );
+    }
+}
+
+class ProfilePopup extends Component {
+    constructor(props) {
+        super(props);
+        this.exit = this.exit.bind(this);
+    }
+
+    exit() {
+
+    }
+
+    render() {
+        const user = this.props.user;
+        return (
+            <PopupContainer popupId={user.id} exit={this.exit}>
+                <div className="posting-popup-toplevel z-depth-2">
+                    <div className="popup-close-button"/>
+                    <AccountDisplay
+                        notSmall={true}
+                        accountCompletion={user.completion}
+                        accountPhoto={user.photo}/>
+                    <h5>{user.firstName + " " + user.lastName}</h5>
+                    <div className="reputation-container">
+                        <div className="reputation-bar z-depth-1 big">
+                            <div className="reputation-bar-filled"
+                                 style={{width: user.reputation + "%"}}/>
+                        </div>
+                        <p className="big">{user.ratings}</p>
+                    </div>
+                    <div className="profile-popup-info-container">
+                        <div className="profile-popup-info-block">
+                            <ul>
+                                <li>
+                                    <div className="profile-popup-contact-info">
+                                        {user.phone ? <p>{user.phone}</p> : null}
+                                        {user.email ? <p>{user.email}</p> : null}
+                                    </div>
+                                </li>
+                                <li>
+                                    {user.location ? (
+                                        <div className="profile-popup-location-info">
+                                            {user.location.city ? <p>{user.location.city}</p> : null}
+                                            {user.location.state ? <p>{user.location.state}</p> : null}
+                                            {user.location.country ? <p>{user.location.country}</p> : null}
+                                        </div>
+                                    ) : null}
+                                </li>
+                            </ul>
+                            {user.postings > 0 ? (
+                                <p className="profile-other-postings">
+                                    {user.firstName + " has " + user.postings + " other posting"
+                                    + (user.postings > 1 ? "s" : "")}
+                                </p>
+                            ) : null}
+                            <div className="profile-other-calltoaction">
+                                <a className="button btn-large waves-effect waves-light">
+                                    See profile
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </PopupContainer>
+        );
+    }
+}
+
+class PopupContainer extends Component {
+    constructor(props) {
+        super(props);
+        this.exit = this.exit.bind(this);
+    }
+
+    exit() {
+        this.props.exit();
+    }
+
+    render() {
+        return (
+            <div id={this.props.popupId} className="popup-type-2 show">
+                <div className="popup-type-2-toplevel">
+                    <div className="popup-type-2-vertB" onClick={this.exit}/>
+                    <div className="popup-type-2-container">
+                        <div className="popup-type-2-vertB"/>
+                        {this.props.children}
+                        <div className="popup-type-2-vertB"/>
+                    </div>
+                    <div className="popup-type-2-vertB" onClick={this.exit}/>
+                </div>
+            </div>
         );
     }
 }

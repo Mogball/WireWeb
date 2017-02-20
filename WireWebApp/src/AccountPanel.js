@@ -264,7 +264,7 @@ class WalletDisplaySect extends Component {
     }
 }
 
-export class WalletDisplayItem extends Component {
+class WalletDisplayItem extends Component {
     constructor(props) {
         super(props);
         this.itemClicked = this.itemClicked.bind(this);

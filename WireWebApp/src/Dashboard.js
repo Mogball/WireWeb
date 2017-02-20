@@ -18,20 +18,15 @@ export default class Dashboard extends Component {
                 email: "emeritus.pachementyke@terran.cdn",
                 phone: "11111111111",
                 reputation: 100,
+                ratings: 128,
                 postings: 25,
                 location: {
                     country: "Terran Confederation",
                     state: "Hyperion",
                     city: "Prefecture 0",
-                    distance: -1
                 },
                 photo: require('./res/stubProfilePic.jpg'),
                 completion: 55
-            },
-            location: {
-                country: "Terran Confederation",
-                state: "Hyperion",
-                city: "Prefecture 0"
             },
             walletItems: [
                 {name: "The swag bank of swagland, xd xd", balance: 999999849599},
