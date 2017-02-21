@@ -334,7 +334,10 @@ export default class StorePanelAssembly extends Component {
     componentDidMount() {
         this.props.popupManager.addPopup("Profile",
             <ProfilePopup key="Profile" closePopup={this.closePopup}/>
-        )
+        );
+        this.props.popupManager.addPopup("Posting",
+            <PostingPopup key="Posting" closePopup={this.closePopup}/>
+        );
     }
 
     clickedOnProfile(user) {
@@ -346,7 +349,11 @@ export default class StorePanelAssembly extends Component {
     }
 
     clickedOnPosting(posting) {
-
+        this.props.popupManager.addPopup("Posting",
+            <PostingPopup key="Posting" posting={posting} closePopup={this.closePopup}/>
+        );
+        this.props.popupManager.showPopup("Posting");
+        document.getElementById("Posting").className = "popup-type-2 show";
     }
 
     closePopup(popup) {
@@ -393,10 +400,15 @@ class Posting extends Component {
         this.stopClick = this.stopClick.bind(this);
         this.startClick = this.startClick.bind(this);
         this.clickedOnProfile = this.clickedOnProfile.bind(this);
+        this.clickedOnPosting = this.clickedOnPosting.bind(this);
     }
 
     clickedOnProfile() {
         this.props.clickedOnProfile(this.props.posting.user);
+    }
+
+    clickedOnPosting() {
+        this.props.clickedOnPosting(this.props.posting);
     }
 
     clickedIn() {
@@ -493,7 +505,7 @@ class Posting extends Component {
                 className={"posting-toplevel "
                 + (this.state.clicked ? "active " : "") + "z-depth-1 waves-effect"}
                 onMouseDown={this.clickedIn} onMouseUp={this.clickedOut}
-                onMouseLeave={this.clickedOut}>
+                onMouseLeave={this.clickedOut} onClick={this.clickedOnPosting}>
                 <div className="posting-info-container">
                     <ul>
                         <li>{thumbnail}</li>
@@ -743,6 +755,38 @@ class ProfilePopup extends Component {
                     </div>) : null}
             </PopupContainer>
         );
+    }
+}
+
+class PostingPopup extends Component {
+    constructor(props) {
+        super(props);
+        this.exit = this.exit.bind(this);
+    }
+
+    exit() {
+        this.props.closePopup("Posting");
+    }
+
+    render() {
+        const posting = this.props.posting;
+        return (
+            <PopupContainer popupId="Posting" exit={this.exit}>
+                {posting ? (
+                    <div className="profile-popup-toplevel z-depth-2">
+                        <div className="popup-close-button">
+                            <i className="material-icons waves-effect"
+                               onClick={this.exit}>close</i>
+                        </div>
+
+
+                        <h1>{posting.title}</h1>
+
+
+                    </div>
+                ) : null}
+            </PopupContainer>
+        )
     }
 }
 
