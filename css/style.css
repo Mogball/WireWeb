@@ -6,6 +6,24 @@
  * Made By MaterializeCSS.com
  */
 
+li a.btn.header-btn {
+    height: 2.4em;
+    border-radius: 1.2em;
+    line-height: 2.4em;
+    font-weight: 400;
+    margin: 0 0.6em 0 0.6em;
+    padding: 0 1.5em 0 1.5em;
+    width: 7.4em;
+}
+
+.header-btn:active {
+    box-shadow: none !important;
+}
+
+.header-btn p {
+    margin: 0;
+}
+
 .icon-block {
     padding: 0 15px;
 }
@@ -75,7 +93,7 @@
 }
 
 .footer-page-link {
-    color: #e5e5fb;
+    color: #f5f5f5;
     -webkit-transition: ease-out 0.1s;
     -moz-transition: ease-out 0.1s;
     -o-transition: ease-out 0.1s;
@@ -89,6 +107,10 @@
     -moz-transition: ease-out 0.15s;
     -o-transition: ease-out 0.15s;
     transition: ease-out 0.15s;
+}
+
+.footer-page-link:active {
+    color: #f0f0f0;
 }
 
 .footer-category-label {
@@ -223,7 +245,7 @@
 }
 
 .container {
-    width: 83%;
+    width: 85%;
 }
 
 .header-nav-btns {
@@ -231,13 +253,17 @@
 }
 
 .header-nav-btns-btn {
-    margin-left: 15px;
 }
 
+
+
 .header-nav-btn {
-    font-size: 18px;
-    font-weight: 500;
-    color: azure;
+    font-size: 1.22rem;
+    font-weight: 200;
+    color: #fff;
+    width: 5.2em;
+    padding: 0;
+    text-align: center;
 }
 
 nav .nav-wrapper i.header-nav-menu {

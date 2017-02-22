@@ -393,6 +393,7 @@ div.popup-type-2 {
     -moz-transition: ease-out 0.2s;
     -o-transition: ease-out 0.2s;
     transition: ease-out 0.2s;
+    z-index: -100;
 }
 
 div.popup-type-2.show {
@@ -401,6 +402,7 @@ div.popup-type-2.show {
     -moz-transition: ease-out 0.3s;
     -o-transition: ease-out 0.3s;
     transition: ease-out 0.3s;
+    z-index: 9999;
 }
 
 .popup-type-2 div.popup-type-2-toplevel {

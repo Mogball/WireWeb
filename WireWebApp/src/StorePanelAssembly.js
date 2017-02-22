@@ -404,11 +404,15 @@ class Posting extends Component {
     }
 
     clickedOnProfile() {
-        this.props.clickedOnProfile(this.props.posting.user);
+        if (!this.state.canClick) {
+            this.props.clickedOnProfile(this.props.posting.user);
+        }
     }
 
     clickedOnPosting() {
-        this.props.clickedOnPosting(this.props.posting);
+        if (this.state.canClick) {
+            this.props.clickedOnPosting(this.props.posting);
+        }
     }
 
     clickedIn() {
@@ -779,9 +783,7 @@ class PostingPopup extends Component {
                                onClick={this.exit}>close</i>
                         </div>
 
-
-                        <h1>{posting.title}</h1>
-
+                        <h4>{posting.title}</h4>
 
                     </div>
                 ) : null}
