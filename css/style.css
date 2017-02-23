@@ -10,7 +10,7 @@ li a.btn.header-btn {
     height: 2.4em;
     border-radius: 1.2em;
     line-height: 2.4em;
-    font-weight: 400;
+    font-weight: 300;
     margin: 0 0.6em 0 0.6em;
     padding: 0 1.5em 0 1.5em;
     width: 7.4em;
@@ -402,7 +402,7 @@ nav .menu-button-collapse i {
 .about-us-title-block {
     margin-top: 0;
     margin-bottom: 25px;
-    background-color: #E2ECF3;
+    background-color: #3f51b5;
 }
 
 .about-us-title-block.margin-top {
@@ -410,13 +410,13 @@ nav .menu-button-collapse i {
 }
 
 .about-us-title {
-    font-weight: 200;
-    color: #021D21;
+    font-weight: 900;
+    color: #fff;
 }
 
 .about-us-header {
-    font-weight: 400;
-    font-size: 20px;
+    font-weight: 200;
+    font-size: 28px;
     color: #FFFFFF;
 }
 
@@ -444,7 +444,7 @@ nav .menu-button-collapse i {
     margin: auto;
     margin-top: 70px;
     margin-bottom: 30px;
-    max-width: 550px;
+    max-width: 500px;
     min-width: 100px;
     -webkit-transition: ease-in 0.25s;
     -moz-transition: ease-in 0.25s;
@@ -463,9 +463,14 @@ nav .menu-button-collapse i {
     transition: ease-out 0.3s;
 }
 
+.about-us-members-block div.container h5 {
+    font-size: 40px;
+    font-weight: 300;
+}
+
 .about-us-member-portrait {
-    height: 40vw;
-    width: 40vw;
+    height: 170px;
+    width: 170px;
     min-width: 40px;
     max-width: 200px;
     min-height: 40px;
@@ -486,12 +491,14 @@ nav .menu-button-collapse i {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    min-width: 420px;
 }
 
 .member-name {
-    color: #777777;
+    color: #222;
     margin: 1px;
-    font-weight: 500;
+    font-weight: 300;
+    font-size: 18px;
 }
 
 .about-us-member-portrait:hover {
@@ -681,8 +688,12 @@ div#map {
     border-radius: inherit;
 }
 
+nav div ul li.tab {
+    font-weight: 300;
+}
+
 .about-us-page-block {
-    background-image: url('../res/waterloo_e5_bridge.jpg');
+    background-image: url('../res/study-prague.jpg');
     background-size: cover;
     margin-bottom: 0;
     height: 70vh;
