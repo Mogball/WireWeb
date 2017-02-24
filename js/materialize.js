@@ -3260,7 +3260,7 @@ if (jQuery) {
 
                     // Make the old tab inactive.
                     $active.removeClass('active');
-                    var $oldContent = $content
+                    var $oldContent = $content;
 
                     // Update the variables with the new link and content
                     $active = $(this);
@@ -3328,9 +3328,6 @@ if (jQuery) {
         }
     };
 
-    $(document).ready(function () {
-        $('ul.tabs').tabs();
-    });
 }(jQuery));
 ;(function ($) {
     $.fn.tooltip = function (options) {

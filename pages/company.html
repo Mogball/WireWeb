@@ -1,5 +1,5 @@
 <!Doctype html>
-<html  class="grey lighten-5">
+<html class="grey lighten-5">
 <!--
 Google Maps API Tutorial
 https://developers.google.com/maps/documentation/javascript/marker-clustering
@@ -61,10 +61,10 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
 <div class="follow-scroll">
     <nav class="indigo darken-1 nav-extended z-depth-0">
         <div class="nav-content">
-            <ul class="tabs tabs-transparent auto-adjust-tabs">
-                <li class="tab"><a href="#about-us">About us</a></li>
-                <li class="tab"><a href="#support">Support</a></li>
-                <li class="tab"><a href="#contact">Contact</a></li>
+            <ul id="nav-tabs" class="tabs tabs-transparent auto-adjust-tabs">
+                <li class="tab"><a id="about-us-btn">About us</a></li>
+                <li class="tab"><a id="support-btn">Support</a></li>
+                <li class="tab"><a id="contact-btn">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -121,11 +121,11 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
     </div>
 </div>
 <div class="section">
-    <div class="container">
+    <div class="container support-items">
         <div class="row">
             <div class="col s12 m4">
-                <div class="card support-item">
-                    <div class="card-content white-text">
+                <div class="card support-item right-border">
+                    <div class="card-content">
                         <span class="card-title">Web App</span>
                         <h5 class="support-item-header">Payment Methods</h5>
                         <p>Vire gives you the option to save payment methods, such as
@@ -144,7 +144,7 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
             </div>
             <div class="col s12 m4">
                 <div class="card support-item">
-                    <div class="card-content white-text">
+                    <div class="card-content">
                         <span class="card-title">Mobile App</span>
                         <p>You can find Vire Mobile on Google Play</p>
                         <div class="container center google-play-badge-container">
@@ -170,8 +170,8 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
                 </div>
             </div>
             <div class="col s12 m4">
-                <div class="card support-item">
-                    <div class="card-content white-text">
+                <div class="card support-item left-border">
+                    <div class="card-content">
                         <span class="card-title">Financial Support</span>
                         <p>If you wish to speak with a Vire financial adviser,
                             feel free to contact us at <span class="support-item-number">
@@ -268,7 +268,63 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
     </div>
 </div>-->
 
-<footer class="page-footer indigo" w3-include-html="../pages/footer.html"></footer>
+<footer class="page-footer indigo">
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col m3">
+                    <h4 class="footer-title"><a class="footer-page-link" href="../index.html">Vire</a></h4>
+                    <ul class="footer-feature-service-list">
+                        <li><a class="footer-page-link" href="../pages/features.html">Features</a></li>
+                        <li><a class="footer-page-link" href="../pages/services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col m9">
+                    <div class="row">
+                        <div class="col m4">
+                            <div class="footer-border">
+                                <h5 class="footer-category-label">Developers</h5>
+                            </div>
+                            <ul>
+                                <li><a class="footer-page-link" href="#">Get started</a></li>
+                                <li><a class="footer-page-link" href="#">API</a></li>
+                                <li><a class="footer-page-link" href="#">Documentation</a></li>
+                                <li><a class="footer-page-link" href="#">Open source</a></li>
+                            </ul>
+                        </div>
+                        <div class="col m4">
+                            <div class="footer-border">
+                                <h5 class="footer-category-label">Company</h5>
+                            </div>
+                            <ul>
+                                <li><a id="about-us-footer" class="footer-page-link">About</a></li>
+                                <li><a id="support-footer" class="footer-page-link">Support</a></li>
+                                <li><a id="contact-footer" class="footer-page-link">Contact</a></li>
+                                <li><a class="footer-page-link" href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="col m4">
+                            <div class="footer-border">
+                                <h5 class="footer-category-label">Resources</h5>
+                            </div>
+                            <ul>
+                                <li><a class="footer-page-link" href="#">Sitemap</a></li>
+                                <li><a class="footer-page-link" href="#">Privacy</a></li>
+                                <li><a class="footer-page-link" href="#">Terms</a></li>
+                                <li><a class="footer-page-link" href="#">Legal</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright indigo darken-1">
+        <div class="container">
+            © Vire
+        </div>
+    </div>
+</footer>
 
 <!--  Scripts-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -283,18 +339,60 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
 
 <!-- one of the jQuery scripts somewhere is messing with the tabs-->
 <script type="text/javascript">
+    const checkBar = function (element, originalY) {
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop >= originalY) {
+            element.addClass("fixed-bar")
+        } else {
+            element.removeClass("fixed-bar");
+        }
+    };
+    const url = window.location.href;
+    const divider = url.lastIndexOf('/');
+    const contextRoot = url.substring(0, divider);
+    var path, anchor;
+    if (url.indexOf('#') >= 0) {
+        const index = url.lastIndexOf('#');
+        path = url.substring(divider, index);
+        anchor = url.substring(index);
+    } else {
+        path = url.substring(divider);
+    }
     (function ($) {
         var element = $(".follow-scroll");
         var originalY = element.offset().top;
-        var topMargin = 0;
-        $(window).on("scroll", function (event) {
-            var scrollTop = $(window).scrollTop();
-            if (scrollTop >= originalY) {
-                element.addClass("fixed-bar")
-            } else {
-                element.removeClass("fixed-bar");
-            }
+        $(window).on("scroll", function () {
+            checkBar(element, originalY);
         });
+        $navTabs = $('#nav-tabs');
+        $navTabs.tabs();
+
+        $aboutUs = $("#about-us-btn");
+        $support = $("#support-btn");
+        $contact = $("#contact-btn");
+        $aboutUs.click(function () {
+           window.location.href = contextRoot + path + "#about-us";
+        });
+        $support.click(function () {
+            window.location.href = contextRoot + path + "#support";
+        });
+        $contact.click(function () {
+            window.location.href = contextRoot + path + "#contact";
+        });
+        $("#about-us-footer").click(function () {
+            $aboutUs.trigger("click");
+        });
+        $("#support-footer").click(function () {
+            $support.trigger("click");
+        });
+        $("#contact-footer").click(function () {
+            $contact.trigger("click");
+        });
+
+        checkBar(element, originalY);
+        if (anchor) {
+            $(anchor + "-btn").trigger('click');
+        }
     })(jQuery);
 </script>
 
