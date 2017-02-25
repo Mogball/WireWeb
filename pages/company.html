@@ -32,9 +32,11 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
 <nav class="indigo darken-1 header-block" role="navigation">
     <div class="nav-wrapper container">
         <a href="../" class="header-logo">Vire</a>
-        <a href="#" data-activates="nav-mobile" class="menu-button-collapse">
-            <i class="material-icons header-nav-menu">menu</i>
-        </a>
+        <div class="side-nav-btn-cnt">
+            <a href="#" data-activates="nav-mobile" class="menu-button-collapse waves-effect">
+                <i class="material-icons header-nav-menu">menu</i>
+            </a>
+        </div>
         <ul class="header-nav-btns right header-nav-btns-btn">
             <li><a class="btn waves-effect waves-light header-btn"
                    href="../pages/register.html"><p>Sign up</p></a></li>
@@ -50,11 +52,13 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
             <li><a class="header-nav-btn waves-effect" href="../pages/career.html">Career</a></li>
         </ul>
         <ul class="side-nav" id="nav-mobile">
-            <li><a href="../#">Home</a></li>
-            <li><a href="../pages/features.html">Features</a></li>
-            <li><a href="../pages/services.html">Services</a></li>
-            <li><a href="../pages/company.html">Company</a></li>
-            <li><a href="../pages/career.html">Career</a></li>
+            <li><a class="waves-effect" href="../#">Home</a></li>
+            <li><a class="waves-effect" href="../pages/features.html">Features</a></li>
+            <li><a class="waves-effect" href="../pages/services.html">Services</a></li>
+            <li><a class="waves-effect" href="../pages/company.html">Company</a></li>
+            <li><a class="waves-effect" href="../pages/career.html">Career</a></li>
+            <li><a class="waves-effect" href="../pages/register.html">Sign Up</a></li>
+            <li><a class="waves-effect" href="../pages/login.html">Log In</a></li>
         </ul>
     </div>
 </nav>
@@ -364,12 +368,12 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
         $(window).on("scroll", function () {
             checkBar(element, originalY);
         });
-        $navTabs = $('#nav-tabs');
+        const $navTabs = $('#nav-tabs');
         $navTabs.tabs();
 
-        $aboutUs = $("#about-us-btn");
-        $support = $("#support-btn");
-        $contact = $("#contact-btn");
+        const $aboutUs = $("#about-us-btn");
+        const $support = $("#support-btn");
+        const $contact = $("#contact-btn");
         $aboutUs.click(function () {
             window.location.href = contextRoot + path + "#about-us";
         });

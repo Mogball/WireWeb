@@ -159,7 +159,7 @@ li a.btn.header-btn {
 }
 
 .app-light-red {
-    background-color: #EE323D;
+    background-color: #e020a0;
     -webkit-transition: ease-out 0.25s;
     -moz-transition: ease-out 0.25s;
     -o-transition: ease-out 0.25s;
@@ -167,15 +167,44 @@ li a.btn.header-btn {
 }
 
 .app-light-red:visited {
-    background-color: #EE323D;
+    background-color: #e020a0;
 }
 
 .app-light-red:hover {
-    background-color: #FE525D;
+    background-color: #e060a0;
+}
+
+.app-light-red:active {
+    background-color: #e060a0;
 }
 
 .app-light-red:focus {
-    background-color: #eb303a;
+    background-color: #e060a0;
+    box-shadow: none !important;
+}
+
+.card div.card-action {
+    padding: 0;
+    display: flex;
+}
+
+.card div.card-action a {
+    padding: 16px 24px;
+    flex: 1;
+    margin: 0 !important;
+}
+
+.card div.card-action a {
+    color: #e52082 !important;
+    -webkit-transition: background-color ease-out 0.1s !important;
+    -moz-transition: background-color ease-out 0.1s !important;
+    -o-transition: background-color ease-out 0.1s !important;
+    transition: background-color ease-out 0.1s !important;
+}
+
+.card div.card-action a:hover {
+    color: #e56082 !important;
+    background-color: rgba(0, 0, 0, 0.018);
 }
 
 .app-light-orange {
@@ -259,9 +288,37 @@ li a.btn.header-btn {
     text-align: center;
 }
 
-nav .nav-wrapper i.header-nav-menu {
-    line-height: 82px;
+body nav .nav-wrapper i.header-nav-menu {
     font-size: 2.4rem;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+div.side-nav-btn-cnt {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 82px;
+}
+
+@media only screen and (min-width: 992px) {
+    div.side-nav-btn-cnt {
+        display: none;
+    }
+}
+
+div.side-nav-btn-cnt a.menu-button-collapse {
+    padding: 7px;
+    margin: 0;
+    height: auto;
+    border-radius: 50%;
+}
+
+ul.side-nav li a {
+    font-weight: 400;
+    font-size: 15px;
 }
 
 nav .menu-button-collapse {
@@ -350,6 +407,10 @@ nav .menu-button-collapse i {
     font-size: 15px;
 }
 
+.flow-text-desc {
+    font-weight: 400;
+}
+
 .career-card-container {
     width: 83%;
 }
@@ -362,7 +423,7 @@ nav .menu-button-collapse i {
 
 .career-page-button-block {
     min-height: 140px;
-    height: 30vh;
+    height: 5em;
 }
 
 .career-block {
@@ -846,6 +907,22 @@ h3.features-desc {
     padding: 0;
     color: #1de9b6;
     font-weight: 900;
+}
+
+.app-light-purple {
+    background-color: #1560BD;
+}
+
+.app-light-green {
+    background-color: #00A594;
+}
+
+.app-text-dark-blue {
+    color: #e52082 !important;
+}
+
+.app-light-indigo {
+    background-color: #324AB2;
 }
 
 .homeT1 {
