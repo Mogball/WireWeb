@@ -336,87 +336,10 @@ Android API key:      AIzaSyBVnhFz0ZLu1FrWObMg7qNF_zl8ompTVZM
 <script src="../js/init.js"></script>
 <script src="../js/html_in.js"></script>
 <script src="../js/init_google_map.js"></script>
-<script>w3IncludeHTML()</script>
+<script src="../js/company_fixednav.js"></script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmsDog871naOfSLVIqTjxo7_q9egdnUvY&callback=initMap"></script>
-
-<!-- one of the jQuery scripts somewhere is messing with the tabs-->
-<script type="text/javascript">
-    const checkBar = function (element, originalY) {
-        var scrollTop = $(window).scrollTop();
-        if (scrollTop >= originalY) {
-            element.addClass("fixed-bar")
-        } else {
-            element.removeClass("fixed-bar");
-        }
-    };
-    const url = window.location.href;
-    const divider = url.lastIndexOf('/');
-    const contextRoot = url.substring(0, divider);
-    var path, anchor;
-    if (url.indexOf('#') >= 0) {
-        const index = url.lastIndexOf('#');
-        path = url.substring(divider, index);
-        anchor = url.substring(index);
-    } else {
-        path = url.substring(divider);
-    }
-    (function ($) {
-        var element = $(".follow-scroll");
-        var originalY = element.offset().top;
-        $(window).on("scroll", function () {
-            checkBar(element, originalY);
-        });
-        const $navTabs = $('#nav-tabs');
-        $navTabs.tabs();
-
-        const $aboutUs = $("#about-us-btn");
-        const $support = $("#support-btn");
-        const $contact = $("#contact-btn");
-        $aboutUs.click(function () {
-            window.location.href = contextRoot + path + "#about-us";
-        });
-        $support.click(function () {
-            window.location.href = contextRoot + path + "#support";
-        });
-        $contact.click(function () {
-            window.location.href = contextRoot + path + "#contact";
-        });
-        $("#about-us-footer").click(function () {
-            $aboutUs.trigger("click");
-        });
-        $("#support-footer").click(function () {
-            $support.trigger("click");
-        });
-        $("#contact-footer").click(function () {
-            $contact.trigger("click");
-        });
-
-        checkBar(element, originalY);
-        if (anchor) {
-            $(anchor + "-btn").trigger('click');
-        }
-    })(jQuery);
-</script>
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            };
-        i[r].l = 1 * new Date();
-        a = s.createElement(o);
-        m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-92540532-1', 'auto');
-    ga('send', 'pageview');
-
-</script>
 
 </body>
 </html>
