@@ -125,7 +125,7 @@ $(function () {
             data: data
         });
         request.done(function (response, textStatus, jqXHR) {
-
+            console.log(response);
         });
         request.fail(function (jqXHR, textStatus, error) {
 
