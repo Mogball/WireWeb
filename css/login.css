@@ -21,13 +21,35 @@
 }
 
 .career-block a.btn-large {
-    margin: 40px 40px 80px 40px;
+    margin: 10px 0 20px 0;
 }
 
 .login-form-container a {
     font-size: 1.5rem;
     padding: 0 45px;
     height: auto;
+}
+
+div.col.left {
+    margin-bottom: 30px;
+    align-self: stretch;
+}
+
+.career-block div a {
+    font-size: 1rem;
+    -webkit-transition: color 0.1s;
+    -moz-transition: color 0.1s;
+    -o-transition: color 0.1s;
+    transition: color 0.1s;
+    padding-left: 0;
+}
+
+.career-block div a:hover {
+    color: #4fc3f7;
+}
+
+.career-block div a:active {
+    color: #039be5;
 }
 
 .login-form-container a:active {
