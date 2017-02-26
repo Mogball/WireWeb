@@ -1,22 +1,42 @@
 // Basic client-side password verification
 const validatePassword = function (field) {
-    let strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
-    let mediumRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+    let lowercase = new RegExp("(?=.*[a-z])");
+    let uppercase = new RegExp("(?=.*[A-Z])");
+    let numeric = new RegExp("(?=.*[0-9])");
+    let special = new RegExp("(?=.*[!@#\$%\^&\*])");
+    let length = new RegExp("(?=.{10,})");
+    let lengthShort = new RegExp("(?=.{8,})");
+    let lengthLong = new RegExp("(?=.{12,})");
     const val = field.val();
+    let strength = lowercase.test(val) + uppercase.test(val)
+        + numeric.test(val) + special.test(val) + lengthShort.test(val)
+        + length.test(val) + lengthLong.test(val);
     if (val.length === 0) {
-        field.removeClass('weak').removeClass('invalid').removeClass('valid');
+        field.removeClass('weak').removeClass('invalid').removeClass('mini').removeClass('valid');
         return;
     }
-    if (strongRegex.test(val)) {
-        field.removeClass('weak').removeClass('invalid').addClass('valid');
-    } else if (mediumRegex.test(val)) {
-        field.removeClass('invalid').removeClass('valid').addClass('weak');
+    if (strength == 7) {
+        field.removeClass('weak').removeClass('invalid').removeClass('mini').addClass('valid');
+    } else if (strength >= 5) {
+        field.removeClass('invalid').removeClass('valid').removeClass('mini').addClass('weak');
+    } else if (lengthShort.test(val) && (lowercase.test(val) || uppercase.test(val)) && numeric.test(val)) {
+        field.removeClass('valid').removeClass('weak').removeClass('invalid').addClass('mini');
     } else {
-        field.removeClass('valid').removeClass('weak').addClass('invalid');
+        let message;
+        if (!lowercase.test(val) && !uppercase.test(val)) {
+            message = "Password must contain a letter";
+        } else if (!numeric.test(val)) {
+            message = "Password must contain a number";
+        } else {
+            message = "Password must be at least 8 characters";
+        }
+        field.siblings('label').attr('data-error', message);
+        field.removeClass('valid').removeClass('weak').removeClass('mini').addClass('invalid');
     }
 };
 // Basic client-side email validation
-const validateEmail = function (field) {
+const validateEmail = function (field, invalidate) {
+    invalidate = !!invalidate;
     let hasLength = field.attr('data-length') !== undefined;
     const lenAttr = parseInt(field.attr('data-length'));
     const len = field.val().length;
@@ -27,7 +47,7 @@ const validateEmail = function (field) {
         }
     } else {
         if (field.hasClass('validate')) {
-            let re = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+            let re = new RegExp(/^(?!(?:(?:\x22?\x5C[\x00-\x7E]\x22?)|(?:\x22?[^\x5C\x22]\x22?)){255,})(?!(?:(?:\x22?\x5C[\x00-\x7E]\x22?)|(?:\x22?[^\x5C\x22]\x22?)){65,}@)(?:(?:[\x21\x23-\x27\x2A\x2B\x2D\x2F-\x39\x3D\x3F\x5E-\x7E]+)|(?:\x22(?:[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]|(?:\x5C[\x00-\x7F]))*\x22))(?:\.(?:(?:[\x21\x23-\x27\x2A\x2B\x2D\x2F-\x39\x3D\x3F\x5E-\x7E]+)|(?:\x22(?:[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]|(?:\x5C[\x00-\x7F]))*\x22)))*@(?:(?:(?!.*[^.]{64,})(?:(?:(?:xn--)?[a-z0-9]+(?:-[a-z0-9]+)*\.){1,126})+(?:(?:[a-z][a-z0-9]*)|(?:(?:xn--)[a-z0-9]+))(?:-[a-z0-9]+)*)|(?:\[(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){7})|(?:(?!(?:.*[a-f0-9][:\]]){7,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?)))|(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){5}:)|(?:(?!(?:.*[a-f0-9]:){5,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3}:)?)))?(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))(?:\.(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))){3}))]))$/i);
             if (((field.is(':valid') && hasLength && (len <= lenAttr))
                 || (field.is(':valid') && !hasLength))
                 && re.test(field.val())) {
@@ -35,8 +55,11 @@ const validateEmail = function (field) {
                 field.addClass('valid');
             }
             else {
-                field.removeClass('valid');
-                field.addClass('invalid');
+                if (invalidate) {
+                    field.removeClass('valid');
+                    field.siblings('label').attr('data-error', "Please enter a valid email address");
+                    field.addClass('invalid');
+                }
             }
         }
     }
@@ -47,40 +70,19 @@ const $selected = $(selector);
 $selected.focus(function () {
     $(this).removeClass('invalid').removeClass('valid');
 });
-$('#email').blur(function () {
-    validateEmail($(this));
+$email = $('#email');
+$email.blur(function () {
+    validateEmail($(this), true);
 });
 const $registerButton = $('#register_btn');
 const checkButton = function () {
     let valid = true;
     $selected.each(function (index, element) {
         const $element = $(element);
-        valid = valid && ($element.hasClass('valid') || $element.hasClass('weak'));
+        valid = valid && ($element.hasClass('valid') || $element.hasClass('weak') || $element.hasClass('mini'));
     });
     $registerButton.attr('disabled', !valid);
 };
-
-let $password = $('#password');
-let $confirmPassword = $('#confirm_password');
-$password.on('input', function () {
-    validatePassword($(this));
-});
-$password.blur(function () {
-    validatePassword($(this));
-});
-$password.focus(function () {
-    validatePassword($(this));
-});
-$confirmPassword.on('input', function () {
-    validateConfirmPassword($(this));
-});
-$confirmPassword.blur(function () {
-    validateConfirmPassword($(this));
-});
-$confirmPassword.focus(function () {
-    validateConfirmPassword($(this));
-});
-
 // Basic client-side password matching
 const validateConfirmPassword = function (field) {
     const val = field.val();
@@ -91,23 +93,92 @@ const validateConfirmPassword = function (field) {
     if (val === $password.val()) {
         field.removeClass('invalid').addClass('valid');
     } else {
+        field.siblings('label').attr('data-error', "Passwords must match");
         field.removeClass('valid').addClass('invalid');
     }
 };
 
+let $password = $('#password');
+let $confirmPassword = $('#confirm_password');
+$password.on('input blue focus', function () {
+    validatePassword($(this));
+    validateConfirmPassword($confirmPassword);
+});
+$confirmPassword.on('input blur focus', function () {
+    validateConfirmPassword($(this));
+});
+
+$selected.on('input change blur', function () {
+    checkButton();
+});
 $selected.on('input', function () {
     $(this).siblings('label').addClass('active');
-    checkButton();
 });
-$selected.change(function () {
-    checkButton();
-});
+$errorMessage = $('#error_message');
+
+// Process responses from the server
+const processResponse = function (response) {
+    if (response.indexOf('-') < 0) {
+        switch (response) {
+            case "WR1001":
+                $confirmPassword.siblings('label').attr('data-error', "Passwords must match");
+                $confirmPassword.removeClass('valid').addClass('invalid');
+                break;
+            case "WR1004":
+                $email.siblings('label').attr('data-error', "Please enter a valid email address");
+                $email.removeClass('valid').addClass('invalid');
+                break;
+            case "WR1006":
+                $email.siblings('label').attr('data-error', "Email is already in use");
+                $email.removeClass('valid').addClass('invalid');
+                $('#recover').addClass('visible');
+                break;
+            case "WR1010":
+                $errorMessage.html("WR1010 Registration failed. Please call us at 1-905-806-8846.");
+                break;
+            case "DB3000":
+                $errorMessage.html("DB3000 Registration failed. Please call us at 1-905-806-8846");
+                break;
+            case "WR1000":
+                window.location.href = "../"; // TODO Redirect to WebAPP
+                break;
+        }
+    } else {
+        const code = response.substring(0, response.indexOf('-'));
+        const values = response.substring(response.indexOf('-') + 1).split('-');
+        const elements = [null, $email, $password, $confirmPassword];
+        switch (code) {
+            case "WR1002":
+                for (let i = 0; i < values.length; i++) {
+                    let index = parseInt(values[i]);
+                    elements[index].siblings('label').attr('data-error', "Field cannot be empty");
+                    elements[index].removeClass('valid').addClass('invalid');
+                }
+                break;
+            case "WR1003":
+                let message = "Password must: ";
+                if (values.indexOf('1') >= 0) {
+                    message += "be at least 8 characters, ";
+                }
+                if (values.indexOf('2') >= 0) {
+                    message += "have at least one letter, ";
+                }
+                if (values.indexOf('3') >= 0) {
+                    message += "have at least one number, ";
+                }
+                message = message.substring(0, message.length - 2);
+                $password.siblings('label').attr('data-error', message);
+        }
+    }
+};
 
 let request;
 $(function () {
     $registerButton.attr('disabled', true);
 
     $registerButton.click(function (event) {
+        $('#recover').removeClass('visible');
+        $errorMessage.html("");
         event.preventDefault();
         if (request) {
             request.abort();
@@ -124,8 +195,8 @@ $(function () {
             type: "POST",
             data: data
         });
-        request.done(function (response, textStatus, jqXHR) {
-            console.log(response);
+        request.done(function (response) {
+            processResponse(response);
         });
         request.fail(function (jqXHR, textStatus, error) {
 

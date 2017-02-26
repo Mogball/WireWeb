@@ -26,14 +26,65 @@ label {
 }
 
 .input-field input[type=password].weak {
-    border-bottom: 1px solid #689f38;
-    box-shadow: 0 1px 0 0 #689f38;
+    border-bottom: 1px solid #c0ca33;
+    box-shadow: 0 1px 0 0 #c0ca33;
 }
 
 .input-field input[type=password].weak + label:after {
-    color: #689f38;
+    color: #c0ca33;
     opacity: 1;
     content: attr(data-weak);
+}
+
+.input-field input[type=password].mini {
+    border-bottom: 1px solid #fb8c00;
+    box-shadow: 0 1px 0 0 #fb8c00;
+}
+
+.input-field input[type=password].mini + label:after {
+    color: #fb8c00;
+    opacity: 1;
+    content: attr(data-mini);
+}
+
+#error_message {
+    font-size: 1.2rem;
+    color: #F44336;
+}
+
+label.displayer {
+    width: 93%;
+}
+
+label.displayer a {
+    opacity: 0;
+    display: none;
+    font-weight: 500;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+    float: right;
+}
+
+label.displayer a:hover {
+    color: #29b6f6;
+}
+
+label.displayer a:active {
+    color: #039be5;
+}
+
+#recover.visible {
+    display: inline;
+    opacity: 1;
+}
+
+.displayer {
+    opacity: 1;
+    font-size: 0.8rem !important;
+    -webkit-transform: translateY(+228%) !important;
+    transform: translateY(+228%) !important;
 }
 
 .input-field input[type=email].invalid,

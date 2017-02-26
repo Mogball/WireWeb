@@ -66,15 +66,20 @@
                        data-success="">
                     Email
                 </label>
+                <label for="email" class="displayer right-align">
+                    <a id="recover" href="#">Recover account</a>
+                    <!-- TODO Make recover account page -->
+                </label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <input id="password" type="password" class="validate" required>
                 <label for="password"
-                       data-error="Password must be at least 6 characters and contain a number"
+                       data-error="Password must be at least 8 characters and contain a number"
                        data-weak="Medium"
-                       data-success="Strong">
+                       data-success="Strong"
+                       data-mini="Weak">
                     Password
                 </label>
             </div>
@@ -93,10 +98,10 @@
                class="btn-large waves-effect waves-light"
                style="margin:40px" disabled>Sign up</a>
         </div>
+        <div class="career-block">
+            <span id="error_message"></span>
+        </div>
     </form>
-    <div>
-
-    </div>
 </div>
 <footer class="page-footer indigo">
     <div class="container">
