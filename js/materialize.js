@@ -4801,7 +4801,7 @@ if (jQuery) {
         });
 
         window.validate_field = function (object) {
-            var hasLength = object.attr('data-length') !== undefined;
+            /*var hasLength = object.attr('data-length') !== undefined;
             var lenAttr = parseInt(object.attr('data-length'));
             var len = object.val().length;
 
@@ -4823,7 +4823,7 @@ if (jQuery) {
                         object.addClass('invalid');
                     }
                 }
-            }
+            }*/
         };
 
         // Radio and Checkbox focus class

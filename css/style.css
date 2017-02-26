@@ -176,11 +176,11 @@ li a.btn.header-btn {
 
 .app-light-red:active {
     background-color: #e060a0;
+    box-shadow: none !important;
 }
 
 .app-light-red:focus {
-    background-color: #e060a0;
-    box-shadow: none !important;
+    background-color: #e020a0;
 }
 
 .card div.card-action {

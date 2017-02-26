@@ -1,0 +1,13 @@
+@media only screen and (max-width: 992px) {
+    #jobs div.row div.col.s12.m4 {
+        width: 100%;
+        margin: auto;
+        left: auto;
+        right: auto;
+        max-width: 520px;
+        float: none;
+    }
+    #jobs div.row {
+        justify-content: center;
+    }
+}

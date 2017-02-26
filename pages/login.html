@@ -3,13 +3,15 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>Vire AR-payment</title>
+    <title>Log in</title>
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/login.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <!-- jQuery -->
     <script src="../js/jquery/jquery.js"></script>
+    <script src="../js/initHtml.js"></script>
 </head>
 
 <body>
@@ -45,29 +47,31 @@
     </div>
 </nav>
 
-<div class="section" style="height: 10vh; min-height: 200px;">
+<div class="section">
     <div class="container center">
-        <div style="margin-top:25px; padding: 30px;">
+        <div class="login-title-container">
             <h3 class="template-main-title app-text-dark-blue">Log in</h3>
         </div>
     </div>
 </div>
-<div class="row" style="padding-bottom:0;padding-top:0;width:50%;min-width:170px;margin:auto">
-    <form class="col s12" style="min-width:170px;">
+<div class="row login-form-container">
+    <form class="col s12">
         <div class="row">
             <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email" data-error="wrong" data-success="right">Email</label>
+                <!-- "aType" is a custom input type attribute -->
+                <input id="emailphone" aType="emailphone" class="validate"
+                       autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+                <label for="emailphone" data-error="wrong" data-success="right">Email or phone number</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="password" type="password" class="validate">
+                <input id="password" type="password" class="validate" required>
                 <label for="password">Password</label>
             </div>
         </div>
         <div class="career-block">
-            <a class="btn-large waves-effect waves-light" style="margin:40px">Log in</a>
+            <a id="login_btn" class="btn-large waves-effect waves-light">Log in</a>
         </div>
     </form>
 </div>
@@ -129,12 +133,13 @@
     </div>
 </footer>
 
-
-<!--  Scripts-->
+<!-- Page -->
+<script src="../js/login.js"></script>
+<!-- Scripts -->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="../js/materialize.js"></script>
 <script src="../js/init.js"></script>
-<script src="../js/html_in.js"></script>
+<script src="../js/initHtml.js"></script>
 
 </body>
 </html>

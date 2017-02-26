@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/register.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
     <script src="../js/jquery/jquery.js"></script>
 </head>
@@ -47,35 +48,55 @@
 </nav>
 <div class="section">
     <div class="container center">
-        <div style="margin-top:25px">
+        <div style="margin-top:50px">
             <h3 class="template-main-title app-text-dark-blue">Sign up</h3>
         </div>
     </div>
 </div>
-<div class="row" style="padding:0 80px 0 80px;width:50%">
-    <form class="col s12">
+<div class="row">
+    <div>
+
+    </div>
+    <form id="register_form" class="col m6 s10">
         <div class="row">
             <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email" data-error="wrong" data-success="right">Email</label>
+                <input id="email" type="email" class="validate" required>
+                <label for="email"
+                       data-error="Please enter a valid email address"
+                       data-success="">
+                    Email
+                </label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="password" type="password" class="validate">
-                <label for="password">Password</label>
+                <input id="password" type="password" class="validate" required>
+                <label for="password"
+                       data-error="Password must be at least 6 characters and contain a number"
+                       data-weak="Medium"
+                       data-success="Strong">
+                    Password
+                </label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="confirm_password" type="password" class="validate">
-                <label for="confirm_password">Confirm password</label>
+                <input id="confirm_password" type="password" class="validate" required>
+                <label for="confirm_password"
+                       data-error="Passwords must match">
+                    Confirm password
+                </label>
             </div>
         </div>
         <div class="career-block">
-            <a class="btn-large waves-effect waves-light" href="#" style="margin:40px">Sign up</a>
+            <a id="register_btn"
+               class="btn-large waves-effect waves-light"
+               style="margin:40px" disabled>Sign up</a>
         </div>
     </form>
+    <div>
+
+    </div>
 </div>
 <footer class="page-footer indigo">
     <div class="container">
@@ -136,11 +157,13 @@
 </footer>
 
 
-<!--  Scripts-->
+<!-- Page -->
+<script src="../js/register.js"></script>
+<!-- Scripts -->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="../js/materialize.js"></script>
 <script src="../js/init.js"></script>
-<script src="../js/html_in.js"></script>
+<script src="../js/initHtml.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,86 @@
+/*.input-field input[type=password].invalid,
+.input-field input[type=password].valid {
+    border-bottom: 1px solid #26a69a;
+    box-shadow: 0 1px 0 0 #26a69a;
+}
+
+.input-field input[type=email] {
+    -webkit-transition: ease-out 0.1s;
+    -moz-transition: ease-out 0.1s;
+    -o-transition: ease-out 0.1s;
+    transition: ease-out 0.1s;
+}*/
+
+input {
+    -webkit-transition: border-color, border, background-color, color, box-shadow 0.1s ease-out;
+    -moz-transition: border-color, border, background-color, color, box-shadow 0.1s ease-out;
+    -o-transition: border-color, border, background-color, color, box-shadow 0.1s ease-out;
+    transition: border-color, border, background-color, color, box-shadow 0.1s ease-out;
+}
+
+label {
+    -webkit-transition: opacity, color 0.1s ease-out;
+    -moz-transition: opacity, color 0.1s ease-out;
+    -o-transition: opacity, color 0.1s ease-out;
+    transition: opacity, color 0.1s ease-out;
+}
+
+.input-field input[type=password].weak {
+    border-bottom: 1px solid #689f38;
+    box-shadow: 0 1px 0 0 #689f38;
+}
+
+.input-field input[type=password].weak + label:after {
+    color: #689f38;
+    opacity: 1;
+    content: attr(data-weak);
+}
+
+.input-field input[type=email].invalid,
+.input-field input[type=password].invalid {
+    border-bottom: 1px solid #F44336;
+    box-shadow: 0 1px 0 0 #F44336;
+}
+
+.input-field input[type=email].invalid + label:after,
+.input-field input[type=password].invalid + label:after {
+    opacity: 1;
+    content: attr(data-error);
+    color: #f44336;
+}
+
+.input-field input[type=email].valid,
+.input-field input[type=password].valid {
+    border-bottom: 1px solid #4CAF50;
+    box-shadow: 0 1px 0 0 #4CAF50;
+}
+
+.input-field input[type=email].valid + label:after,
+.input-field input[type=password].valid + label:after {
+    color: #4caf50;
+    opacity: 1;
+    content: attr(data-success);
+}
+
+.career-block a {
+    padding: 0 45px;
+    font-size: 1.3rem;
+}
+
+.career-block a:active {
+    box-shadow: none !important;
+}
+
+#register_form {
+    float: none;
+    margin: auto;
+    max-width: 350px;
+}
+
+@media only screen and (min-width: 601px) {
+    #register_form {
+        margin: auto;
+        min-width: 300px;
+        max-width: 350px;
+    }
+}
