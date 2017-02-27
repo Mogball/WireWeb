@@ -5,13 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
     <title>Vire AR-payment</title>
 
-    <!-- CSS  -->
+    <!-- CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/register.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
+    <!-- Init -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        let config = {
+            apiKey: "AIzaSyAnfNn3BZPU_aQcWF76Zc5TGj1bmVcpNCk",
+            authDomain: "vire-b186c.firebaseapp.com",
+            databaseURL: "https://vire-b186c.firebaseio.com",
+            storageBucket: "vire-b186c.appspot.com",
+            messagingSenderId: "260157066657"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="../js/jquery/jquery.js"></script>
+    <script src="../js/init.js"></script>
+    <script src="../js/initHtml.js"></script>
 </head>
 
 <body>
@@ -166,8 +180,6 @@
 <script src="../js/register.js"></script>
 <!-- Scripts -->
 <script src="../js/materialize.js"></script>
-<script src="../js/init.js"></script>
-<script src="../js/initHtml.js"></script>
 
 </body>
 </html>

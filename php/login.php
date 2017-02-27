@@ -19,10 +19,12 @@ function encode($source, $indices)
 {
     $result = "";
     foreach ($indices as &$index) {
-        if (is_array($source[$index])) {
-            $result .= encode_all($source[$index], $index);
-        } else {
-            $result .= $index . '=' . $source[$index] . '&';
+        if (array_key_exists($index, $source)) {
+            if (is_array($source[$index])) {
+                $result .= encode_all($source[$index], $index);
+            } else {
+                $result .= $index . '=' . $source[$index] . '&';
+            }
         }
     }
     unset($index);
@@ -34,7 +36,7 @@ function encode_all($source, $prefix)
 {
     $result = "";
     foreach ($source as $key => $value) {
-        $result .= $prefix . '-' . $key . '=' . $value . '&';
+        $result .= $prefix . '_' . $key . '=' . $value . '&';
     }
     return $result;
 }
@@ -58,15 +60,15 @@ $password = $_POST['password'];
 $database = get_firebaseDB();
 if (strpos($emailphone, '@') !== false) {
     // Email
-    $param = 'email-address';
+    $param = 'email_address';
 } else {
     // Phone
-    $param = 'phone-number';
+    $param = 'phone_number';
 }
 $results = $database->getReference('/users')->orderByChild($param)->getSnapshot()->getValue();
 $user = false;
 foreach ($results as $result) {
-    if ($result[$param] == $emailphone) {
+    if (array_key_exists($param, $result) && $result[$param] == $emailphone) {
         $user = $result;
         break;
     }
@@ -77,7 +79,7 @@ if ($user === false) {
 }
 if ($user['password'] == $password) {
     echo "WL1000:" . encode($user, array(
-            'email-address', 'phone-number', 'first-name', 'last-name',
+            'email_address', 'phone_number', 'first_name', 'last_name',
             'country', 'state', 'city', 'funds', 'points', 'birthdate'));
 } else {
     echo "WL1001";

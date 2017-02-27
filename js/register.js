@@ -72,6 +72,9 @@ $selected.focus(function () {
 });
 $email = $('#email');
 $email.blur(function () {
+    if ($email.val().length == 0) {
+        $email.siblings('label').removeClass('active');
+    }
     validateEmail($(this), true);
 });
 const $registerButton = $('#register_btn');
@@ -111,7 +114,7 @@ $confirmPassword.on('input blur focus', function () {
 $selected.on('input change blur', function () {
     checkButton();
 });
-$selected.on('input', function () {
+$selected.on('input focus', function () {
     $(this).siblings('label').addClass('active');
 });
 $errorMsg = $('#error_message');
@@ -179,7 +182,6 @@ const processResponse = function (response) {
 let request;
 $(function () {
     $registerButton.attr('disabled', true);
-
     $registerButton.click(function (event) {
         $('#recover').removeClass('visible');
         $errorMsg.html("");
@@ -209,4 +211,5 @@ $(function () {
             $inputs.prop('disabled', false);
         });
     });
+    $email.focus();
 });

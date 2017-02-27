@@ -68,18 +68,18 @@
     </div>
 </div>
 <div class="row">
-    <form id="login_form" class="col s12">
+    <form id="login_form" class="col s12" autocomplete="on">
         <div class="row">
             <div class="input-field col s12">
                 <!-- "aType" is a custom input type attribute -->
-                <input id="emailphone" aType="emailphone" class="validate"
-                       autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+                <input id="emailphone" aType="emailphone" class="validate" name="email"
+                       autocomplete="on" autocorrect="off" autocapitalize="off" spellcheck="false" required>
                 <label for="emailphone">Email or phone number</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="password" type="password" class="validate" required>
+                <input id="password" type="password" class="validate" name="password" required>
                 <label for="password">Password</label>
             </div>
         </div>

@@ -8,9 +8,5 @@ $firebase = Firebase::fromServiceAccount(
 $database = $firebase->getDatabase();
 
 
-$snapshot = $database->getReference('/users/fheY57Fi28Yj')->getValue();
-if (!$snapshot) {
-    echo 'no';
-} else {
-    echo 'yes';
-}
+$snapshot = $database->getReference('/users')->orderByChild('email_address')->equalTo('jeffniu22@gmail.com')->getSnapshot()->getValue();
+var_dump($snapshot);

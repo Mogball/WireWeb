@@ -54,11 +54,20 @@
                  style="min-height: 400px; display: flex; flex-direction: column;justify-content: center">
                 <h4>Login successful</h4>
                 <?php
+                function get_postParam($index)
+                {
+                    if (array_key_exists($index, $_POST)) {
+                        return $_POST[$index];
+                    } else {
+                        return "";
+                    }
+                }
+
                 echo sprintf("%s<br>%s<br>%s %s<br>%s %s %s<br> %s %s %s<br>",
-                    $_POST['email-address'], $_POST['phone-number'],
-                    $_POST['first-name'], $_POST['last-name'],
-                    $_POST['country'], $_POST['state'], $_POST['city'],
-                    $_POST['birthdate-year'], $_POST['birthdate-month'], $_POST['birthdate-day']);
+                    get_postParam('email_address'), get_postParam('phone_number'),
+                    get_postParam('first_name'), get_postParam('last_name'),
+                    get_postParam('country'), get_postParam('state'), get_postParam('city'),
+                    get_postParam('birthdate-year'), get_postParam('birthdate_month'), get_postParam('birthdate_day'));
                 ?>
             </div>
             <div class="col m3 s1"></div>

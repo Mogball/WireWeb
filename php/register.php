@@ -130,19 +130,21 @@ function perform_addUser($email, $password)
 function perform_addUser_FBDB($email, $password)
 {
     $database = get_firebaseDB();
-    $users = $database->getReference('/users')->orderByChild('email-address')->getSnapshot()->getValue();
-    // TODO replace with binary search
-    foreach ($users as &$user) {
-        if ($user['email-address'] == $email) {
-            echo "WR1006";
-            die();
+    $users = $database->getReference('/users')->orderByChild('email_address')->getSnapshot()->getValue();
+    if ($users) {
+        // TODO replace with binary search
+        foreach ($users as &$user) {
+            if ($user['email_address'] == $email) {
+                echo "WR1006";
+                die();
+            }
         }
     }
     do {
         $uid = get_uniqueUserID();
     } while ($database->getReference('/users/' . $uid)->getSnapshot()->getValue());
     $database->getReference('/users/' . $uid)->set([
-        'email-address' => $email,
+        'email_address' => $email,
         'password' => $password,
         'funds' => 0,
         'points' => 0

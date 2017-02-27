@@ -76,7 +76,6 @@ const decode = function (data) {
 };
 
 const handleResponse = function (response) {
-    console.log(response);
     if (response.indexOf(':') < 0) {
         switch (response) {
             case "WL1001":
@@ -159,15 +158,17 @@ $(function () {
             handleResponse("WS3000");
         });
     });
+    $emailphone.focus();
 });
 
-$('#recover').click(function (event) {
-    event.preventDefault();
-    $.ajax({
-        url: '../php/firebase.php',
-        success: function(response) {
-            console.log(response);
-        }
-    });
+/*
+ $('#recover').click(function (event) {
+ event.preventDefault();
+ $.ajax({
+ url: '../php/firebase.php',
+ success: function(response) {
+ console.log(response);
+ }
+ });
 
-});
+ });*/
