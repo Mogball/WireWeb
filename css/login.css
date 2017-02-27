@@ -21,17 +21,17 @@
 }
 
 .career-block a.btn-large {
-    margin: 10px 0 20px 0;
+    margin: 10px 0 25px 0;
 }
 
-.login-form-container a {
+#login_btn {
     font-size: 1.5rem;
     padding: 0 45px;
     height: auto;
 }
 
 div.col.left {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     align-self: stretch;
 }
 
@@ -52,7 +52,7 @@ div.col.left {
     color: #039be5;
 }
 
-.login-form-container a:active {
+form a:active {
     box-shadow: none !important;
 }
 
@@ -146,4 +146,18 @@ input[aType=emailphone] + label:after {
     -moz-transition: .2s opacity ease-out, 0.2s color ease-out;
     -o-transition: .2s opacity ease-out, 0.2s color ease-out;
     transition: .2s opacity ease-out, 0.2s color ease-out;
+}
+
+#login_form {
+    float: none;
+    margin: auto;
+    max-width: 350px;
+}
+
+@media only screen and (min-width: 601px) {
+    #login_form {
+        margin: auto;
+        min-width: 300px;
+        max-width: 350px;
+    }
 }

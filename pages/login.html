@@ -9,8 +9,21 @@
     <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/login.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <!-- jQuery -->
+    <!-- Init-->
+    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        let config = {
+            apiKey: "AIzaSyAnfNn3BZPU_aQcWF76Zc5TGj1bmVcpNCk",
+            authDomain: "vire-b186c.firebaseapp.com",
+            databaseURL: "https://vire-b186c.firebaseio.com",
+            storageBucket: "vire-b186c.appspot.com",
+            messagingSenderId: "260157066657"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="../js/jquery/jquery.js"></script>
+    <script src="../js/init.js"></script>
     <script src="../js/initHtml.js"></script>
 </head>
 
@@ -54,8 +67,8 @@
         </div>
     </div>
 </div>
-<div class="row login-form-container">
-    <form class="col s12">
+<div class="row">
+    <form id="login_form" class="col s12">
         <div class="row">
             <div class="input-field col s12">
                 <!-- "aType" is a custom input type attribute -->
@@ -71,18 +84,22 @@
             </div>
         </div>
         <div class="career-block">
-            <a id="login_btn" class="btn-large waves-effect waves-light">Log in</a>
+            <a id="login_btn" class="btn-large waves-effect waves-light" disabled>Log in</a>
             <div class="col left">
                 <ul>
                     <li>
-                        <a href="../pages/register.html">Don't have an account?</a>
+                        <a id="signup" href="../pages/register.html">Don't have an account?</a>
                     </li>
                     <li>
-                        <a href="#">Can't access your account?</a>
+                        <!-- TODO Make the recovery feature -->
+                        <a id="recover" href="#">Can't access your account?</a>
                     </li>
                 </ul>
             </div>
         </div>
+    </form>
+    <form id="hidden" method="post" action="../pages/loginSuccess.php">
+
     </form>
 </div>
 <footer class="page-footer indigo">
@@ -147,8 +164,6 @@
 <script src="../js/login.js"></script>
 <!-- Scripts -->
 <script src="../js/materialize.js"></script>
-<script src="../js/init.js"></script>
-<script src="../js/initHtml.js"></script>
 
 </body>
 </html>

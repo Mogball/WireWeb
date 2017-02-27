@@ -1,8 +1,3 @@
-const validate = function (field) {
-    const value = field.val();
-};
-
-
 const $fields = $('input[aType=emailphone], input[type=password]');
 
 // Add 'active' to label if autocomplete
@@ -11,7 +6,6 @@ $fields.change(function () {
     if ($this.val().length !== 0 || $this.attr('placeholder') !== undefined) {
         $this.siblings('label').addClass('active');
     }
-    validate($this);
 });
 
 // Form resettings
@@ -51,10 +45,78 @@ $fields.blur(function () {
     } else {
         $this.addClass('filled');
     }
-    validate($this);
 });
 
+$loginButton = $('#login_btn');
+$emailphone = $('#emailphone');
+$password = $('#password');
+
+const checkButton = function () {
+    let disabled = false;
+    disabled = disabled
+        || $password.val().length < 8
+        || $emailphone.val().length == 0;
+    $loginButton.attr('disabled', disabled);
+};
+
+$fields.on('blur focus input change', function () {
+    checkButton();
+    $(this).removeClass('invalid').removeClass('valid');
+});
+
+const decode = function (data) {
+    let result = {};
+    let values = data.split('&');
+    for (let i = 0; i < values.length; i++) {
+        let value = values[i];
+        let pair = value.split('=');
+        result[pair[0]] = pair[1];
+    }
+    return result;
+};
+
+const handleResponse = function (response) {
+    console.log(response);
+    if (response.indexOf(':') < 0) {
+        switch (response) {
+            case "WL1001":
+                $fields.addClass('invalid');
+                $password.siblings('label').attr('data-error', "Incorrect email/phone number or password");
+                break;
+            case "WL1010":
+                $errorMsg.html("WR1010 Login failed. " +
+                    "Please call us at 1-905-806-8846.");
+                break;
+            case "DB3000":
+                $errorMsg.html("DB3000 Cannot connect to database. " +
+                    "Please call us at 1-905-806-8846");
+                break;
+            case "WS3000":
+                $errorMsg.html("WS3000 Cannot connect to webserver. " +
+                    "Please call us at 1-905-806-8846");
+                break;
+        }
+    } else {
+        const code = response.substring(0, response.indexOf(':'));
+        let values = response.substring(response.indexOf(':') + 1).split(':');
+        switch (code) {
+            case "WL1000":
+                values = decode(values[0]);
+                $hidden = $('#hidden');
+                let html = "";
+                for (let key in values) {
+                    if (values.hasOwnProperty(key) && values[key]) {
+                        html += "<input type='hidden' name='" + key + "' value='" + values[key] + "'/>";
+                    }
+                }
+                $hidden.html(html);
+                $hidden.submit();
+        }
+    }
+};
+
 // Document ready
+let request;
 $(function () {
     // Add 'active' to label if the field is prepopulated
     $('input[aType=emailphone], input[type=password]').each(function (index, element) {
@@ -68,6 +130,44 @@ $(function () {
         }
     });
 
-    $('#login_btn').click(function () {
+    $loginButton.click(function (event) {
+        $fields.removeClass('valid');
+        $fields.removeClass('invalid');
+        event.preventDefault();
+        if (request) {
+            request.abort();
+        }
+        const $form = $('#login_form');
+        const $inputs = $form.find('#emailphone, #password');
+        let data = "";
+        $inputs.each(function (index, element) {
+            data += element.id + '=' + element.value + '&';
+        });
+        $inputs.prop('disabled', true);
+        request = $.ajax({
+            url: '../php/login.php',
+            type: "POST",
+            data: data
+        });
+        request.always(function () {
+            $inputs.prop('disabled', false);
+        });
+        request.done(function (response) {
+            handleResponse(response);
+        });
+        request.fail(function () {
+            handleResponse("WS3000");
+        });
     });
+});
+
+$('#recover').click(function (event) {
+    event.preventDefault();
+    $.ajax({
+        url: '../php/firebase.php',
+        success: function(response) {
+            console.log(response);
+        }
+    });
+
 });

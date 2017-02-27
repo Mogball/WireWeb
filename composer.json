@@ -1,0 +1,6 @@
+{
+  "minimum-stability": "dev",
+  "require": {
+    "kreait/firebase-php": "2.0"
+  }
+}

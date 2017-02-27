@@ -26,19 +26,21 @@
  *      WR1006: Email already used
  *      WR1010: <Generic> Failed to register user
  *      DB3000: Connection to user database failed
+ *      WS3000: Communication with webserver failed
+ *          -- Will never occur server-side
  *  Success
  *      WR1000: Registration successful
  ******************************************************/
 function isValidPassword($password, &$error)
 {
     if (strlen($password) < 8) {
-        $error .= '-1';
+        $error .= ':1';
     }
     if (!preg_match('#[a-zA-Z]+#', $password)) {
-        $error .= '-2';
+        $error .= ':2';
     }
     if (!preg_match('#[0-9]+#', $password)) {
-        $error .= '-3';
+        $error .= ':3';
     }
     return !strlen($error);
 }
@@ -65,6 +67,18 @@ function get_connectionToDB()
         die();
     }
     return $connection;
+}
+
+function get_firebaseDB()
+{
+    require '../vendor/autoload.php';
+
+    $firebase = Firebase::fromServiceAccount(
+        '../php/vire-e9eb3-firebase-adminsdk-u209d-1d4e8c38ae.json',
+        'https://vire-e9eb3.firebaseio.com'
+    );
+    $database = $firebase->getDatabase();
+    return $database;
 }
 
 function get_uniqueUserID($length = 12)
@@ -106,11 +120,34 @@ function perform_addUser($email, $password)
         mysqli_real_escape_string($connection, $password));
     $result = mysqli_query($connection, $query);
     if ($result) {
-        echo "WR1000";
+        echo "WR1000:email=" . $email;
     } else {
         echo "WR1010";
     }
     $connection->close();
+}
+
+function perform_addUser_FBDB($email, $password)
+{
+    $database = get_firebaseDB();
+    $users = $database->getReference('/users')->orderByChild('email-address')->getSnapshot()->getValue();
+    // TODO replace with binary search
+    foreach ($users as &$user) {
+        if ($user['email-address'] == $email) {
+            echo "WR1006";
+            die();
+        }
+    }
+    do {
+        $uid = get_uniqueUserID();
+    } while ($database->getReference('/users/' . $uid)->getSnapshot()->getValue());
+    $database->getReference('/users/' . $uid)->set([
+        'email-address' => $email,
+        'password' => $password,
+        'funds' => 0,
+        'points' => 0
+    ]);
+    echo "WR1000:email=" . $email;
 }
 
 $email = $_POST['email'];
@@ -119,13 +156,13 @@ $confirm_password = $_POST['confirm_password'];
 
 $error = "";
 if (!strlen($email)) {
-    $error .= '-1';
+    $error .= ':1';
 }
 if (!strlen($password)) {
-    $error .= '-2';
+    $error .= ':2';
 }
 if (!strlen($confirm_password)) {
-    $error .= '-3';
+    $error .= ':3';
 }
 if (strlen($error)) {
     echo "WR1002" . $error;
@@ -140,5 +177,6 @@ if ($password != $confirm_password) {
 } elseif (!isValidEmail($email)) {
     echo "WR1004";
 } else {
-    perform_addUser($email, $password);
+    unset($error);
+    perform_addUser_FBDB($email, $password);
 }

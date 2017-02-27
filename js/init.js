@@ -1,8 +1,9 @@
 (function ($) {
     $(function () {
+        let i;
         $(".menu-button-collapse").sideNav();
-        var buttons = document.getElementsByClassName("btn");
-        for (var i = 0; i < buttons.length; i++) {
+        let buttons = document.getElementsByClassName("btn");
+        for (i = 0; i < buttons.length; i++) {
             buttons[i].ondragstart = function () {
                 return false;
             };
@@ -31,4 +32,3 @@
 
 ga('create', 'UA-92540532-1', 'auto');
 ga('send', 'pageview');
-

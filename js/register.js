@@ -114,11 +114,11 @@ $selected.on('input change blur', function () {
 $selected.on('input', function () {
     $(this).siblings('label').addClass('active');
 });
-$errorMessage = $('#error_message');
+$errorMsg = $('#error_message');
 
 // Process responses from the server
 const processResponse = function (response) {
-    if (response.indexOf('-') < 0) {
+    if (response.indexOf(':') < 0) {
         switch (response) {
             case "WR1001":
                 $confirmPassword.siblings('label').attr('data-error', "Passwords must match");
@@ -134,18 +134,18 @@ const processResponse = function (response) {
                 $('#recover').addClass('visible');
                 break;
             case "WR1010":
-                $errorMessage.html("WR1010 Registration failed. Please call us at 1-905-806-8846.");
+                $errorMsg.html("WR1010 Registration failed. Please call us at 1-905-806-8846.");
                 break;
             case "DB3000":
-                $errorMessage.html("DB3000 Registration failed. Please call us at 1-905-806-8846");
+                $errorMsg.html("DB3000 Cannot connect to database. Please call us at 1-905-806-8846");
                 break;
-            case "WR1000":
-                window.location.href = "../"; // TODO Redirect to WebAPP
+            case "WS3000":
+                $errorMsg.html("WS3000 Cannot connect to webserver. Please call us at 1-905-806-8846");
                 break;
         }
     } else {
-        const code = response.substring(0, response.indexOf('-'));
-        const values = response.substring(response.indexOf('-') + 1).split('-');
+        const code = response.substring(0, response.indexOf(':'));
+        const values = response.substring(response.indexOf(':') + 1).split(':');
         const elements = [null, $email, $password, $confirmPassword];
         switch (code) {
             case "WR1002":
@@ -168,6 +168,10 @@ const processResponse = function (response) {
                 }
                 message = message.substring(0, message.length - 2);
                 $password.siblings('label').attr('data-error', message);
+                break;
+            case "WR1000":
+                window.location.href = "../pages/registerSuccess.html"; // TODO Redirect to WebAPP
+                break;
         }
     }
 };
@@ -178,7 +182,7 @@ $(function () {
 
     $registerButton.click(function (event) {
         $('#recover').removeClass('visible');
-        $errorMessage.html("");
+        $errorMsg.html("");
         event.preventDefault();
         if (request) {
             request.abort();
@@ -198,8 +202,8 @@ $(function () {
         request.done(function (response) {
             processResponse(response);
         });
-        request.fail(function (jqXHR, textStatus, error) {
-
+        request.fail(function () {
+            processResponse("WS3000");
         });
         request.always(function () {
             $inputs.prop('disabled', false);
