@@ -138,16 +138,15 @@ const handleResponse = function (response) {
 let request;
 $(function () {
     // Add 'active' to label if the field is prepopulated
-    $('input[aType=emailphone], input[type=password]').each(function (index, element) {
-        const $this = $(this);
-        const $element = $(element);
-        const $siblingsLabel = $this.siblings('label');
-        if ($element.val().length > 0 || $this.attr('placeholder') !== undefined) {
-            $siblingsLabel.addClass('active');
-        } else {
-            $siblingsLabel.removeClass('active');
+    window.setInterval(function () {
+        let hasValue = $password.val().length > 0;
+        if (!hasValue) {
+            hasValue = $('#password:-webkit-autofill').length > 0;
         }
-    });
+        if (hasValue) {
+            $password.trigger('focus');
+        }
+    }, 333);
 
     $loginButton.click(function (event) {
         $fields.removeClass('valid');
