@@ -138,21 +138,27 @@ const handleResponse = function (response) {
     }
 };
 
+// Add 'active' to label if the field is prepopulated
+let increment = 0;
+const pollID = window.setInterval(function () {
+    increment++;
+    let hasValue = $password.val().length > 0;
+    if (!hasValue) {
+        hasValue = $('#password:-webkit-autofill').length > 0;
+    }
+    if (hasValue) {
+        $password.trigger('input');
+        $password.siblings('label').addClass('active');
+    }
+    if (increment >= 20) {
+        window.clearInterval(pollID);
+    }
+    console.log('xd');
+}, 100);
 
 // Document ready
 let request;
 $(function () {
-
-    // Add 'active' to label if the field is prepopulated
-    window.setInterval(function () {
-        let hasValue = $password.val().length > 0;
-        if (!hasValue) {
-            hasValue = $('#password:-webkit-autofill').length > 0;
-        }
-        if (hasValue) {
-            $password.siblings('label').addClass('active');
-        }
-    }, 300);
 
     $loginButton.click(function (event) {
         $fields.removeClass('valid');
