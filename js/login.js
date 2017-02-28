@@ -144,7 +144,7 @@ $(function () {
             hasValue = $('#password:-webkit-autofill').length > 0;
         }
         if (hasValue) {
-            $password.trigger('focus');
+            $password.trigger('change');
         }
     }, 333);
 
