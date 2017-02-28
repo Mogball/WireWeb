@@ -8,6 +8,8 @@ $fields.change(function () {
     }
 });
 
+$errorMsg = $('#error_message');
+
 // Form resettings
 $(document).on('reset', function (event) {
     const formReset = $(event.target);
@@ -51,17 +53,34 @@ $loginButton = $('#login_btn');
 $emailphone = $('#emailphone');
 $password = $('#password');
 
+$fields.keypress(function (event) {
+    if (event.which == 13) {
+        if (!$loginButton.attr('disabled')) {
+            $loginButton.click();
+        }
+    }
+});
+
 const checkButton = function () {
     let disabled = false;
     disabled = disabled
         || $password.val().length < 8
         || $emailphone.val().length == 0;
+    if ($emailphone.attr('disabled')) {
+        disabled = true;
+    }
     $loginButton.attr('disabled', disabled);
 };
 
 $fields.on('blur focus input change', function () {
     checkButton();
     $(this).removeClass('invalid').removeClass('valid');
+});
+
+$(document).keyup(function (event) {
+    if (event.keyCode == 27) {
+        $emailphone.select();
+    }
 });
 
 const decode = function (data) {
@@ -79,6 +98,7 @@ const handleResponse = function (response) {
     if (response.indexOf(':') < 0) {
         switch (response) {
             case "WL1001":
+                $emailphone.select();
                 $fields.addClass('invalid');
                 $password.siblings('label').attr('data-error', "Incorrect email/phone number or password");
                 break;
@@ -143,6 +163,7 @@ $(function () {
             data += element.id + '=' + element.value + '&';
         });
         $inputs.prop('disabled', true);
+        $loginButton.attr('disabled', true);
         request = $.ajax({
             url: '../php/login.php',
             type: "POST",
@@ -150,6 +171,7 @@ $(function () {
         });
         request.always(function () {
             $inputs.prop('disabled', false);
+            $loginButton.attr('disabled', false);
         });
         request.done(function (response) {
             handleResponse(response);

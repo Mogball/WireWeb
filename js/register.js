@@ -40,7 +40,7 @@ const validateEmail = function (field, invalidate) {
     let hasLength = field.attr('data-length') !== undefined;
     const lenAttr = parseInt(field.attr('data-length'));
     const len = field.val().length;
-    if (field.val().length === 0 && field[0].validity.badInput === false) {
+    if (field.val().length === 0) {
         if (field.hasClass('validate')) {
             field.removeClass('valid');
             field.removeClass('invalid');
@@ -48,9 +48,7 @@ const validateEmail = function (field, invalidate) {
     } else {
         if (field.hasClass('validate')) {
             let re = new RegExp(/^(?!(?:(?:\x22?\x5C[\x00-\x7E]\x22?)|(?:\x22?[^\x5C\x22]\x22?)){255,})(?!(?:(?:\x22?\x5C[\x00-\x7E]\x22?)|(?:\x22?[^\x5C\x22]\x22?)){65,}@)(?:(?:[\x21\x23-\x27\x2A\x2B\x2D\x2F-\x39\x3D\x3F\x5E-\x7E]+)|(?:\x22(?:[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]|(?:\x5C[\x00-\x7F]))*\x22))(?:\.(?:(?:[\x21\x23-\x27\x2A\x2B\x2D\x2F-\x39\x3D\x3F\x5E-\x7E]+)|(?:\x22(?:[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]|(?:\x5C[\x00-\x7F]))*\x22)))*@(?:(?:(?!.*[^.]{64,})(?:(?:(?:xn--)?[a-z0-9]+(?:-[a-z0-9]+)*\.){1,126})+(?:(?:[a-z][a-z0-9]*)|(?:(?:xn--)[a-z0-9]+))(?:-[a-z0-9]+)*)|(?:\[(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){7})|(?:(?!(?:.*[a-f0-9][:\]]){7,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?)))|(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){5}:)|(?:(?!(?:.*[a-f0-9]:){5,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3}:)?)))?(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))(?:\.(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))){3}))]))$/i);
-            if (((field.is(':valid') && hasLength && (len <= lenAttr))
-                || (field.is(':valid') && !hasLength))
-                && re.test(field.val())) {
+            if (re.test(field.val())) {
                 field.removeClass('invalid');
                 field.addClass('valid');
             }
@@ -84,6 +82,10 @@ const checkButton = function () {
         const $element = $(element);
         valid = valid && ($element.hasClass('valid') || $element.hasClass('weak') || $element.hasClass('mini'));
     });
+    if ($email.attr('disabled')) {
+        $registerButton.attr('disabled', true);
+        return;
+    }
     $registerButton.attr('disabled', !valid);
 };
 // Basic client-side password matching
@@ -100,6 +102,10 @@ const validateConfirmPassword = function (field) {
         field.removeClass('valid').addClass('invalid');
     }
 };
+
+$email.on('input focus change', function () {
+    validateEmail($(this), $email.hasClass('valid'));
+});
 
 let $password = $('#password');
 let $confirmPassword = $('#confirm_password');
@@ -124,14 +130,17 @@ const processResponse = function (response) {
     if (response.indexOf(':') < 0) {
         switch (response) {
             case "WR1001":
+                $confirmPassword.select();
                 $confirmPassword.siblings('label').attr('data-error', "Passwords must match");
                 $confirmPassword.removeClass('valid').addClass('invalid');
                 break;
             case "WR1004":
+                $email.select();
                 $email.siblings('label').attr('data-error', "Please enter a valid email address");
                 $email.removeClass('valid').addClass('invalid');
                 break;
             case "WR1006":
+                $email.select();
                 $email.siblings('label').attr('data-error', "Email is already in use");
                 $email.removeClass('valid').addClass('invalid');
                 $('#recover').addClass('visible');
@@ -152,8 +161,9 @@ const processResponse = function (response) {
         const elements = [null, $email, $password, $confirmPassword];
         switch (code) {
             case "WR1002":
-                for (let i = 0; i < values.length; i++) {
+                for (let i = values.length - 1; i >= 0; i--) {
                     let index = parseInt(values[i]);
+                    elements[index].select();
                     elements[index].siblings('label').attr('data-error', "Field cannot be empty");
                     elements[index].removeClass('valid').addClass('invalid');
                 }
@@ -169,6 +179,7 @@ const processResponse = function (response) {
                 if (values.indexOf('3') >= 0) {
                     message += "have at least one number, ";
                 }
+                $password.select();
                 message = message.substring(0, message.length - 2);
                 $password.siblings('label').attr('data-error', message);
                 break;
@@ -178,6 +189,18 @@ const processResponse = function (response) {
         }
     }
 };
+
+$selected.keypress(function (event) {
+    if (event.which == 13 && !$registerButton.attr('disabled')) {
+        $registerButton.click();
+    }
+});
+
+$(document).keyup(function (event) {
+    if (event.keyCode == 27) {
+        $email.select();
+    }
+});
 
 let request;
 $(function () {
@@ -196,19 +219,21 @@ $(function () {
             data += element.id + '=' + element.value + '&';
         });
         $inputs.prop('disabled', true);
+        $registerButton.attr('disabled', true);
         request = $.ajax({
             url: "../php/register.php",
             type: "POST",
             data: data
         });
+        request.always(function () {
+            $inputs.prop('disabled', false);
+        });
         request.done(function (response) {
             processResponse(response);
+            $registerButton.attr('disabled', false);
         });
         request.fail(function () {
             processResponse("WS3000");
-        });
-        request.always(function () {
-            $inputs.prop('disabled', false);
         });
     });
     $email.focus();

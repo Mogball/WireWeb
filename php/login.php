@@ -65,7 +65,7 @@ if (strpos($emailphone, '@') !== false) {
     // Phone
     $param = 'phone_number';
 }
-$results = $database->getReference('/users')->orderByChild($param)->getSnapshot()->getValue();
+$results = $database->getReference('/users')->getSnapshot()->getValue();
 $user = false;
 foreach ($results as $result) {
     if (array_key_exists($param, $result) && $result[$param] == $emailphone) {
