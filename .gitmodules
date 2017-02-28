@@ -1,0 +1,18 @@
+[submodule "firebase-php"]
+	path = vendor/kreait/firebase-php
+	url = https://github.com/kreait/firebase-php.git
+[submodule "guzzle"]
+	path = vendor/guzzlehttp/guzzle
+	url = https://github.com/guzzle/guzzle.git
+[submodule "promises"]
+	path = vendor/guzzlehttp/promises
+	url = https://github.com/guzzle/promises.git
+[submodule "psr7"]
+	path = vendor/guzzlehttp/psr7
+	url = https://github.com/guzzle/psr7.git
+[submodule "cache"]
+	path = vendor/psr/cache
+	url = https://github.com/php-fig/cache.git
+[submodule "http-message"]
+	path = vendor/psr/http-message
+	url = https://github.com/php-fig/http-message.git
