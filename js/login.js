@@ -115,39 +115,44 @@ const handleResponse = function (response) {
                     "Please call us at 1-905-806-8846");
                 break;
         }
+        $inputs.prop('disabled', false);
+        $loginButton.attr('disabled', false);
     } else {
         const code = response.substring(0, response.indexOf(':'));
         let values = response.substring(response.indexOf(':') + 1).split(':');
-        switch (code) {
-            case "WL1000":
-                values = decode(values[0]);
-                $hidden = $('#hidden');
-                let html = "";
-                for (let key in values) {
-                    if (values.hasOwnProperty(key) && values[key]) {
-                        html += "<input type='hidden' name='" + key + "' value='" + values[key] + "'/>";
-                    }
+        if (code === "WL1000") {
+            values = decode(values[0]);
+            $hidden = $('#hidden');
+            let html = "";
+            for (let key in values) {
+                if (values.hasOwnProperty(key) && values[key]) {
+                    html += "<input type='hidden' name='" + key + "' value='" + values[key] + "'/>";
                 }
-                $hidden.html(html);
-                $hidden.submit();
+            }
+            $hidden.html(html);
+            $hidden.submit();
+        } else {
+            $inputs.prop('disabled', false);
+            $loginButton.attr('disabled', false);
         }
     }
 };
 
-// Add 'active' to label if the field is prepopulated
-window.setInterval(function () {
-    let hasValue = $password.val().length > 0;
-    if (!hasValue) {
-        hasValue = $('#password:-webkit-autofill').length > 0;
-    }
-    if (hasValue) {
-        $password.siblings('label').addClass('active');
-    }
-}, 300);
 
 // Document ready
 let request;
 $(function () {
+
+    // Add 'active' to label if the field is prepopulated
+    window.setInterval(function () {
+        let hasValue = $password.val().length > 0;
+        if (!hasValue) {
+            hasValue = $('#password:-webkit-autofill').length > 0;
+        }
+        if (hasValue) {
+            $password.siblings('label').addClass('active');
+        }
+    }, 300);
 
     $loginButton.click(function (event) {
         $fields.removeClass('valid');
@@ -170,14 +175,14 @@ $(function () {
             data: data
         });
         request.always(function () {
-            $inputs.prop('disabled', false);
-            $loginButton.attr('disabled', false);
         });
         request.done(function (response) {
             handleResponse(response);
         });
         request.fail(function () {
             handleResponse("WS3000");
+            $inputs.prop('disabled', false);
+            $loginButton.attr('disabled', false);
         });
     });
     $fields.blur();
