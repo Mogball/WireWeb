@@ -180,6 +180,7 @@ $(function () {
             handleResponse("WS3000");
         });
     });
+    $fields.blur();
     $emailphone.focus();
 });
 
