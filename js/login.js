@@ -142,18 +142,20 @@ const handleResponse = function (response) {
 let increment = 0;
 const pollID = window.setInterval(function () {
     increment++;
-    let hasValue = $password.val().length > 0;
+    let hasValue = $password.val().length >= 8;
     if (!hasValue) {
-        hasValue = $('#password:-webkit-autofill').length > 0;
+        hasValue = $('#password:-webkit-autofill').length >= 8;
     }
     if (hasValue) {
         $password.trigger('input');
         $password.siblings('label').addClass('active');
+        if ($emailphone.val().length > 0 || $('#emailphone:-webkit-autofill').length > 0) {
+            $loginButton.attr('disabled', false);
+        }
     }
     if (increment >= 20) {
         window.clearInterval(pollID);
     }
-    console.log('xd');
 }, 100);
 
 // Document ready
