@@ -155,6 +155,7 @@ const pollID = window.setInterval(function () {
     }
     if (increment >= 20) {
         window.clearInterval(pollID);
+        console.log('xd');
     }
 }, 100);
 
