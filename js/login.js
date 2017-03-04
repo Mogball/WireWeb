@@ -149,6 +149,7 @@ const pollID = window.setInterval(function () {
     if (hasValue) {
         $password.trigger('input');
         $password.siblings('label').addClass('active');
+        console.log($emailphone.val() + " : " + $('#emailphone:-webkit-autofill'));
         if ($emailphone.val().length > 0 || $('#emailphone:-webkit-autofill').length > 0) {
             $loginButton.attr('disabled', false);
             console.log('xd');
