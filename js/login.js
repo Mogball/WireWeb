@@ -194,7 +194,6 @@ $(function () {
         });
     });
     $fields.blur();
-    $fields.trigger('input');
     $emailphone.focus();
 });
 
