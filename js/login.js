@@ -142,6 +142,7 @@ const handleResponse = function (response) {
 let increment = 0;
 const pollID = window.setInterval(function () {
     increment++;
+    console.log($password.val());
     let hasValue = $password.val().length >= 8;
     if (!hasValue) {
         hasValue = $('#password:-webkit-autofill').length >= 8;
@@ -152,7 +153,6 @@ const pollID = window.setInterval(function () {
         console.log($emailphone.val() + " : " + $('#emailphone:-webkit-autofill'));
         if ($emailphone.val().length > 0 || $('#emailphone:-webkit-autofill').length > 0) {
             $loginButton.attr('disabled', false);
-            console.log('xd');
         }
     }
     if (increment >= 20) {
