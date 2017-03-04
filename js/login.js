@@ -193,7 +193,7 @@ $(function () {
             $loginButton.attr('disabled', false);
         });
     });
-    $fields.blur();
+    $fields.trigger('blur');
     $emailphone.focus();
 });
 

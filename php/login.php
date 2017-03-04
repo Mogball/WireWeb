@@ -64,6 +64,7 @@ if (strpos($emailphone, '@') !== false) {
 } else {
     // Phone
     $param = 'phone_number';
+    $emailphone = preg_replace('/[^0-9.]+/', '', $emailphone);
 }
 $results = $database->getReference('/users')->getSnapshot()->getValue();
 $user = false;

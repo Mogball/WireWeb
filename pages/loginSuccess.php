@@ -67,7 +67,7 @@
                     get_postParam('email_address'), get_postParam('phone_number'),
                     get_postParam('first_name'), get_postParam('last_name'),
                     get_postParam('country'), get_postParam('state'), get_postParam('city'),
-                    get_postParam('birthdate-year'), get_postParam('birthdate_month'), get_postParam('birthdate_day'));
+                    get_postParam('birthdate_year'), get_postParam('birthdate_month'), get_postParam('birthdate_day'));
                 ?>
             </div>
             <div class="col m3 s1"></div>

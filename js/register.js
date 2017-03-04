@@ -1,12 +1,12 @@
 // Basic client-side password verification
 const validatePassword = function (field) {
-    let lowercase = new RegExp("(?=.*[a-z])");
-    let uppercase = new RegExp("(?=.*[A-Z])");
-    let numeric = new RegExp("(?=.*[0-9])");
-    let special = new RegExp("(?=.*[!@#\$%\^&\*])");
-    let length = new RegExp("(?=.{10,})");
-    let lengthShort = new RegExp("(?=.{8,})");
-    let lengthLong = new RegExp("(?=.{12,})");
+    const lowercase = new RegExp("(?=.*[a-z])");
+    const uppercase = new RegExp("(?=.*[A-Z])");
+    const numeric = new RegExp("(?=.*[0-9])");
+    const special = new RegExp("(?=.*[!@#\$%\^&\*])");
+    const length = new RegExp("(?=.{10,})");
+    const lengthShort = new RegExp("(?=.{8,})");
+    const lengthLong = new RegExp("(?=.{12,})");
     const val = field.val();
     let strength = lowercase.test(val) + uppercase.test(val)
         + numeric.test(val) + special.test(val) + lengthShort.test(val)
