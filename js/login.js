@@ -172,7 +172,6 @@ $(function () {
             $loginButton.attr('disabled', false);
         });
     });
-    $password.focus();
     $emailphone.focus();
 });
 
