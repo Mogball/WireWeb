@@ -192,9 +192,21 @@ $(function () {
             $loginButton.attr('disabled', false);
         });
     });
-    $fields.blur();
-    $emailphone.focus();
-    window.focus();
+    $(document).ready(function () {
+        $fields.blur();
+        $emailphone.focus();
+        window.focus();
+        let count = 0;
+        $('#password, #emailphone').each(function (index, element) {
+           if (element.val().length > 0) {
+               element.siblings('label').addClass('active');
+               count++;
+           }
+        });
+        if (count == 2) {
+            $('#login_btn').attr('disabled', false);
+        }
+    });
 });
 
 /*
