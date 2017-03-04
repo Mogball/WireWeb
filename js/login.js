@@ -152,7 +152,9 @@ const pollID = window.setInterval(function () {
         if ($emailphone.val().length > 0 || $('#emailphone:-webkit-autofill').length > 0) {
             $loginButton.attr('disabled', false);
         }
+        console.log('xd');
     }
+    console.log('xd');
     if (increment >= 20) {
         window.clearInterval(pollID);
         console.log('xd');
