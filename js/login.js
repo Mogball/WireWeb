@@ -138,26 +138,6 @@ const handleResponse = function (response) {
     }
 };
 
-// Add 'active' to label if the field is prepopulated
-let increment = 0;
-const pollID = window.setInterval(function () {
-    increment++;
-    let hasValue = $password.val().length >= 8;
-    if (!hasValue) {
-        hasValue = $('#password:-webkit-autofill').length >= 8;
-    }
-    if (hasValue) {
-        $password.trigger('input');
-        $password.siblings('label').addClass('active');
-        if ($emailphone.val().length > 0 || $('#emailphone:-webkit-autofill').length > 0) {
-            $loginButton.attr('disabled', false);
-        }
-    }
-    if (increment >= 20) {
-        window.clearInterval(pollID);
-    }
-}, 100);
-
 // Document ready
 let request;
 $(function () {
@@ -192,21 +172,8 @@ $(function () {
             $loginButton.attr('disabled', false);
         });
     });
-    $(document).ready(function () {
-        $fields.blur();
-        $emailphone.focus();
-        window.focus();
-        let count = 0;
-        $('#password, #emailphone').each(function (index, element) {
-           if (element.val().length > 0) {
-               element.siblings('label').addClass('active');
-               count++;
-           }
-        });
-        if (count == 2) {
-            $('#login_btn').attr('disabled', false);
-        }
-    });
+    $password.focus();
+    $emailphone.focus();
 });
 
 /*
