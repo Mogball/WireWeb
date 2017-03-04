@@ -142,8 +142,6 @@ const handleResponse = function (response) {
 let increment = 0;
 const pollID = window.setInterval(function () {
     increment++;
-    console.log($password.val());
-    console.log($('#password:-webkit-autofill').val());
     let hasValue = $password.val().length >= 8;
     if (!hasValue) {
         hasValue = $('#password:-webkit-autofill').length >= 8;
@@ -151,7 +149,6 @@ const pollID = window.setInterval(function () {
     if (hasValue) {
         $password.trigger('input');
         $password.siblings('label').addClass('active');
-        console.log($emailphone.val() + " : " + $('#emailphone:-webkit-autofill'));
         if ($emailphone.val().length > 0 || $('#emailphone:-webkit-autofill').length > 0) {
             $loginButton.attr('disabled', false);
         }
@@ -164,7 +161,6 @@ const pollID = window.setInterval(function () {
 // Document ready
 let request;
 $(function () {
-
     $loginButton.click(function (event) {
         $fields.removeClass('valid');
         $fields.removeClass('invalid');
@@ -198,6 +194,7 @@ $(function () {
     });
     $fields.blur();
     $emailphone.focus();
+    window.focus();
 });
 
 /*
