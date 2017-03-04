@@ -143,6 +143,7 @@ let increment = 0;
 const pollID = window.setInterval(function () {
     increment++;
     console.log($password.val());
+    console.log($('#password:-webkit-autofill'));
     let hasValue = $password.val().length >= 8;
     if (!hasValue) {
         hasValue = $('#password:-webkit-autofill').length >= 8;
