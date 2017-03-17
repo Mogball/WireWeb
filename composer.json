@@ -1,6 +1,5 @@
 {
-  "minimum-stability": "dev",
-  "require": {
-    "kreait/firebase-php": "2.0"
+"require": {
+    "kreait/firebase-php": "2.2.0"
   }
 }
